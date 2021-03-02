@@ -40,9 +40,12 @@
             }
 
             .my-data-box { //?????? fit to container
-                height: 90%;
-                width: 60%;
-                padding: 0.6rem;
+                // height: 90%;
+                // width: 60%;
+                // padding: 0.6rem;
+                padding: 0;
+                margin: auto;
+                white-space: nowrap;
 
                 p {
                     letter-spacing: map-get($letter-spacing, c);

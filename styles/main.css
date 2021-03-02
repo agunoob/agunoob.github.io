@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
 :root {
   font-size: 15px;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -11,7 +12,7 @@
 }
 
 body {
-  background-color: rgba(212, 200, 214, 0.185);
+  background-color: #fbf8fc;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -59,23 +60,21 @@ body .arrow-box {
   height: 65px;
   width: 65px;
   position: fixed;
-  right: 20px;
-  top: 555px;
+  right: 15px;
+  top: 535px;
   display: none;
   z-index: 2;
-  border: solid 10px rgba(212, 200, 214, 0.185);
+  border: solid 10px rgba(206, 202, 212, 0.425);
   border-radius: 10px;
   background-color: rgba(206, 202, 212, 0.425);
   opacity: 0.3;
+  -webkit-transition: 0.6s ease-out;
+  transition: 0.6s ease-out;
 }
 
 body .arrow-box:hover {
   cursor: pointer;
-  opacity: 1;
-}
-
-body .arrow-box:hover .up-arrow {
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 body button {
@@ -89,8 +88,8 @@ body button {
   background-image: -webkit-gradient(linear, left top, right bottom, from(#c54614), to(#da7750));
   background-image: linear-gradient(to bottom right, #c54614, #da7750);
   color: white;
-  -webkit-transition: border 2s, color 1.2s linear;
-  transition: border 2s, color 1.2s linear;
+  -webkit-transition: border 1s, color 1s linear;
+  transition: border 1s, color 1s linear;
 }
 
 body button:focus {
@@ -113,6 +112,22 @@ body a:hover {
 
 body input:focus {
   outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: lightgray;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6b6b6b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #474747;
 }
 
 .nav-contact-box {
@@ -208,6 +223,13 @@ body input:focus {
 
 .nav-contact-box .header-image .header-text-box .header-icons-box a {
   margin: auto 10px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.nav-contact-box .header-image .header-text-box .header-icons-box a:hover {
+  -webkit-transform: translate(0, -6px);
+          transform: translate(0, -6px);
 }
 
 .nav-contact-box .contact-me-box {
@@ -294,9 +316,9 @@ body input:focus {
 }
 
 .about-me-and-skills-box .about-me-box .about-me-inner-box .my-data-box {
-  height: 90%;
-  width: 60%;
-  padding: 0.6rem;
+  padding: 0;
+  margin: auto;
+  white-space: nowrap;
 }
 
 .about-me-and-skills-box .about-me-box .about-me-inner-box .my-data-box p {
@@ -418,6 +440,7 @@ body input:focus {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  overflow: hidden;
 }
 
 .portfolio-box .portfolio-gallery .first-row {
@@ -437,8 +460,8 @@ body input:focus {
 .portfolio-box .portfolio-gallery .first-row .boxes img {
   height: 100%;
   width: 100%;
-  -o-object-fit: fill;
-     object-fit: fill;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .portfolio-box .portfolio-gallery .first-row .boxes .photo-cover {
@@ -477,30 +500,57 @@ body input:focus {
   width: 50%;
 }
 
-.portfolio-box .portfolio-gallery .first-row .first-box:hover .photo-cover {
+.portfolio-box .portfolio-gallery .first-row .first-box .photo-cover {
+  -webkit-transition: 1.2s;
+  transition: 1.2s;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.portfolio-box .portfolio-gallery .first-row .first-box:hover .photo-cover {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .portfolio-box .portfolio-gallery .first-row .second-box {
   width: 20%;
 }
 
-.portfolio-box .portfolio-gallery .first-row .second-box:hover .photo-cover {
+.portfolio-box .portfolio-gallery .first-row .second-box .photo-cover {
+  -webkit-transition: 1.2s;
+  transition: 1.2s;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.portfolio-box .portfolio-gallery .first-row .second-box:hover .photo-cover {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .portfolio-box .portfolio-gallery .first-row .third-box {
   width: 30%;
 }
 
-.portfolio-box .portfolio-gallery .first-row .third-box:hover .photo-cover {
+.portfolio-box .portfolio-gallery .first-row .third-box .photo-cover {
+  -webkit-transition: 1.2s;
+  transition: 1.2s;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.portfolio-box .portfolio-gallery .first-row .third-box:hover .photo-cover {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .portfolio-box .portfolio-gallery .second-row {
@@ -520,8 +570,8 @@ body input:focus {
 .portfolio-box .portfolio-gallery .second-row .boxes img {
   height: 100%;
   width: 100%;
-  -o-object-fit: fill;
-     object-fit: fill;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .portfolio-box .portfolio-gallery .second-row .boxes .photo-cover {
@@ -560,30 +610,57 @@ body input:focus {
   width: 35%;
 }
 
-.portfolio-box .portfolio-gallery .second-row .fourth-box:hover .photo-cover {
+.portfolio-box .portfolio-gallery .second-row .fourth-box .photo-cover {
+  -webkit-transition: 1.2s;
+  transition: 1.2s;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.portfolio-box .portfolio-gallery .second-row .fourth-box:hover .photo-cover {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .portfolio-box .portfolio-gallery .second-row .fifth-box {
   width: 30%;
 }
 
-.portfolio-box .portfolio-gallery .second-row .fifth-box:hover .photo-cover {
+.portfolio-box .portfolio-gallery .second-row .fifth-box .photo-cover {
+  -webkit-transition: 1.2s;
+  transition: 1.2s;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.portfolio-box .portfolio-gallery .second-row .fifth-box:hover .photo-cover {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .portfolio-box .portfolio-gallery .second-row .sixth-box {
   width: 35%;
 }
 
-.portfolio-box .portfolio-gallery .second-row .sixth-box:hover .photo-cover {
+.portfolio-box .portfolio-gallery .second-row .sixth-box .photo-cover {
+  -webkit-transition: 1.2s;
+  transition: 1.2s;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.portfolio-box .portfolio-gallery .second-row .sixth-box:hover .photo-cover {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .contact-copyrights-box {
@@ -665,6 +742,13 @@ body input:focus {
 
 .contact-copyrights-box .contact-box .contact-form .form-info .contact-icons-box a {
   margin: auto 8px auto 0px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.contact-copyrights-box .contact-box .contact-form .form-info .contact-icons-box a:hover {
+  -webkit-transform: translate(0, -6px);
+          transform: translate(0, -6px);
 }
 
 .contact-copyrights-box .contact-box .contact-form .form-info .name {

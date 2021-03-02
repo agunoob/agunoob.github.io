@@ -52,6 +52,11 @@
 
                     a {
                         margin: auto 8px auto 0px;
+                        transition: 0.5s;
+
+                        &:hover {
+                            transform: translate(0, -6px);
+                        }
                     }
                 }
 

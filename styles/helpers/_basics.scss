@@ -1,7 +1,7 @@
 :root {
     font-size: 15px;
+    scroll-behavior: smooth;
 }
-
 * {
     margin: 0;
     padding: 0;
@@ -51,23 +51,20 @@ body {
         height: 65px;
         width: 65px;
         position: fixed;
-        right: 20px;
-        top: 555px;
+        right: 15px;
+        top: 535px;
         display: none;
         z-index: 2;
-        border: solid 10px map-get($color, bg);
+        border: solid 10px map-get($color, shadow);
         border-radius: 10px;
         background-color: map-get($color, shadow);
         opacity: 0.3;
+        transition: 0.6s ease-out;
     }
 
     .arrow-box:hover {
         cursor: pointer;
-        opacity: 1;
-
-        .up-arrow {
-            opacity: 0.5;
-        }
+        opacity: 0.8;
     }
 
     button {
@@ -92,4 +89,20 @@ body {
     input:focus {
         outline: none;
     }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(211, 211, 211); 
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(107, 107, 107); 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(71, 71, 71); 
 }

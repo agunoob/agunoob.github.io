@@ -1,5 +1,6 @@
 "use strict"
 
+//show arrow when scroll
 const arrow = document.getElementById('arrow-box');
 window.onscroll = function showArrow() {
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
@@ -9,20 +10,24 @@ window.onscroll = function showArrow() {
     }
   }
 
+//scroll to start
 arrow.onclick = function scrollToTop() {
-    window.scrollTo(0,0);
+    window.scroll(0,0);
+};
+
+
+//scroll to part of the page
+const start = document.getElementById('start');
+const startPart = document.getElementById('start-part');
+start.onclick = function scrollToStart() {
+    startPart.scrollIntoView();
+
 };
 
 const aboutMe = document.getElementById('about-me');
 const aboutMePart = document.getElementById('about-me-part');
-aboutMe.onclick = function scrollToAboutMe() {
+aboutMe.onclick = function scrollToaboutMe() {
     aboutMePart.scrollIntoView();
-};
-
-const skills = document.getElementById('skills');
-const skillsPart = document.getElementById('skills-part');
-skills.onclick = function scrollToSkills() {
-    skillsPart.scrollIntoView();
 };
 
 const portfolio = document.getElementById('portfolio');
@@ -38,7 +43,52 @@ contact.onclick = function scrollToContact() {
 };
 
 const contactMe = document.getElementById('contact-me');
-// const contactPart = document.getElementById('contact-part');
 contactMe.onclick = function scrollToContact() {
     contactPart.scrollIntoView();
+};
+
+//btns alerts
+const btnCheckMyCv = document.getElementById('check-my-cv-btn');
+btnCheckMyCv.onclick = function btnCheckMyCv() {
+ alert('It doesnt work yet');
+};
+
+const btnFirstPic = document.getElementById('btn-first-pic');
+btnFirstPic.onclick = function btnFirstPic() {
+ alert('It doesnt work yet');
+};
+
+const btnSecondPic = document.getElementById('btn-second-pic');
+btnSecondPic.onclick = function btnSecondPic() {
+ alert('It doesnt work yet');
+};
+
+const btnThirdPic = document.getElementById('btn-third-pic');
+btnThirdPic.onclick = function btnThirdPic() {
+ alert('It doesnt work yet');
+};
+
+const btnFourthPic = document.getElementById('btn-fourth-pic');
+btnFourthPic.onclick = function btnFourthPic() {
+ alert('It doesnt work yet');
+};
+
+const btnFifthPic = document.getElementById('btn-fifth-pic');
+btnFifthPic.onclick = function btnFifthPic() {
+ alert('It doesnt work yet');
+};
+
+const btnSixthPic = document.getElementById('btn-six-pic');
+btnSixthPic.onclick = function btnSixthPic() {
+ alert('It doesnt work yet');
+};
+
+const btnSend = document.getElementById('btn-send');
+btnSend.onclick = function btnSend() {
+ alert('It doesnt work yet');
+};
+
+//no picture dragging
+window.ondragstart = function() { 
+    return false; 
 };

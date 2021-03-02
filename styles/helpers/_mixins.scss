@@ -8,7 +8,7 @@
     letter-spacing: 1px;
     background-image: linear-gradient(to bottom right,map-get($color, dark-orange),map-get($color, light-orange));
     color: map-get($color, primary);
-    transition: border 2s, color 1.2s linear;
+    transition: border 1s, color 1s linear;
 };
 
 @mixin buttons-hover {
