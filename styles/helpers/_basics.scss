@@ -1,0 +1,95 @@
+:root {
+    font-size: 15px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: map-get($color, bg);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    cursor: default;
+
+    h1 {
+        font-size: map-get($font-size, extra-big);
+        color: map-get($color, primary);
+        letter-spacing: map-get($letter-spacing, a)
+    }
+
+    h2 {
+        font-size: map-get($font-size, medium);
+        color: map-get($color, primary);
+        letter-spacing:  map-get($letter-spacing, c)
+    }
+
+    h3 {
+        font-size: map-get($font-size, medium);
+        color: map-get($color, accent);
+        letter-spacing:  map-get($letter-spacing, b)
+    }
+
+    h4 {
+        font-size: map-get($font-size, small);
+        color: map-get($color, secondary);
+        letter-spacing:  map-get($letter-spacing, b)
+    }
+
+    p {
+        font-size: map-get($font-size, extra-small);
+        color: map-get($color, secondary);
+        line-height: 2.5;
+        letter-spacing: map-get($letter-spacing, c)
+    }
+
+    .arrow-box {
+        height: 65px;
+        width: 65px;
+        position: fixed;
+        right: 20px;
+        top: 555px;
+        display: none;
+        z-index: 2;
+        border: solid 10px map-get($color, bg);
+        border-radius: 10px;
+        background-color: map-get($color, shadow);
+        opacity: 0.3;
+    }
+
+    .arrow-box:hover {
+        cursor: pointer;
+        opacity: 1;
+
+        .up-arrow {
+            opacity: 0.5;
+        }
+    }
+
+    button {
+        @include buttons;
+
+        &:focus {
+            outline: none;
+            border: none;
+        }
+
+        &:hover {
+            @include buttons-hover;
+            cursor: pointer;
+        }
+    }
+
+    a:hover {
+        cursor: pointer;
+        color: map-get($color, secondary);
+    }
+
+    input:focus {
+        outline: none;
+    }
+}

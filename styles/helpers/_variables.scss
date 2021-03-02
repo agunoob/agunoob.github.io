@@ -1,0 +1,26 @@
+$color: (
+    "bg": rgba(212, 200, 214, 0.185),
+    "primary": rgb(255, 255, 255),
+    "accent": rgb(68, 71, 100),
+    "accent-mid-fade": rgba(68, 71, 100, 0.9),
+    "accent-fade": rgb(241, 238, 245),
+    "secondary": rgb(0, 0, 0),
+    "secondary-fade": rgba(#000, 0.7),
+    "light-grey": rgb(119, 119, 119),
+    "dark-orange": rgb(197, 70, 20),
+    "light-orange": rgb(218, 119, 80),
+    "shadow":rgba(206, 202, 212, 0.425)
+);
+
+$font-size: (
+    "extra-big": 4.5rem,
+    "medium": 1.4rem,
+    "small": 1.2rem,
+    "extra-small": 1rem
+);
+
+$letter-spacing: (
+    "a": 0.6rem,
+    "b": 0.3rem,
+    "c": 0.1rem
+)

@@ -1,0 +1,23 @@
+@mixin buttons {
+    height: 40px;
+    width: 150px;
+    border: none;
+    border-radius: 6px;
+    font-size: map-get($font-size, small);
+    font-variant: all-small-caps;
+    letter-spacing: 1px;
+    background-image: linear-gradient(to bottom right,map-get($color, dark-orange),map-get($color, light-orange));
+    color: map-get($color, primary);
+    transition: border 2s, color 1.2s linear;
+};
+
+@mixin buttons-hover {
+    background-image: linear-gradient(to bottom right,map-get($color, primary),map-get($color, primary));
+    color: map-get($color, dark-orange);
+    border: solid 1px map-get($color, dark-orange);
+};
+
+@mixin box-shadow {
+    background-color: map-get($color, primary);
+    box-shadow: 6px 6px 6px map-get($color, shadow);
+}

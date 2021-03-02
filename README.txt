@@ -1,0 +1,1 @@
+This is my first try of making my Business Card with portfolio 

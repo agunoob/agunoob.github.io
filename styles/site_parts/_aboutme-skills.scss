@@ -1,0 +1,126 @@
+.about-me-and-skills-box {
+    height: 100vmin;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .about-me-box {
+        height : 45vmin;
+        width: 75%;
+        position: relative;
+        background-color: map-get($color, accent-fade);
+        display: flex;
+        align-items: center;
+        
+        h3 {
+            position: absolute;
+            top: 8px;
+            left: 110px;
+        }
+
+        .about-me-inner-box {
+            height: 30vmin;
+            width: 150%; //???????????? longer div
+            position: relative;
+            left: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include box-shadow;
+
+            .about-me-items {
+                margin: auto 30px;
+            }
+
+            .profile-picture {
+                height: 90px;
+                width: 90px;
+                object-fit: cover;
+                border-radius: 50px;
+            }
+
+            .my-data-box { //?????? fit to container
+                height: 90%;
+                width: 60%;
+                padding: 0.6rem;
+
+                p {
+                    letter-spacing: map-get($letter-spacing, c);
+                    line-height: 1.8;
+                }
+
+                strong {
+                    color: map-get($color, accent);
+                    font-size: map-get($font-size, medium);
+                    font-weight: 900;
+                    font-variant: all-small-caps;
+                    letter-spacing:  map-get($letter-spacing, c);
+                }
+            }
+        }
+    }
+
+    .skills-box {
+        height : 45vmin;
+        width: 75%;
+        position: relative;
+        top: 10vmin;
+        display: flex;
+        align-items: center;
+        align-self: flex-end;
+        background-color: map-get($color, accent-fade);
+        
+        h3 {
+            position: absolute;
+            top: 8px;
+            left: 30px;
+        }
+
+        .skills-inner-box {
+            height: 30vmin;
+            width: 150%; //????????????
+            position: relative;
+            right: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            @include box-shadow;
+
+            i img {
+                width: 80px;
+            }
+
+            p {
+                padding-top: 20px;
+                text-align: center;
+                font-size: map-get($font-size, small);
+                font-weight: bold;
+                color: map-get($color, accent)
+            }
+
+            .css-sass {
+                position: relative;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    display: block;
+                    height: 120px;
+                    left: -120px;
+                    top: 10px;
+                    border-left: dotted 6px map-get($color, dark-orange) ;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    display: block;
+                    height: 120px;
+                    right: -120px;
+                    top: 10px;
+                    border-right: dotted 6px map-get($color, dark-orange) ;
+                }
+            }
+        }
+    }
+}

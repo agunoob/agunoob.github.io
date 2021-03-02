@@ -1,0 +1,79 @@
+.nav-contact-box{
+    height: 100vmin;
+    display: flex;
+    flex-direction: column;
+
+    .nav-box {
+        height: 6vmin;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        a {
+            position: relative;
+            margin: auto 10px;
+            color: map-get($color, accent);
+            font-size: map-get($font-size, small);
+            font-weight: bold;
+            letter-spacing: map-get($letter-spacing, c);
+            font-variant: all-small-caps;
+
+            &::before {
+                content: '|';
+                position: absolute;
+                left: -12px;
+                color: map-get($color, accent);
+            }
+
+            &:hover {
+                color: black;
+            }
+        }
+    }
+
+    .header-image {
+        height: 75vmin;
+        // background-color: map-get($color, accent);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../photos/main_picture.png");
+        background-position: center;
+        background-repeat: repeat;
+        background-size: contain; //?????how to fit picture
+
+        .header-text-box {
+            position: relative;
+            top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .header-icons-box {
+                height: 40px;
+                width: 300px;
+                position: relative;
+                top: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .youtube {
+                    display: flex;
+                }
+                
+                a {
+                    margin: auto 10px;
+                }
+            }
+        }
+    }
+
+    .contact-me-box {
+        height: 19vmin;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        button {
+            margin: 15px 20px;
+        }
+    }
+}
