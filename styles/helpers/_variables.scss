@@ -9,18 +9,23 @@ $color: (
     "light-grey": rgb(119, 119, 119),
     "dark-orange": rgb(197, 70, 20),
     "light-orange": rgb(218, 119, 80),
-    "shadow":rgba(206, 202, 212, 0.425)
+    "shadow":rgba(206, 202, 212, 0.425),
+    "bright-orange": rgb(255, 187, 61)
 );
 
 $font-size: (
-    "extra-big": 4.5rem,
-    "medium": 1.4rem,
-    "small": 1.2rem,
-    "extra-small": 1rem
+    "extra-big": 7rem,
+    "big-for-media": 5.5rem,
+    "big-for-menu": 4rem,
+    "big": 2.5rem,
+    "medium": 2.2rem,
+    "small": 2rem,
+    "extra-small": 1.5rem,
+    "super-small": 0.8rem
 );
 
 $letter-spacing: (
-    "a": 0.6rem,
-    "b": 0.3rem,
-    "c": 0.1rem
+    "wide": 0.6rem,
+    "mid-wide": 0.3rem,
+    "narrow": 0.1rem
 )

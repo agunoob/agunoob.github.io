@@ -1,84 +1,100 @@
-.nav-contact-box{
+.nav-contact-box
+{
     height: 100vmin;
     display: flex;
     flex-direction: column;
+    position: relative;
 
-    .nav-box {
+    .nav-box
+    {
         height: 6vmin;
         display: flex;
         align-items: center;
         justify-content: flex-end;
 
-        a {
+        a
+        {
             position: relative;
-            margin: auto 10px;
+            margin: auto 1rem;
             color: map-get($color, accent);
             font-size: map-get($font-size, small);
-            font-weight: bold;
-            letter-spacing: map-get($letter-spacing, c);
+            letter-spacing: map-get($letter-spacing, narrow);
             font-variant: all-small-caps;
 
-            &::before {
+            &::before
+            {
                 content: '|';
                 position: absolute;
-                left: -12px;
+                left: -1.2rem;
                 color: map-get($color, accent);
             }
 
-            &:hover {
+            &:hover
+            {
                 color: black;
             }
         }
     }
 
-    .header-image {
+    .header-image
+    {
         height: 75vmin;
-        // background-color: map-get($color, accent);
+        background-color: map-get($color, accent);
         background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../photos/main_picture.png");
         background-position: center;
-        background-repeat: repeat;
+        background-repeat: no-repeat;
         background-size: contain; //?????how to fit picture
 
-        .header-text-box {
+        .header-text-box
+        {
             position: relative;
-            top: 50px;
+            top: 5rem;
             display: flex;
             flex-direction: column;
             align-items: center;
 
-            .header-icons-box {
-                height: 40px;
-                width: 300px;
+            h1
+            {   // trick for gradient text!!
+                background: linear-gradient(to top left, map-get($color, bright-orange), map-get($color, primary));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .header-icons-box
+            {
+                height: 4rem;
+                width: 30rem;
                 position: relative;
-                top: 5px;
+                top: 0.5rem;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-
-                .youtube {
-                    display: flex;
-                }
                 
-                a {
-                    margin: auto 10px;
+                a
+                {
+                    margin: auto 1rem;
                     transition: 0.5s;
 
-                    &:hover {
-                        transform: translate(0, -6px);
+                    &:hover
+                    {
+                        transform: translate(0, -0.6rem);
                     }
                 }
             }
         }
     }
 
-    .contact-me-box {
+    .contact-me-box
+    {
         height: 19vmin;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        button {
-            margin: 15px 20px;
+        
+        button
+        {
+            margin: 1.5rem 2rem;
         }
     }
 }

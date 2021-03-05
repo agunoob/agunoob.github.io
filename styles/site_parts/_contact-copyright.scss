@@ -1,11 +1,13 @@
-.contact-copyrights-box {
+.contact-copyrights-box
+{
     height: 100vmin;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    .contact-box {
+    .contact-box
+    {
         height: 90%;
         width: 100%;
         background-color: map-get($color, accent-fade);
@@ -13,109 +15,146 @@
         justify-content: center;
         position: relative;
 
-        &>h3 {
+        &>h3
+        {
             position: absolute;
-            top: 20px;
-            left:180px;
+            top: 1.5rem;
+            left: 15.5rem;
         }
 
-        .contact-form {
+        .contact-form
+        {
             height: 80%;
             width: 80%;
             align-self: center;
             @include box-shadow;
             display: flex;
 
-            .form-info {
+            .form-info
+            {
                 height: 100%;
                 width: 40%;
                 position: relative;
-                padding: 35px 50px 35px 35px;
+                padding: 3.5rem 5rem 3.5rem 3.5rem;
                 background-color: map-get($color, accent);
 
-                p {
+                p
+                {
                     color: map-get($color, primary);
                     line-height: 1.8;
                 }
 
-                i img {
-                    margin-bottom: 15px;
+                i img
+                {
+                    margin-bottom: 1.5rem;
                 }
 
-                .contact-icons-box {
-                    margin-top: 120px;
+                .contact-icons-box
+                {
+                    margin-top: 12rem;
                     display: flex;
 
-                    .contact-youtube {
+                    .contact-youtube
+                    {
                         display: flex;
                     }
 
-                    a {
-                        margin: auto 8px auto 0px;
+                    a
+                    {
+                        margin: auto 0.8rem auto 0;
                         transition: 0.5s;
 
-                        &:hover {
-                            transform: translate(0, -6px);
+                        &:hover
+                        {
+                            transform: translate(0, -0.6rem);
                         }
                     }
                 }
 
-                .name {
+                .name
+                {
                     font-weight: bold;
                 }
 
-                &::after {
+                &::after
+                {
                     content: '';
                     position: absolute;
-                    top: 40px;
-                    right: -19px;   // triangle trick
+                    top: 4rem;
+                    right: -1.9rem;   // triangle trick
                     width: 0; 
                     height: 0; 
-                    border-top: 20px solid transparent;
-                    border-bottom: 20px solid transparent;
-                    border-left: 20px solid map-get($color, accent);
+                    border-top: 2rem solid transparent;
+                    border-bottom: 2rem solid transparent;
+                    border-left: 2rem solid map-get($color, accent);
                 }
             }
 
-            .form {
+            .form
+            {
                 height: 100%;
                 width: 60%;
-                padding: 40px 60px;
+                padding: 4rem 6rem;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-around;
 
-                h3 {
-                    margin-left: 30px;
+                h3
+                {
+                    margin-left: 2rem;
                 }
 
-                input {
+                input, form
+                {
                     height: 8%;
-                    padding: 5px;
+                    padding: 0.5rem 2rem;
                     border: none;
-                    border-radius: 6px;
-                    box-shadow: 4px 5px 4px map-get($color, accent-fade) inset;
+                    border-radius: 0.6rem;
+                    box-shadow: 0.4rem 0.5rem 0.4rem map-get($color, accent-fade) inset;
+                    font-size: map-get($font-size, extra-small);
+                    color: map-get($color, dark-orange);
+                    font-family: 'Poppins', sans-serif;
                 }
 
-                .input-message {
+                ::-webkit-input-placeholder
+                {
+                    color: map-get($color, light-orange);
+                }
+
+                form {
                     height: 40%;
+                    padding-right: 0.2rem;
+
+                    textarea {
+                        padding-top: 0.5rem;
+                        width: 100%;
+                        height: 100%;
+                        border: none;
+                        resize: none;
+                        color: map-get($color, dark-orange);
+                        font-size: map-get($font-size, extra-small);
+                        font-family: 'Poppins', sans-serif;
+                    }
                 }
 
-                button {
+                button
+                {
                     align-self: flex-end;
                 }
             }
         }
     }
 
-    .copyrights {
+    .copyrights
+    {
         height: 10%;
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
 
-        h6 {
+        h6
+        {
             color: map-get($color, light-grey)
         }
     }

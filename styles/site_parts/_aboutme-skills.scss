@@ -1,10 +1,12 @@
-.about-me-and-skills-box {
+.about-me-and-skills-box
+{
     height: 100vmin;
     width: 100%;
     display: flex;
     flex-direction: column;
 
-    .about-me-box {
+    .about-me-box
+    {
         height : 45vmin;
         width: 75%;
         position: relative;
@@ -12,58 +14,76 @@
         display: flex;
         align-items: center;
         
-        h3 {
+        h3
+        {
             position: absolute;
-            top: 8px;
-            left: 110px;
+            top: 1rem;
+            left: 10rem;
         }
 
-        .about-me-inner-box {
+        .about-me-inner-box
+        {
             height: 30vmin;
             width: 150%; //???????????? longer div
             position: relative;
-            left: 80px;
+            left: 8rem;
             display: flex;
             align-items: center;
             justify-content: center;
             @include box-shadow;
 
-            .about-me-items {
-                margin: auto 30px;
+            .about-me-items
+            {
+                margin: auto 3rem;
             }
 
-            .profile-picture {
-                height: 90px;
-                width: 90px;
+            .profile-picture
+            {
+                height: 9rem;
+                width: 9rem;
                 object-fit: cover;
-                border-radius: 50px;
+                border-radius: 5rem;
+                // transition: 1s;
+
+                // &:hover
+                // {
+                //     height: 9.5rem;
+                //     width: 9.5rem;
+                //     margin: auto 2.5rem auto 3rem;
+                // }
             }
 
-            .my-data-box { //?????? fit to container
-                // height: 90%;
-                // width: 60%;
-                // padding: 0.6rem;
+            .my-data-box
+            { //?????? fit to container
                 padding: 0;
                 margin: auto;
                 white-space: nowrap;
 
-                p {
-                    letter-spacing: map-get($letter-spacing, c);
+                p
+                {
+                    letter-spacing: map-get($letter-spacing, narrow);
                     line-height: 1.8;
                 }
 
-                strong {
+                strong
+                {
                     color: map-get($color, accent);
                     font-size: map-get($font-size, medium);
                     font-weight: 900;
                     font-variant: all-small-caps;
-                    letter-spacing:  map-get($letter-spacing, c);
+                    letter-spacing:  map-get($letter-spacing, narrow);
                 }
+            }
+
+            .description-box
+            {
+                width: 40%;
             }
         }
     }
 
-    .skills-box {
+    .skills-box
+    {
         height : 45vmin;
         width: 75%;
         position: relative;
@@ -73,55 +93,70 @@
         align-self: flex-end;
         background-color: map-get($color, accent-fade);
         
-        h3 {
+        h3
+        {
             position: absolute;
-            top: 8px;
-            left: 30px;
+            top: 1rem;
+            left: 2rem;
         }
 
-        .skills-inner-box {
+        .skills-inner-box
+        {
             height: 30vmin;
             width: 150%; //????????????
             position: relative;
-            right: 80px;
+            right: 8rem;
             display: flex;
             align-items: center;
             justify-content: space-around;
             @include box-shadow;
 
-            i img {
-                width: 80px;
+            .skills-items
+            {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
             }
 
-            p {
-                padding-top: 20px;
+            i img
+            {
+                width: 8rem;
+            }
+
+            p
+            {
+                padding-top: 2rem;
                 text-align: center;
                 font-size: map-get($font-size, small);
                 font-weight: bold;
                 color: map-get($color, accent)
             }
 
-            .css-sass {
+            .css-sass
+            {
                 position: relative;
 
-                &::before {
+                &::before
+                {
                     content: '';
                     position: absolute;
                     display: block;
-                    height: 120px;
-                    left: -120px;
-                    top: 10px;
-                    border-left: dotted 6px map-get($color, dark-orange) ;
+                    height: 12rem;
+                    left: -12rem;
+                    top: 1rem;
+                    border-left: dotted 0.6rem map-get($color, dark-orange) ;
                 }
 
-                &::after {
+                &::after
+                {
                     content: '';
                     position: absolute;
                     display: block;
-                    height: 120px;
-                    right: -120px;
-                    top: 10px;
-                    border-right: dotted 6px map-get($color, dark-orange) ;
+                    height: 12rem;
+                    right: -12rem;
+                    top: 1rem;
+                    border-right: dotted 0.6rem map-get($color, dark-orange) ;
                 }
             }
         }

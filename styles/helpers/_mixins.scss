@@ -1,23 +1,26 @@
-@mixin buttons {
-    height: 40px;
-    width: 150px;
+@mixin buttons
+{
+    height: 4rem;
+    width: 15rem;
     border: none;
-    border-radius: 6px;
+    border-radius: 0.6rem;
     font-size: map-get($font-size, small);
     font-variant: all-small-caps;
-    letter-spacing: 1px;
+    letter-spacing: 0.1rem;
     background-image: linear-gradient(to bottom right,map-get($color, dark-orange),map-get($color, light-orange));
     color: map-get($color, primary);
     transition: border 1s, color 1s linear;
 };
 
-@mixin buttons-hover {
+@mixin buttons-hover
+{
     background-image: linear-gradient(to bottom right,map-get($color, primary),map-get($color, primary));
     color: map-get($color, dark-orange);
-    border: solid 1px map-get($color, dark-orange);
+    border: solid 0.1rem map-get($color, dark-orange);
 };
 
-@mixin box-shadow {
+@mixin box-shadow
+{
     background-color: map-get($color, primary);
-    box-shadow: 6px 6px 6px map-get($color, shadow);
+    box-shadow: 0.6rem 0.6rem 0.6rem map-get($color, shadow);
 }

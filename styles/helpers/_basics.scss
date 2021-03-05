@@ -1,14 +1,17 @@
-:root {
-    font-size: 15px;
+:root
+{
+    font-size: 10px;
     scroll-behavior: smooth;
 }
-* {
+*
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
+body
+{
     background-color: map-get($color, bg);
     position: relative;
     display: flex;
@@ -16,93 +19,176 @@ body {
     font-family: 'Poppins', sans-serif;
     cursor: default;
 
-    h1 {
+    .burger-icon
+    {
+        width: 3.5rem;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        display: none;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .nav-contact-box
+    {
+        a img
+        {
+            width: 1.8rem;
+        }
+
+        .youtube img
+        {
+            width: 2rem;
+            display: flex;
+        }
+    }
+
+    .contact-copyrights-box
+    {
+        a img
+        {
+            width: 2rem;
+        }
+
+        .contact-youtube img
+        {
+            width: 2.2rem;
+            display: flex;
+        }
+
+        i img {
+            width: 3.5rem;
+        }
+    }
+
+    h1
+    {
         font-size: map-get($font-size, extra-big);
         color: map-get($color, primary);
-        letter-spacing: map-get($letter-spacing, a)
+        letter-spacing: map-get($letter-spacing, wide);
     }
 
-    h2 {
-        font-size: map-get($font-size, medium);
+    h2
+    {
+        font-size: map-get($font-size, big);
         color: map-get($color, primary);
-        letter-spacing:  map-get($letter-spacing, c)
+        letter-spacing:  map-get($letter-spacing, narrow);
+        font-weight: 100;
     }
 
-    h3 {
+    h3
+    {
         font-size: map-get($font-size, medium);
         color: map-get($color, accent);
-        letter-spacing:  map-get($letter-spacing, b)
+        letter-spacing:  map-get($letter-spacing, mid-wide)
     }
 
-    h4 {
+    h4
+    {
         font-size: map-get($font-size, small);
         color: map-get($color, secondary);
-        letter-spacing:  map-get($letter-spacing, b)
+        letter-spacing:  map-get($letter-spacing, mid-wide)
     }
 
-    p {
+    h5
+    {
+        font-size: map-get($font-size, super-small);
+        font-weight: 100;
+        letter-spacing: map-get($letter-spacing, narrow);
+    }
+
+    p
+    {
         font-size: map-get($font-size, extra-small);
         color: map-get($color, secondary);
         line-height: 2.5;
-        letter-spacing: map-get($letter-spacing, c)
+        letter-spacing: map-get($letter-spacing, narrow)
     }
 
-    .arrow-box {
-        height: 65px;
-        width: 65px;
+    .arrow-box
+    {
+        height: 6.5rem;
+        width: 6.5rem;
         position: fixed;
-        right: 15px;
-        top: 535px;
+        right: 1.5rem;
+        bottom: 1.5rem;
         display: none;
+        align-items: center;
+        justify-content: center;
         z-index: 2;
-        border: solid 10px map-get($color, shadow);
-        border-radius: 10px;
-        background-color: map-get($color, shadow);
-        opacity: 0.3;
-        transition: 0.6s ease-out;
+        border-radius: 1rem;
+        background-color: map-get($color, bg);
+        opacity: 0.4;
+        transition: width 2s, opacity 1s ease-out;
+
+        i img {
+            width: 4.5rem;
+        }
     }
 
-    .arrow-box:hover {
+    .arrow-box:hover
+    {
         cursor: pointer;
-        opacity: 0.8;
+        opacity: 0.9;
+
+        i img
+        {
+            width: 4.3rem;
+        }
     }
 
-    button {
+    button
+    {
         @include buttons;
 
-        &:focus {
+        &:focus
+        {
             outline: none;
             border: none;
         }
 
-        &:hover {
+        &:hover
+        {
             @include buttons-hover;
             cursor: pointer;
         }
     }
 
-    a:hover {
+    a:hover
+    {
         cursor: pointer;
         color: map-get($color, secondary);
     }
 
-    input:focus {
+    input:focus, textarea:focus
+    {
         outline: none;
     }
+
+        // trick for icon shadow not whole box-shadow
+        // .html i img
+        // {
+        //     filter: drop-shadow(2px 3px 2px red);
+        // }
 }
 
-::-webkit-scrollbar {
-    width: 10px;
+::-webkit-scrollbar
+{
+    width: 1rem;
 }
 
-::-webkit-scrollbar-track {
+::-webkit-scrollbar-track
+{
     background: rgb(211, 211, 211); 
 }
 
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb
+{
     background: rgb(107, 107, 107); 
 }
 
-::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover
+{
     background: rgb(71, 71, 71); 
 }
