@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
 
-    .about-me-box
+    .about-me-box //zewnetrzny
     {
         height: 45vmin;
         width: 75%;
@@ -21,7 +21,7 @@
             left: 10rem;
         }
 
-        .about-me-inner-box
+        .about-me-inner-box //wewnetrzny
         {
             height: 30vmin;
             width: 150%; //???????????? longer div
@@ -43,14 +43,6 @@
                 width: 9rem;
                 object-fit: cover;
                 border-radius: 5rem;
-                // transition: 1s;
-
-                // &:hover
-                // {
-                //     height: 9.5rem;
-                //     width: 9.5rem;
-                //     margin: auto 2.5rem auto 3rem;
-                // }
             }
 
             .my-data-box
@@ -82,7 +74,7 @@
         }
     }
 
-    .skills-box
+    .skills-box //zewnetrzny
     {
         height : 45vmin;
         width: 75%;
@@ -100,14 +92,14 @@
             left: 2rem;
         }
 
-        .skills-inner-box
+        .skills-inner-box //wewnetrzny
         {
             height: 30vmin;
             width: 150%; //????????????
             position: relative;
             right: 8rem;
             display: flex;
-            align-items: center;
+            // align-items: center;
             justify-content: space-around;
             @include box-shadow;
 
@@ -126,7 +118,6 @@
 
             p
             {
-                padding-top: 2rem;
                 text-align: center;
                 font-size: map-get($font-size, small);
                 font-weight: bold;

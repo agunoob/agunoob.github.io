@@ -154,26 +154,21 @@
         {
             display: flex;
 
-            .contact-youtube
+            a img
             {
-                display: flex;
-            }
-
-            .contact-twitch
-            {
-                margin: 0;
-            }
-
-            a
-            {
-                width: 2.5rem;
-                margin: auto 3rem auto 0;
+                width: 2.2rem;
+                margin-right: 2rem;
                 transition: 0.5s;
 
                 &:hover
                 {
                     transform: translate(0, -0.6rem);
                 }
+            }
+
+            .contact-twitch img
+            {
+                margin-right: 0;
             }
         }
 

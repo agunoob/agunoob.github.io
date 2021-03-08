@@ -11,6 +11,7 @@
 @import './site_parts/contact-copyright';
 
 //media
-@import './helpers/media-mobile';
-@import './helpers/media-tablet';
+@import './helpers/media/media-mobile';
+@import './helpers/media/media-tablet-small';
+@import './helpers/media/media-tablet-big';
 

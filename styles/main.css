@@ -41,20 +41,10 @@ body .nav-contact-box a img {
 
 body .nav-contact-box .youtube img {
   width: 2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 body .contact-copyrights-box a img {
   width: 2rem;
-}
-
-body .contact-copyrights-box .contact-youtube img {
-  width: 2.2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 body .contact-copyrights-box i img {
@@ -459,9 +449,6 @@ body input:focus, body textarea:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   background-color: white;
@@ -490,7 +477,6 @@ body input:focus, body textarea:focus {
 }
 
 .about-me-and-skills-box .skills-box .skills-inner-box p {
-  padding-top: 2rem;
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
@@ -829,26 +815,20 @@ body input:focus, body textarea:focus {
   display: flex;
 }
 
-.contact-copyrights-box .copyrights .contact-icons-box .contact-youtube {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.contact-copyrights-box .copyrights .contact-icons-box .contact-twitch {
-  margin: 0;
-}
-
-.contact-copyrights-box .copyrights .contact-icons-box a {
-  width: 2.5rem;
-  margin: auto 3rem auto 0;
+.contact-copyrights-box .copyrights .contact-icons-box a img {
+  width: 2.2rem;
+  margin-right: 2rem;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
-.contact-copyrights-box .copyrights .contact-icons-box a:hover {
+.contact-copyrights-box .copyrights .contact-icons-box a img:hover {
   -webkit-transform: translate(0, -0.6rem);
           transform: translate(0, -0.6rem);
+}
+
+.contact-copyrights-box .copyrights .contact-icons-box .contact-twitch img {
+  margin-right: 0;
 }
 
 .contact-copyrights-box .copyrights i img {
@@ -942,10 +922,6 @@ body input:focus, body textarea:focus {
   body .nav-contact-box .header-image .header-text-box .header-icons-box a img {
     width: 3rem;
     margin: 0;
-  }
-  body .nav-contact-box .header-image .header-text-box .header-icons-box .youtube img {
-    width: 3.5rem;
-    margin-top: 0.5rem;
   }
   body .nav-contact-box .header-image .header-text-box .header-icons-box .twitch img {
     margin-right: 0;
@@ -1224,15 +1200,234 @@ body input:focus, body textarea:focus {
     line-height: 1.5;
     text-align: center;
   }
-  body .contact-copyrights-box .copyrights .contact-icons-box a {
-    margin: auto 1rem auto 0;
+  body .contact-copyrights-box .copyrights .contact-icons-box a img {
+    width: 2.6rem;
+    margin-right: 6rem;
   }
   body .contact-copyrights-box .copyrights i img {
     display: none;
   }
 }
 
-@media screen and (min-width: 425px) and (max-width: 768px) {
+@media screen and (min-width: 426px) and (max-width: 599px) {
+  :root {
+    font-size: 7.5px;
+  }
+  body .burger-icon {
+    display: block;
+  }
+  body .nav-contact-box {
+    height: 100vh;
+  }
+  body .nav-contact-box .nav-box-closed {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-item-align: center;
+        align-self: center;
+    justify-self: center;
+    background-color: #444764;
+    z-index: 1;
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: opacity 0.5s, -webkit-transform 0.8s;
+    transition: opacity 0.5s, -webkit-transform 0.8s;
+    transition: opacity 0.5s, transform 0.8s;
+    transition: opacity 0.5s, transform 0.8s, -webkit-transform 0.8s;
+  }
+  body .nav-contact-box .nav-box-open {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  body .nav-contact-box .nav-box-open .close-burger {
+    position: fixed;
+    top: 1rem;
+    right: 2.5rem;
+    display: block;
+    font-size: 4rem;
+    color: white;
+  }
+  body .nav-contact-box .nav-box-open a {
+    color: white;
+    font-size: 4rem;
+    letter-spacing: 0.6rem;
+    position: relative;
+  }
+  body .nav-contact-box .nav-box-open a::after {
+    content: '';
+    height: 0.1rem;
+    width: 160vw;
+    position: absolute;
+    bottom: 0;
+    left: -1rem;
+    background-color: white;
+  }
+  body .nav-contact-box .nav-box-open a:hover, body .nav-contact-box .nav-box-open a:focus {
+    color: #ffbb3d;
+  }
+  body .nav-contact-box .nav-box-open a:hover:after {
+    background-color: #ffbb3d;
+  }
+  body .nav-contact-box .header-image {
+    background-size: cover;
+    height: 50vh;
+    background-position: center;
+    background-size: cover;
+  }
+  body .nav-contact-box .header-image .header-icons-box {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 1rem auto;
+  }
+  body .nav-contact-box .header-image .header-icons-box a img {
+    width: 2.5rem;
+    margin: auto 1.5rem;
+  }
+  body .nav-contact-box .header-image .header-icons-box .twitch img {
+    margin-right: 0;
+  }
+  body .nav-contact-box .contact-me-box {
+    height: 50vh;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  body .nav-contact-box .contact-me-box .contact-me-buttons {
+    width: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  body .nav-contact-box .contact-me-box .contact-me-buttons button {
+    height: 7rem;
+    width: 80%;
+  }
+  body .about-me-and-skills-box {
+    height: 100vh;
+  }
+  body .about-me-and-skills-box .about-me-box {
+    height: 60vh;
+    width: 85%;
+  }
+  body .about-me-and-skills-box .about-me-box .about-me-inner-box {
+    height: 45vh;
+    left: 4rem;
+  }
+  body .about-me-and-skills-box .about-me-box .about-me-inner-box .about-me-items {
+    margin: auto 0.5rem;
+  }
+  body .about-me-and-skills-box .about-me-box .about-me-inner-box .my-data-box {
+    white-space: normal;
+  }
+  body .about-me-and-skills-box .about-me-box .about-me-inner-box .my-data-box p {
+    letter-spacing: 0.1rem;
+    line-height: 1.5;
+  }
+  body .about-me-and-skills-box .about-me-box .about-me-inner-box .my-data-box strong {
+    font-size: 2.5rem;
+  }
+  body .about-me-and-skills-box .about-me-box .about-me-inner-box .description-box {
+    margin: 0;
+    height: 98%;
+    width: 50%;
+    padding-right: 0.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    overflow: auto;
+  }
+  body .about-me-and-skills-box .about-me-box .about-me-inner-box .description-box p {
+    line-height: 1.8;
+  }
+  body .about-me-and-skills-box .skills-box {
+    height: 40vh;
+    width: 85%;
+    top: 0;
+  }
+  body .about-me-and-skills-box .skills-box .skills-inner-box {
+    height: 25vh;
+    right: 4rem;
+  }
+  body .about-me-and-skills-box .skills-box .skills-inner-box .css-sass::before, body .about-me-and-skills-box .skills-box .skills-inner-box .css-sass::after {
+    display: none;
+  }
+  body .portfolio-box {
+    height: 200vh;
+  }
+  body .portfolio-box .portfolio-gallery {
+    height: 190vh;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    background-color: #fbf8fc;
+  }
+  body .portfolio-box .portfolio-gallery .row {
+    height: 190vh;
+    width: 40%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body .portfolio-box .portfolio-gallery .row .boxes {
+    height: calc(190%/3);
+    width: 100%;
+  }
+  body .portfolio-box .portfolio-gallery .row .boxes .photo-cover button {
+    height: 7rem;
+    width: 80%;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    margin-left: 0;
+  }
+  body .contact-copyrights-box {
+    height: 100vh;
+  }
+  body .contact-copyrights-box .contact-box {
+    height: 90%;
+  }
+  body .contact-copyrights-box .contact-box .contact-form {
+    width: 85%;
+  }
+  body .contact-copyrights-box .contact-box .contact-form .form-info .text-p {
+    line-height: 2;
+  }
+  body .contact-copyrights-box .contact-box .contact-form .form {
+    padding: 4rem 4rem;
+  }
+  body .contact-copyrights-box .copyrights i img {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 768px) {
   :root {
     font-size: 8px;
   }
@@ -1316,10 +1511,6 @@ body input:focus, body textarea:focus {
     width: 2.5rem;
     margin: auto 1.5rem;
   }
-  body .nav-contact-box .header-image .header-icons-box .youtube img {
-    width: 3.5rem;
-    margin-top: 0.5rem;
-  }
   body .nav-contact-box .header-image .header-icons-box .twitch img {
     margin-right: 0;
   }
@@ -1340,19 +1531,24 @@ body input:focus, body textarea:focus {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
   }
   body .nav-contact-box .contact-me-box .contact-me-buttons button {
     height: 9rem;
     width: 40%;
   }
   body .about-me-and-skills-box .about-me-box {
-    height: 50vmin;
+    height: 60vmin;
     width: 85%;
   }
   body .about-me-and-skills-box .about-me-box .about-me-inner-box {
-    height: 35vmin;
+    height: 45vmin;
+    left: 6rem;
+  }
+  body .about-me-and-skills-box .about-me-box .about-me-inner-box .about-me-items {
+    margin: auto 0.8rem;
   }
   body .about-me-and-skills-box .about-me-box .about-me-inner-box .my-data-box {
     white-space: normal;
@@ -1365,18 +1561,68 @@ body input:focus, body textarea:focus {
     font-size: 2.5rem;
   }
   body .about-me-and-skills-box .about-me-box .about-me-inner-box .description-box {
-    width: 50%;
+    margin: 0;
+    height: 98%;
+    padding-right: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    overflow: auto;
+  }
+  body .about-me-and-skills-box .about-me-box .about-me-inner-box .description-box p {
+    line-height: 1.8;
   }
   body .about-me-and-skills-box .skills-box {
-    height: 50vmin;
+    height: 40vmin;
     width: 85%;
     top: 0;
   }
   body .about-me-and-skills-box .skills-box .skills-inner-box {
-    height: 35vmin;
+    height: 25vmin;
+    right: 6rem;
   }
   body .about-me-and-skills-box .skills-box .skills-inner-box .css-sass::before, body .about-me-and-skills-box .skills-box .skills-inner-box .css-sass::after {
     display: none;
+  }
+  body .portfolio-box {
+    height: 200vh;
+  }
+  body .portfolio-box .portfolio-gallery {
+    height: 190vh;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    background-color: #fbf8fc;
+  }
+  body .portfolio-box .portfolio-gallery .row {
+    height: 190vh;
+    width: 40%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body .portfolio-box .portfolio-gallery .row .boxes {
+    height: calc(190%/3);
+    width: 100%;
+  }
+  body .portfolio-box .portfolio-gallery .row .boxes .photo-cover button {
+    height: 7rem;
+    width: 80%;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    margin-left: 0;
+  }
+  body .contact-copyrights-box .copyrights .contact-icons-box a img {
+    margin-right: 4rem;
   }
 }
 /*# sourceMappingURL=main.css.map */
