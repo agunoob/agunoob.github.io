@@ -11,6 +11,12 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        position: relative;
+
+        .close-burger
+        {
+            display: none;
+        }
 
         a
         {
@@ -40,30 +46,53 @@
     {
         height: 75vmin;
         background-color: map-get($color, accent);
-        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../photos/main_picture.png");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url("../photos/main_picture.png");
         background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain; //?????how to fit picture
+        // background-repeat: no-repeat;
+        background-size: contain;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .header-image-effect
+        {
+            height: 100%;
+            width: 100%;
+            background-image: url("../photos/background-effect.jpeg");
+            opacity: 15%;
+            // mix-blend-mode: lighten;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
 
         .header-text-box
         {
-            position: relative;
-            top: 5rem;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
 
             h1
             {   // trick for gradient text!!
                 background: linear-gradient(to top left, map-get($color, bright-orange), map-get($color, primary));
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
+                margin: 2.5rem auto;
             }
 
             .header-icons-box
             {
                 height: 4rem;
-                width: 30rem;
+                width: 70%;
                 position: relative;
                 top: 0.5rem;
                 display: flex;

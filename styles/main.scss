@@ -10,5 +10,7 @@
 @import './site_parts/portfolio';
 @import './site_parts/contact-copyright';
 
-@import './helpers/media';
+//media
+@import './helpers/media-mobile';
+@import './helpers/media-tablet';
 

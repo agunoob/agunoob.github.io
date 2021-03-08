@@ -7,7 +7,7 @@
 
     .about-me-box
     {
-        height : 45vmin;
+        height: 45vmin;
         width: 75%;
         position: relative;
         background-color: map-get($color, accent-fade);
@@ -68,10 +68,10 @@
                 strong
                 {
                     color: map-get($color, accent);
-                    font-size: map-get($font-size, medium);
+                    font-size: map-get($font-size, big-for-contact);
                     font-weight: 900;
                     font-variant: all-small-caps;
-                    letter-spacing:  map-get($letter-spacing, narrow);
+                    letter-spacing:  map-get($letter-spacing, mid-wide);
                 }
             }
 

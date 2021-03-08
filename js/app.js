@@ -19,56 +19,48 @@ arrow.onclick = function scrollToTop() {
 const burger = document.getElementById('burger');
 const navBoxOpen = document.getElementById('nav-box-open');
 burger.onclick = function openMenu() {
-    // if (navBoxOpen.style.display = 'none') {
-        navBoxOpen.style.display = 'flex';
-    // } else if (navBoxOpen.style.display = 'flex') {
-    //     navBoxOpen.style.display = 'none';
-    // }
+    navBoxOpen.classList.add('nav-box-open')
+        console.log('otwarte')
+        //close burger with ANY click ???????????????????????????????????????????????
+        navBoxOpen.addEventListener('click', function(){
+        navBoxOpen.classList.remove('nav-box-open');
+    })
 };
+
+//close burger
+// const closeBurger = document.getElementById('close-burger');
+// closeBurger.onclick = function closeMenu() {
+//     navBoxOpen.classList.remove('nav-box-open');
+// };
 
 //scroll to part of the page
 const start = document.getElementById('start');
 const startPart = document.getElementById('start-part');
 start.onclick = function scrollToStart() {
     startPart.scrollIntoView();
-    // if (burger.style.display = 'flex') {
-    //     navBoxOpen.style.display = 'none';
-    // }
 };
 
 const aboutMe = document.getElementById('about-me');
 const aboutMePart = document.getElementById('about-me-part');
 aboutMe.onclick = function scrollToaboutMe() {
     aboutMePart.scrollIntoView();
-    // if (burger.style.display = 'flex') {
-    //     navBoxOpen.style.display = 'none';
-    // }
 };
 
 const portfolio = document.getElementById('portfolio');
 const portfolioPart = document.getElementById('portfolio-part');
 portfolio.onclick = function scrollToPortfolio() {
     portfolioPart.scrollIntoView();
-    // if (burger.style.display = 'flex') {
-    //     navBoxOpen.style.display = 'none';
-    // }
 };
 
 const contact = document.getElementById('contact');
 const contactPart = document.getElementById('contact-part');
 contact.onclick = function scrollToContact() {
     contactPart.scrollIntoView();
-    // if (burger.style.display = 'flex') {
-    //     navBoxOpen.style.display = 'none';
-    // }
 };
 
 const contactMe = document.getElementById('contact-me');
 contactMe.onclick = function scrollToContact() {
     contactPart.scrollIntoView();
-    // if (burger.style.display = 'flex') {
-    //     navBoxOpen.style.display = 'none';
-    // }
 };
 
 //btns alerts
