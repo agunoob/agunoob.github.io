@@ -1,0 +1,260 @@
+@media screen and (min-width: 600px) and (max-width: 768px) {
+    :root
+    {
+        font-size: 8px;
+    }
+
+    body
+    {
+        .pl-flag, .uk-flag
+        {
+            top: 1.5rem;
+        }
+
+        .burger-icon
+        {
+            display: block;
+        }
+
+        //nav-header-contact-part
+        .nav-contact-box
+        {
+            height: 100vh;
+
+            .nav-box-closed
+            {
+                 
+                height: 100%;
+                width: 100%;
+                position: fixed;
+                display: flex;
+                flex-direction: column;
+                align-self: center;
+                justify-self: center;
+                background-color: map-get($color, accent);
+                z-index: 1;
+                opacity: 0;
+                transform: translateX(100%);
+                transition: opacity 0.5s, transform 0.8s;
+            }
+ 
+            .nav-box-open
+            {
+                opacity: 1;
+                transform: translateX(0%);
+ 
+                .close-burger
+                {
+                    position: fixed;
+                    top: 1rem;
+                    right: 2.5rem;
+                    display: block;
+                    font-size: map-get($font-size, big-for-menu);
+                    color: map-get($color, primary);
+                }
+
+                a
+                {
+                    color: map-get($color, primary);
+                    font-size: map-get($font-size, big-for-menu);
+                    letter-spacing: map-get($letter-spacing, wide);
+                    position: relative;
+                }
+
+                a::after
+                {
+                    content: '';
+                    height: 0.1rem;
+                    width: 160vw;
+                    position: absolute;
+                    bottom: 0;
+                    left: -1rem;
+                    background-color: map-get($color, primary);
+                }
+
+                a:hover, a:focus
+                {
+                    color: map-get($color, bright-orange);
+
+                }
+
+                a:hover:after
+                {
+                    background-color: map-get($color, bright-orange);
+                }
+            }
+
+            .header-image
+            {
+                background-size: cover;
+
+                height: 50vh;
+                background-position: center;
+                // background-repeat: no-repeat;
+                background-size: cover;
+
+                .header-icons-box
+                {
+                    justify-content: space-between;
+                    margin: 1rem auto;
+
+                    a img
+                    {
+                        width: 2.5rem;
+                        margin: auto 1.5rem;
+                    }
+
+                    .twitch img
+                    {
+                        margin-right: 0;
+                    }
+                }
+            }
+
+            .contact-me-box
+            {
+                height: 50vh;
+                justify-content: space-around;
+
+                .contact-me-buttons
+                {
+                    width: 90%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-evenly;
+
+                    button
+                    {
+                        height: 9rem;
+                        width: 40%;
+                    }
+                }
+            }
+        }
+
+        //about-me-and-skills-part
+        .about-me-and-skills-box
+        {
+            .about-me-box
+            {
+                height: 60vmin;
+                width: 85%;
+
+                .about-me-inner-box
+                {
+                    height: 45vmin;
+                    left: 6rem;
+
+                    .about-me-items
+                    {
+                        margin: auto 2rem;
+                    }
+                    
+                    .my-data-box
+                    {
+                        white-space: normal;
+
+                        p
+                        {
+                            letter-spacing: map-get($letter-spacing, narrow);
+                            line-height: 1.5;
+                        }
+        
+                        strong
+                        {
+                            font-size: map-get($font-size, big);
+                        }
+                    }
+
+                    .description-box
+                    {
+                        margin: 0;
+                        height: 98%;
+                        padding-right: 2.5rem;
+                        display: flex;
+                        align-items: center;
+                        overflow: auto;
+
+                        p
+                        {
+                            line-height: 1.8;
+                        }
+                    }
+                }
+            }
+
+            .skills-box
+            {
+                height : 40vmin;
+                width: 85%;
+                top: 0;
+
+                .skills-inner-box
+                {
+                    height: 25vmin;
+                    right: 6rem;
+
+                    .css-sass
+                    {
+                        &::before, &::after
+                        {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        //portfolio-part
+        .portfolio-box
+        {
+            height: 200vh;
+
+            .portfolio-gallery
+            {
+                height: 190vh;
+                flex-direction: row;
+                justify-content: space-evenly;
+                background-color: map-get($color, bg);
+
+                .row
+                {
+                    height: 190vh;
+                    width: 40%;
+                    flex-direction: column;
+
+                    .boxes
+                    {
+                        height: calc(190%/3);
+                        width: 100%;
+
+                        .photo-cover button
+                        {
+                            height: 7rem;
+                            width: 80%;
+                            align-self: center;
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        //contact-me-part
+        .contact-copyrights-box
+        {
+            .copyrights
+            {
+
+                .contact-icons-box
+                {
+                    a img
+                    {
+                        margin-right: 4rem;
+                    }
+                }
+            }
+        }
+    }
+}

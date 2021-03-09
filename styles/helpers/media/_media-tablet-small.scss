@@ -1,0 +1,293 @@
+@media screen and (min-width: 426px) and (max-width: 599px) {
+    :root
+    {
+        font-size: 7.5px;
+    }
+
+    body
+    {
+        .pl-flag, .uk-flag
+        {
+            top: 1.5rem;
+        }
+    
+        .burger-icon
+        {
+            display: block;
+        }
+
+        //nav-header-contact-part
+        .nav-contact-box
+        {
+            height: 100vh;
+
+            .nav-box-closed
+            {
+                 
+                height: 100%;
+                width: 100%;
+                position: fixed;
+                display: flex;
+                flex-direction: column;
+                align-self: center;
+                justify-self: center;
+                background-color: map-get($color, accent);
+                z-index: 1;
+                opacity: 0;
+                transform: translateX(100%);
+                transition: opacity 0.5s, transform 0.8s;
+            }
+ 
+            .nav-box-open
+            {
+                opacity: 1;
+                transform: translateX(0%);
+ 
+                .close-burger
+                {
+                    position: fixed;
+                    top: 1rem;
+                    right: 2.5rem;
+                    display: block;
+                    font-size: map-get($font-size, big-for-menu);
+                    color: map-get($color, primary);
+                }
+
+                a
+                {
+                    color: map-get($color, primary);
+                    font-size: map-get($font-size, big-for-menu);
+                    letter-spacing: map-get($letter-spacing, wide);
+                    position: relative;
+                }
+
+                a::after
+                {
+                    content: '';
+                    height: 0.1rem;
+                    width: 160vw;
+                    position: absolute;
+                    bottom: 0;
+                    left: -1rem;
+                    background-color: map-get($color, primary);
+                }
+
+                a:hover, a:focus
+                {
+                    color: map-get($color, bright-orange);
+
+                }
+
+                a:hover:after
+                {
+                    background-color: map-get($color, bright-orange);
+                }
+            }
+
+            .header-image
+            {
+                background-size: cover;
+
+                height: 50vh;
+                background-position: center;
+                // background-repeat: no-repeat;
+                background-size: cover;
+
+                .header-icons-box
+                {
+                    justify-content: space-between;
+                    margin: 1rem auto;
+
+                    a img
+                    {
+                        width: 2.5rem;
+                        margin: auto 1.5rem;
+                    }
+
+                    .twitch img
+                    {
+                        margin-right: 0;
+                    }
+                }
+            }
+
+            .contact-me-box
+            {
+                height: 50vh;
+                justify-content: space-evenly;
+
+                .contact-me-buttons
+                {
+                    width: 90%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-around;
+
+                    button
+                    {
+                        height: 7rem;
+                        width: 80%;
+                    }
+                }
+            }
+        }
+
+        //about-me-and-skills-part
+        .about-me-and-skills-box
+        {
+            height: 100vh;
+
+            .about-me-box //zewnetrzny
+            {
+                height: 60vh;
+                width: 85%;
+
+                .about-me-inner-box //wewnetrzny
+                {
+                    height: 45vh;
+                    left: 4rem;
+
+                    .about-me-items
+                    {
+                        margin: auto 1.5rem;
+                    }
+                    
+                    .my-data-box
+                    {
+                        white-space: normal;
+
+                        p
+                        {
+                            letter-spacing: map-get($letter-spacing, narrow);
+                            line-height: 1.5;
+                        }
+        
+                        strong
+                        {
+                            font-size: map-get($font-size, big);
+                        }
+                    }
+
+                    .description-box
+                    {
+                        margin: 0;
+                        height: 98%;
+                        width: 50%;
+                        padding-right: 1rem;
+                        display: flex;
+                        align-items: center;
+                        overflow: auto;
+
+                        p
+                        {
+                            line-height: 1.8;
+                        }
+                    }
+                }
+            }
+
+            .skills-box //zewnetrzny
+            {
+                height : 40vh;
+                width: 85%;
+                top: 0;
+
+                .skills-inner-box //wewnetrzny
+                {
+                    height: 25vh;
+                    right: 4rem;
+
+                    .css-sass
+                    {
+                        &::before, &::after
+                        {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        //portfolio-part
+        .portfolio-box
+        {
+            height: 200vh;
+
+            .portfolio-gallery
+            {
+                height: 190vh;
+                flex-direction: row;
+                justify-content: space-evenly;
+                background-color: map-get($color, bg);
+
+                .row
+                {
+                    height: 190vh;
+                    width: 40%;
+                    flex-direction: column;
+
+                    .boxes
+                    {
+                        height: calc(190%/3);
+                        width: 100%;
+
+                        .photo-cover button
+                        {
+                            height: 7rem;
+                            width: 80%;
+                            align-self: center;
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        //contact-me-part
+        .contact-copyrights-box
+        {
+            height: 100vh;
+
+            .contact-box
+            {
+                height: 90%;
+
+                .contact-form
+                {
+                    width: 85%;
+
+                    .form-info
+                    {
+                        .text-p
+                        {
+                            line-height: 2;
+                        }
+                    }
+
+                    .form
+                    {
+                        padding: 4rem 4rem;
+                    }
+                }
+            }
+
+            .copyrights
+            {
+
+                .contact-icons-box
+                {
+                    a img
+                    {
+                        margin-right: 3rem;
+                    }
+                }
+
+                i img
+                {
+                    display: none;
+                }
+            }
+        }
+    }
+}
