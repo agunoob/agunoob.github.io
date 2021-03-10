@@ -8,7 +8,7 @@
     {
         .pl-flag, .uk-flag
         {
-            top: 1.5rem;
+            top: 2.5rem;
         }
     
         .burger-icon
@@ -33,24 +33,27 @@
                 justify-self: center;
                 background-color: map-get($color, accent);
                 z-index: 1;
-                opacity: 0;
+                // opacity: 0;
                 transform: translateX(100%);
-                transition: opacity 0.5s, transform 0.8s;
+                transition: transform 0.6s ease-out;
+                // opacity 0.5s, 
             }
  
             .nav-box-open
             {
-                opacity: 1;
+                // opacity: 1;
                 transform: translateX(0%);
  
                 .close-burger
                 {
                     position: fixed;
-                    top: 1rem;
-                    right: 2.5rem;
+                    top: 3rem;
+                    right: 3rem;
                     display: block;
-                    font-size: map-get($font-size, big-for-menu);
-                    color: map-get($color, primary);
+
+                    & img {
+                    width: 2.5rem;
+                    }
                 }
 
                 a
@@ -61,15 +64,15 @@
                     position: relative;
                 }
 
-                a::after
+                a::before
                 {
                     content: '';
-                    height: 0.1rem;
-                    width: 160vw;
-                    position: absolute;
+                    left: 0;
                     bottom: 0;
-                    left: -1rem;
+                    width: 120%;
+                    height: 0.1rem;
                     background-color: map-get($color, primary);
+                    position: absolute;
                 }
 
                 a:hover, a:focus
@@ -78,7 +81,7 @@
 
                 }
 
-                a:hover:after
+                a:hover::before, a:focus::before
                 {
                     background-color: map-get($color, bright-orange);
                 }
@@ -181,7 +184,8 @@
 
                         p
                         {
-                            line-height: 1.8;
+                            height: 80%;
+                            line-height: 2;
                         }
                     }
                 }
@@ -197,14 +201,6 @@
                 {
                     height: 25vh;
                     right: 4rem;
-
-                    .css-sass
-                    {
-                        &::before, &::after
-                        {
-                            display: none;
-                        }
-                    }
                 }
             }
         }
@@ -212,33 +208,52 @@
         //portfolio-part
         .portfolio-box
         {
-            height: 200vh;
+            height: 155vh;
 
             .portfolio-gallery
             {
-                height: 190vh;
-                flex-direction: row;
-                justify-content: space-evenly;
-                background-color: map-get($color, bg);
+                height: 140vh;
 
-                .row
+                .first-box
                 {
-                    height: 190vh;
-                    width: 40%;
-                    flex-direction: column;
+                    width: 70%;
+                }
 
-                    .boxes
+                .second-box
+                {
+                    width: 30%;
+                }
+
+                .third-box
+                {
+                    width: 45%;
+                }
+
+                .fourth-box
+                {
+                    width: 55%;
+                }
+
+                .fifth-box
+                {
+                    width: 50%;
+                }
+
+                .sixth-box
+                {
+                    width: 50%;
+                }
+
+                .boxes
+                {
+                    height: calc(140vh/3);
+
+                    .photo-cover button
                     {
-                        height: calc(190%/3);
-                        width: 100%;
-
-                        .photo-cover button
-                        {
-                            height: 7rem;
-                            width: 80%;
-                            align-self: center;
-                            margin-left: 0;
-                        }
+                        height: 7rem;
+                        width: 80%;
+                        align-self: center;
+                        margin-left: 0;
                     }
                 }
             }
@@ -253,12 +268,18 @@
             {
                 height: 90%;
 
+                &>h3
+                {
+                    margin-left: 8rem;
+                }
+
                 .contact-form
                 {
                     width: 85%;
 
                     .form-info
                     {
+
                         .text-p
                         {
                             line-height: 2;

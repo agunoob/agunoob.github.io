@@ -13,6 +13,7 @@
         background-color: map-get($color, accent-fade);
         display: flex;
         align-items: center;
+        justify-items: center;
         
         h3
         {
@@ -46,7 +47,7 @@
             }
 
             .my-data-box
-            { //?????? fit to container
+            {
                 padding: 0;
                 white-space: nowrap;
 
@@ -69,6 +70,15 @@
             .description-box
             {
                 width: 40%;
+                height: 100%;
+                overflow: auto;
+                display: flex;
+                align-items: center;
+
+                p
+                {
+                    height: 98%;
+                }
             }
         }
     }
@@ -110,9 +120,27 @@
                 justify-content: center;
             }
 
-            i img
+            i 
             {
-                width: 8rem;
+                img
+                {
+                    width: 8rem;
+                }
+
+                .img-html
+                {
+                    animation: skills-moves 20s infinite;
+                }
+
+                .img-sass
+                {
+                    animation: skills-moves 20s 3.5s infinite;
+                }
+
+                .img-js
+                {
+                    animation: skills-moves 20s  7s infinite;
+                }
             }
 
             p
@@ -121,33 +149,6 @@
                 font-size: map-get($font-size, small);
                 font-weight: bold;
                 color: map-get($color, accent)
-            }
-
-            .css-sass
-            {
-                position: relative;
-
-                &::before
-                {
-                    content: '';
-                    position: absolute;
-                    display: block;
-                    height: 12rem;
-                    left: -12rem;
-                    top: 4rem;
-                    border-left: dotted 0.6rem map-get($color, dark-orange) ;
-                }
-
-                &::after
-                {
-                    content: '';
-                    position: absolute;
-                    display: block;
-                    height: 12rem;
-                    right: -12rem;
-                    top: 4rem;
-                    border-right: dotted 0.6rem map-get($color, dark-orange) ;
-                }
             }
         }
     }

@@ -8,7 +8,7 @@
     {
         .pl-flag, .uk-flag
         {
-            top: 1.5rem;
+            top: 2rem;
         }
         
         .burger-icon
@@ -33,24 +33,27 @@
                 justify-self: center;
                 background-color: map-get($color, accent);
                 z-index: 1;
-                opacity: 0;
+                // opacity: 0;
                 transform: translateX(100%);
-                transition: opacity 0.5s, transform 0.8s;
+                transition: transform 0.6s ease-out;
+                // opacity 0.5s, 
             }
 
             .nav-box-open
             {
-                opacity: 1;
+                // opacity: 1;
                 transform: translateX(0%);
 
                 .close-burger
                 {
                     position: fixed;
-                    top: 1rem;
-                    right: 2.5rem;
+                    top: 3rem;
+                    right: 3rem;
                     display: block;
-                    font-size: map-get($font-size, big-for-menu);
-                    color: map-get($color, primary);
+
+                    & img {
+                    width: 2.5rem;
+                    }
                 }
 
                 a
@@ -61,15 +64,15 @@
                     position: relative;
                 }
 
-                a::after
+                a::before
                 {
                     content: '';
-                    height: 0.1rem;
-                    width: 160vw;
-                    position: absolute;
+                    left: 0;
                     bottom: 0;
-                    left: -1rem;
+                    width: 120%;
+                    height: 0.1rem;
                     background-color: map-get($color, primary);
+                    position: absolute;
                 }
 
                 a:hover, a:focus
@@ -78,7 +81,7 @@
 
                 }
 
-                a:hover:after
+                a:hover::before, a:focus::before
                 {
                     background-color: map-get($color, bright-orange);
                 }
@@ -191,6 +194,8 @@
                     .description-box
                     {
                         width: 70%;
+                        height: 40%;
+                        overflow: auto;
                     }
                 }
             }
@@ -249,14 +254,6 @@
                     {
                         padding: 0;
                     }
-
-                    .css-sass
-                    {
-                        &::before, &::after
-                        {
-                            display: none;
-                        }
-                    }
                 }
             }
         }
@@ -273,31 +270,22 @@
                 align-items: center;
                 justify-content: center;
 
-                .row
+                .boxes
                 {
-                    height: calc(100vh);
-                    width: 100%;
-                    flex-direction: column;
-                    align-items: center;
-                    background-color: map-get($color, bg);
+                    height: calc(100%/6);
+                    width: 80%;
 
-                    .boxes
+                    .photo-cover button
                     {
-                        height: calc(100%/3);
-                        width: 80%;
+                        height: 7rem;
+                        width: 95%;
+                        align-self: center;
+                        margin-left: 0;
+                    }
 
-                        .photo-cover button
-                        {
-                            height: 7rem;
-                            width: 95%;
-                            align-self: center;
-                            margin-left: 0;
-                        }
-
-                        img
-                        {
-                            height: 100%;
-                        }
+                    img
+                    {
+                        height: 100%;
                     }
                 }
             }
@@ -310,7 +298,7 @@
 
             .contact-box
             {
-                height: 90%;
+                height: 85%;
                 flex-direction: column;
                 align-items: center;
                 position: static;
@@ -339,7 +327,7 @@
                         i img
                         {
                             margin: 0;
-                            width: 8rem;
+                            width: 7rem;
                         }
 
                         .text-p
@@ -389,7 +377,7 @@
 
             .copyrights
             {
-                height: 10%;
+                height: 15%;
                 flex-direction: column;
 
                 p

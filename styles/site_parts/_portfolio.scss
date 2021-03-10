@@ -13,115 +13,136 @@
 
     .portfolio-gallery
     {
-        background-color: rgb(88, 88, 88);
+        // background-color: rgb(88, 88, 88);
         height: 85vmin;
         width: 100%;
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
         overflow: hidden;
 
-        .row
+        .first-box
+        {
+            width: 50%;
+        }
+
+        .second-box
+        {
+            width: 20%;
+        }
+
+        .third-box
+        {
+            width: 30%;
+        }
+
+        .fourth-box
+        {
+            width: 35%;
+        }
+
+        .fifth-box
+        {
+            width: 30%;
+        }
+
+        .sixth-box
+        {
+            width: 35%;
+        }
+
+        .boxes
         {
             height: 50%;
-            width: 100%;
-            display: flex;
+            position: relative;
 
-            .boxes
+            img
+            {
+                height:100%;
+                width:100%;
+                object-fit: cover;
+            }
+
+            .photo-cover
             {
                 height: 100%;
-                position: relative;
+                width: 100%;
+                position: absolute;
+                background-image: linear-gradient(map-get($color, secondary-fade),map-get($color, accent-mid-fade));
+                display: none;
+                flex-direction: column;
+                transition: 1.2s;
+                transform: translateY(100%);
+                display: flex;
 
-                img
+                h4, p
                 {
-                    height:100%;
-                    width:100%;
-                    object-fit: cover;
+                    margin-left: 1.5rem;
+                    color: map-get($color, primary)
                 }
+
+                h4
+                {
+                    margin-top: 3rem;
+                }
+
+                p
+                {
+                    margin-top: 2rem;
+                    line-height: 1.4;
+                }
+
+                button
+                {
+                    margin-top: 4rem;
+                    margin-left: 1.5rem;
+                }
+            }
+
+            &:hover
+            {
 
                 .photo-cover
                 {
-                    height: 100%;
-                    width: 100%;
-                    position: absolute;
-                    background-image: linear-gradient(map-get($color, secondary-fade),map-get($color, accent-mid-fade));
-                    display: none;
-                    flex-direction: column;
-                    transition: 1.2s;
-                    transform: translateY(100%);
-                    display: flex;
-
-                    h4, p
-                    {
-                        margin-left: 1.5rem;
-                        color: map-get($color, primary)
-                    }
-
-                    h4
-                    {
-                        margin-top: 3rem;
-                    }
-
-                    p
-                    {
-                        margin-top: 2rem;
-                        line-height: 1.4;
-                    }
-
-                    button
-                    {
-                        margin-top: 4rem;
-                        margin-left: 1.5rem;
-                    }
-                }
-
-                &:hover
-                {
-
-                    .photo-cover
-                    {
-                        transform:translateY(0);
-                    }
+                    transform:translateY(0);
                 }
             }
         }
+    }
+}
 
-        .first-row
+.modal-bg
+{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    .modal-content
+    {
+        position: relative;
+        height: 90%;
+        width: 90%;
+        @include buttons-hover;
+        border: solid 0.2rem;
+
+        .exit-img
         {
-            background-color: aqua;
+            width: 2rem;
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            transition: transform 0.4s;
 
-            .first-box
+            &:hover
             {
-                width: 50%;
-            }
-
-           .second-box
-           {
-                width: 20%;
-            }
-
-           .third-box
-           {
-                width: 30%;
-            }
-        }
-
-        .second-row
-        {
-            background-color: blueviolet;
-
-            .fourth-box
-            {
-                width: 35%;
-            }
-
-            .fifth-box
-            {
-                width: 30%;
-            }
-
-            .sixth-box
-            {
-                width: 35%;
+                cursor: pointer;
+                transform: scale(0.8);
             }
         }
     }

@@ -7,8 +7,9 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -28,7 +29,7 @@ body {
 body .pl-flag, body .uk-flag {
   width: 3rem;
   position: absolute;
-  top: 0.5rem;
+  top: 1.4rem;
   left: 2rem;
   cursor: pointer;
   z-index: 1;
@@ -36,6 +37,11 @@ body .pl-flag, body .uk-flag {
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+body .pl-flag img, body .uk-flag img {
+  -webkit-filter: drop-shadow(0 0 0.1rem black);
+          filter: drop-shadow(0 0 0.1rem black);
 }
 
 body .pl-flag:hover, body .uk-flag:hover {
@@ -46,10 +52,10 @@ body .pl-flag:hover, body .uk-flag:hover {
 }
 
 body .burger-icon {
-  width: 3.5rem;
   position: absolute;
   top: 2rem;
   right: 2rem;
+  width: 3.5rem;
   display: none;
   cursor: pointer;
   z-index: 1;
@@ -68,7 +74,7 @@ body .contact-copyrights-box a img {
 }
 
 body .contact-copyrights-box i img {
-  width: 3.5rem;
+  width: 4.5rem;
 }
 
 body h1 {
@@ -166,8 +172,15 @@ body button:focus {
 body button:hover {
   background-image: -webkit-gradient(linear, left top, right bottom, from(white), to(white));
   background-image: linear-gradient(to bottom right, white, white);
+  -moz-background-image: linear-gradient(to bottom right, white, white);
+  -ms-background-image: linear-gradient(to bottom right, white, white);
+  -webkit-background-image: -webkit-gradient(linear, left top, right bottom, from(white), to(white));
+  -webkit-background-image: linear-gradient(to bottom right, white, white);
   color: #c54614;
   border: solid 0.1rem #c54614;
+  -moz-border: solid 0.1rem #c54614;
+  -ms-border: solid 0.1rem #c54614;
+  -webkit-border: solid 0.1rem #c54614;
   cursor: pointer;
 }
 
@@ -178,6 +191,10 @@ body a:hover {
 
 body input:focus, body textarea:focus {
   outline: none;
+}
+
+body .contact-copyrights-box .copyrights div p {
+  font-size: 1.2rem;
 }
 
 ::-webkit-scrollbar {
@@ -209,7 +226,7 @@ body input:focus, body textarea:focus {
 }
 
 .nav-contact-box .nav-box {
-  height: 6vmin;
+  height: 8vmin;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -228,22 +245,33 @@ body input:focus, body textarea:focus {
 
 .nav-contact-box .nav-box a {
   position: relative;
-  margin: auto 1rem;
+  margin: auto 5rem;
   color: #444764;
   font-size: 2rem;
   letter-spacing: 0.1rem;
   font-variant: all-small-caps;
+  -webkit-transition: color 0.4s linear;
+  transition: color 0.4s linear;
 }
 
 .nav-contact-box .nav-box a::before {
-  content: '|';
+  content: '';
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0.1rem;
+  background-color: #c54614;
   position: absolute;
-  left: -1.2rem;
-  color: #444764;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+.nav-contact-box .nav-box a:hover::before {
+  width: 80%;
 }
 
 .nav-contact-box .nav-box a:hover {
-  color: black;
+  color: #c54614;
 }
 
 .nav-contact-box .header-image {
@@ -334,7 +362,7 @@ body input:focus, body textarea:focus {
 }
 
 .nav-contact-box .contact-me-box {
-  height: 19vmin;
+  height: 17vmin;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -377,6 +405,7 @@ body input:focus, body textarea:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  justify-items: center;
 }
 
 .about-me-and-skills-box .about-me-box h3 {
@@ -436,6 +465,18 @@ body input:focus, body textarea:focus {
 
 .about-me-and-skills-box .about-me-box .about-me-inner-box .description-box {
   width: 40%;
+  height: 100%;
+  overflow: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about-me-and-skills-box .about-me-box .about-me-inner-box .description-box p {
+  height: 98%;
 }
 
 .about-me-and-skills-box .skills-box {
@@ -495,35 +536,26 @@ body input:focus, body textarea:focus {
   width: 8rem;
 }
 
+.about-me-and-skills-box .skills-box .skills-inner-box i .img-html {
+  -webkit-animation: skills-moves 20s infinite;
+          animation: skills-moves 20s infinite;
+}
+
+.about-me-and-skills-box .skills-box .skills-inner-box i .img-sass {
+  -webkit-animation: skills-moves 20s 3.5s infinite;
+          animation: skills-moves 20s 3.5s infinite;
+}
+
+.about-me-and-skills-box .skills-box .skills-inner-box i .img-js {
+  -webkit-animation: skills-moves 20s  7s infinite;
+          animation: skills-moves 20s  7s infinite;
+}
+
 .about-me-and-skills-box .skills-box .skills-inner-box p {
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
   color: #444764;
-}
-
-.about-me-and-skills-box .skills-box .skills-inner-box .css-sass {
-  position: relative;
-}
-
-.about-me-and-skills-box .skills-box .skills-inner-box .css-sass::before {
-  content: '';
-  position: absolute;
-  display: block;
-  height: 12rem;
-  left: -12rem;
-  top: 4rem;
-  border-left: dotted 0.6rem #c54614;
-}
-
-.about-me-and-skills-box .skills-box .skills-inner-box .css-sass::after {
-  content: '';
-  position: absolute;
-  display: block;
-  height: 12rem;
-  right: -12rem;
-  top: 4rem;
-  border-right: dotted 0.6rem #c54614;
 }
 
 .portfolio-box {
@@ -546,40 +578,53 @@ body input:focus, body textarea:focus {
 }
 
 .portfolio-box .portfolio-gallery {
-  background-color: #585858;
   height: 85vmin;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   overflow: hidden;
 }
 
-.portfolio-box .portfolio-gallery .row {
-  height: 50%;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.portfolio-box .portfolio-gallery .first-box {
+  width: 50%;
 }
 
-.portfolio-box .portfolio-gallery .row .boxes {
-  height: 100%;
+.portfolio-box .portfolio-gallery .second-box {
+  width: 20%;
+}
+
+.portfolio-box .portfolio-gallery .third-box {
+  width: 30%;
+}
+
+.portfolio-box .portfolio-gallery .fourth-box {
+  width: 35%;
+}
+
+.portfolio-box .portfolio-gallery .fifth-box {
+  width: 30%;
+}
+
+.portfolio-box .portfolio-gallery .sixth-box {
+  width: 35%;
+}
+
+.portfolio-box .portfolio-gallery .boxes {
+  height: 50%;
   position: relative;
 }
 
-.portfolio-box .portfolio-gallery .row .boxes img {
+.portfolio-box .portfolio-gallery .boxes img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.portfolio-box .portfolio-gallery .row .boxes .photo-cover {
+.portfolio-box .portfolio-gallery .boxes .photo-cover {
   height: 100%;
   width: 100%;
   position: absolute;
@@ -599,60 +644,82 @@ body input:focus, body textarea:focus {
   display: flex;
 }
 
-.portfolio-box .portfolio-gallery .row .boxes .photo-cover h4, .portfolio-box .portfolio-gallery .row .boxes .photo-cover p {
+.portfolio-box .portfolio-gallery .boxes .photo-cover h4, .portfolio-box .portfolio-gallery .boxes .photo-cover p {
   margin-left: 1.5rem;
   color: white;
 }
 
-.portfolio-box .portfolio-gallery .row .boxes .photo-cover h4 {
+.portfolio-box .portfolio-gallery .boxes .photo-cover h4 {
   margin-top: 3rem;
 }
 
-.portfolio-box .portfolio-gallery .row .boxes .photo-cover p {
+.portfolio-box .portfolio-gallery .boxes .photo-cover p {
   margin-top: 2rem;
   line-height: 1.4;
 }
 
-.portfolio-box .portfolio-gallery .row .boxes .photo-cover button {
+.portfolio-box .portfolio-gallery .boxes .photo-cover button {
   margin-top: 4rem;
   margin-left: 1.5rem;
 }
 
-.portfolio-box .portfolio-gallery .row .boxes:hover .photo-cover {
+.portfolio-box .portfolio-gallery .boxes:hover .photo-cover {
   -webkit-transform: translateY(0);
           transform: translateY(0);
 }
 
-.portfolio-box .portfolio-gallery .first-row {
-  background-color: aqua;
+.modal-bg {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-.portfolio-box .portfolio-gallery .first-row .first-box {
-  width: 50%;
+.modal-bg .modal-content {
+  position: relative;
+  height: 90%;
+  width: 90%;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(white), to(white));
+  background-image: linear-gradient(to bottom right, white, white);
+  -moz-background-image: linear-gradient(to bottom right, white, white);
+  -ms-background-image: linear-gradient(to bottom right, white, white);
+  -webkit-background-image: -webkit-gradient(linear, left top, right bottom, from(white), to(white));
+  -webkit-background-image: linear-gradient(to bottom right, white, white);
+  color: #c54614;
+  border: solid 0.1rem #c54614;
+  -moz-border: solid 0.1rem #c54614;
+  -ms-border: solid 0.1rem #c54614;
+  -webkit-border: solid 0.1rem #c54614;
+  border: solid 0.2rem;
 }
 
-.portfolio-box .portfolio-gallery .first-row .second-box {
-  width: 20%;
+.modal-bg .modal-content .exit-img {
+  width: 2rem;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
 }
 
-.portfolio-box .portfolio-gallery .first-row .third-box {
-  width: 30%;
-}
-
-.portfolio-box .portfolio-gallery .second-row {
-  background-color: blueviolet;
-}
-
-.portfolio-box .portfolio-gallery .second-row .fourth-box {
-  width: 35%;
-}
-
-.portfolio-box .portfolio-gallery .second-row .fifth-box {
-  width: 30%;
-}
-
-.portfolio-box .portfolio-gallery .second-row .sixth-box {
-  width: 35%;
+.modal-bg .modal-content .exit-img:hover {
+  cursor: pointer;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
 }
 
 .contact-copyrights-box {
@@ -767,14 +834,24 @@ body input:focus, body textarea:focus {
 }
 
 .contact-copyrights-box .contact-box .contact-form .form input, .contact-copyrights-box .contact-box .contact-form .form form {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(white), to(white));
+  background-image: linear-gradient(to bottom right, white, white);
+  -moz-background-image: linear-gradient(to bottom right, white, white);
+  -ms-background-image: linear-gradient(to bottom right, white, white);
+  -webkit-background-image: -webkit-gradient(linear, left top, right bottom, from(white), to(white));
+  -webkit-background-image: linear-gradient(to bottom right, white, white);
+  color: #c54614;
+  border: solid 0.1rem #c54614;
+  -moz-border: solid 0.1rem #c54614;
+  -ms-border: solid 0.1rem #c54614;
+  -webkit-border: solid 0.1rem #c54614;
   height: 8%;
   padding: 0.5rem 2rem;
-  border: none;
   border-radius: 0.6rem;
-  -webkit-box-shadow: 0.1rem 0.1rem 0.6rem rgba(68, 71, 100, 0.9) inset;
-          box-shadow: 0.1rem 0.1rem 0.6rem rgba(68, 71, 100, 0.9) inset;
   font-size: 1.5rem;
-  color: #c54614;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -788,7 +865,6 @@ body input:focus, body textarea:focus {
 }
 
 .contact-copyrights-box .contact-box .contact-form .form form textarea {
-  padding-top: 0.5rem;
   width: 100%;
   height: 100%;
   border: none;
@@ -821,7 +897,7 @@ body input:focus, body textarea:focus {
 
 .contact-copyrights-box .copyrights p {
   line-height: 2;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .contact-copyrights-box .copyrights .name-box .name {
@@ -853,6 +929,8 @@ body input:focus, body textarea:focus {
 .contact-copyrights-box .copyrights i img {
   width: 5rem;
   display: block;
+  -webkit-animation: tilt-astronaut 6s linear infinite;
+          animation: tilt-astronaut 6s linear infinite;
 }
 
 @media screen and (max-width: 425px) {
@@ -860,7 +938,7 @@ body input:focus, body textarea:focus {
     font-size: 7px;
   }
   body .pl-flag, body .uk-flag {
-    top: 1.5rem;
+    top: 2rem;
   }
   body .burger-icon {
     display: block;
@@ -884,26 +962,25 @@ body input:focus, body textarea:focus {
     justify-self: center;
     background-color: #444764;
     z-index: 1;
-    opacity: 0;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
-    -webkit-transition: opacity 0.5s, -webkit-transform 0.8s;
-    transition: opacity 0.5s, -webkit-transform 0.8s;
-    transition: opacity 0.5s, transform 0.8s;
-    transition: opacity 0.5s, transform 0.8s, -webkit-transform 0.8s;
+    -webkit-transition: -webkit-transform 0.6s ease-out;
+    transition: -webkit-transform 0.6s ease-out;
+    transition: transform 0.6s ease-out;
+    transition: transform 0.6s ease-out, -webkit-transform 0.6s ease-out;
   }
   body .nav-contact-box .nav-box-open {
-    opacity: 1;
     -webkit-transform: translateX(0%);
             transform: translateX(0%);
   }
   body .nav-contact-box .nav-box-open .close-burger {
     position: fixed;
-    top: 1rem;
-    right: 2.5rem;
+    top: 3rem;
+    right: 3rem;
     display: block;
-    font-size: 4rem;
-    color: white;
+  }
+  body .nav-contact-box .nav-box-open .close-burger img {
+    width: 2.5rem;
   }
   body .nav-contact-box .nav-box-open a {
     color: white;
@@ -911,19 +988,19 @@ body input:focus, body textarea:focus {
     letter-spacing: 0.6rem;
     position: relative;
   }
-  body .nav-contact-box .nav-box-open a::after {
+  body .nav-contact-box .nav-box-open a::before {
     content: '';
-    height: 0.1rem;
-    width: 160vw;
-    position: absolute;
+    left: 0;
     bottom: 0;
-    left: -1rem;
+    width: 120%;
+    height: 0.1rem;
     background-color: white;
+    position: absolute;
   }
   body .nav-contact-box .nav-box-open a:hover, body .nav-contact-box .nav-box-open a:focus {
     color: #ffbb3d;
   }
-  body .nav-contact-box .nav-box-open a:hover:after {
+  body .nav-contact-box .nav-box-open a:hover::before, body .nav-contact-box .nav-box-open a:focus::before {
     background-color: #ffbb3d;
   }
   body .nav-contact-box .header-image {
@@ -1023,6 +1100,8 @@ body input:focus, body textarea:focus {
   }
   body .about-me-and-skills-box .about-me-box .about-me-inner-box .description-box {
     width: 70%;
+    height: 40%;
+    overflow: auto;
   }
   body .about-me-and-skills-box .skills-box {
     height: 100vh;
@@ -1085,9 +1164,6 @@ body input:focus, body textarea:focus {
   body .about-me-and-skills-box .skills-box .skills-inner-box p {
     padding: 0;
   }
-  body .about-me-and-skills-box .skills-box .skills-inner-box .css-sass::before, body .about-me-and-skills-box .skills-box .skills-inner-box .css-sass::after {
-    display: none;
-  }
   body .portfolio-box {
     height: calc(2.12*100vh);
     -webkit-box-pack: center;
@@ -1103,23 +1179,11 @@ body input:focus, body textarea:focus {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  body .portfolio-box .portfolio-gallery .row {
-    height: calc(100vh);
-    width: 100%;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    background-color: #fbf8fc;
-  }
-  body .portfolio-box .portfolio-gallery .row .boxes {
-    height: calc(100%/3);
+  body .portfolio-box .portfolio-gallery .boxes {
+    height: calc(100%/6);
     width: 80%;
   }
-  body .portfolio-box .portfolio-gallery .row .boxes .photo-cover button {
+  body .portfolio-box .portfolio-gallery .boxes .photo-cover button {
     height: 7rem;
     width: 95%;
     -ms-flex-item-align: center;
@@ -1127,14 +1191,14 @@ body input:focus, body textarea:focus {
         align-self: center;
     margin-left: 0;
   }
-  body .portfolio-box .portfolio-gallery .row .boxes img {
+  body .portfolio-box .portfolio-gallery .boxes img {
     height: 100%;
   }
   body .contact-copyrights-box {
     height: 180vh;
   }
   body .contact-copyrights-box .contact-box {
-    height: 90%;
+    height: 85%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1175,7 +1239,7 @@ body input:focus, body textarea:focus {
   }
   body .contact-copyrights-box .contact-box .contact-form .form-info i img {
     margin: 0;
-    width: 8rem;
+    width: 7rem;
   }
   body .contact-copyrights-box .contact-box .contact-form .form-info .text-p {
     width: 70%;
@@ -1212,7 +1276,7 @@ body input:focus, body textarea:focus {
         align-self: center;
   }
   body .contact-copyrights-box .copyrights {
-    height: 10%;
+    height: 15%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1236,7 +1300,7 @@ body input:focus, body textarea:focus {
     font-size: 7.5px;
   }
   body .pl-flag, body .uk-flag {
-    top: 1.5rem;
+    top: 2.5rem;
   }
   body .burger-icon {
     display: block;
@@ -1260,26 +1324,25 @@ body input:focus, body textarea:focus {
     justify-self: center;
     background-color: #444764;
     z-index: 1;
-    opacity: 0;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
-    -webkit-transition: opacity 0.5s, -webkit-transform 0.8s;
-    transition: opacity 0.5s, -webkit-transform 0.8s;
-    transition: opacity 0.5s, transform 0.8s;
-    transition: opacity 0.5s, transform 0.8s, -webkit-transform 0.8s;
+    -webkit-transition: -webkit-transform 0.6s ease-out;
+    transition: -webkit-transform 0.6s ease-out;
+    transition: transform 0.6s ease-out;
+    transition: transform 0.6s ease-out, -webkit-transform 0.6s ease-out;
   }
   body .nav-contact-box .nav-box-open {
-    opacity: 1;
     -webkit-transform: translateX(0%);
             transform: translateX(0%);
   }
   body .nav-contact-box .nav-box-open .close-burger {
     position: fixed;
-    top: 1rem;
-    right: 2.5rem;
+    top: 3rem;
+    right: 3rem;
     display: block;
-    font-size: 4rem;
-    color: white;
+  }
+  body .nav-contact-box .nav-box-open .close-burger img {
+    width: 2.5rem;
   }
   body .nav-contact-box .nav-box-open a {
     color: white;
@@ -1287,19 +1350,19 @@ body input:focus, body textarea:focus {
     letter-spacing: 0.6rem;
     position: relative;
   }
-  body .nav-contact-box .nav-box-open a::after {
+  body .nav-contact-box .nav-box-open a::before {
     content: '';
-    height: 0.1rem;
-    width: 160vw;
-    position: absolute;
+    left: 0;
     bottom: 0;
-    left: -1rem;
+    width: 120%;
+    height: 0.1rem;
     background-color: white;
+    position: absolute;
   }
   body .nav-contact-box .nav-box-open a:hover, body .nav-contact-box .nav-box-open a:focus {
     color: #ffbb3d;
   }
-  body .nav-contact-box .nav-box-open a:hover:after {
+  body .nav-contact-box .nav-box-open a:hover::before, body .nav-contact-box .nav-box-open a:focus::before {
     background-color: #ffbb3d;
   }
   body .nav-contact-box .header-image {
@@ -1384,7 +1447,8 @@ body input:focus, body textarea:focus {
     overflow: auto;
   }
   body .about-me-and-skills-box .about-me-box .about-me-inner-box .description-box p {
-    line-height: 1.8;
+    height: 80%;
+    line-height: 2;
   }
   body .about-me-and-skills-box .skills-box {
     height: 40vh;
@@ -1395,36 +1459,34 @@ body input:focus, body textarea:focus {
     height: 25vh;
     right: 4rem;
   }
-  body .about-me-and-skills-box .skills-box .skills-inner-box .css-sass::before, body .about-me-and-skills-box .skills-box .skills-inner-box .css-sass::after {
-    display: none;
-  }
   body .portfolio-box {
-    height: 200vh;
+    height: 155vh;
   }
   body .portfolio-box .portfolio-gallery {
-    height: 190vh;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    background-color: #fbf8fc;
+    height: 140vh;
   }
-  body .portfolio-box .portfolio-gallery .row {
-    height: 190vh;
-    width: 40%;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+  body .portfolio-box .portfolio-gallery .first-box {
+    width: 70%;
   }
-  body .portfolio-box .portfolio-gallery .row .boxes {
-    height: calc(190%/3);
-    width: 100%;
+  body .portfolio-box .portfolio-gallery .second-box {
+    width: 30%;
   }
-  body .portfolio-box .portfolio-gallery .row .boxes .photo-cover button {
+  body .portfolio-box .portfolio-gallery .third-box {
+    width: 45%;
+  }
+  body .portfolio-box .portfolio-gallery .fourth-box {
+    width: 55%;
+  }
+  body .portfolio-box .portfolio-gallery .fifth-box {
+    width: 50%;
+  }
+  body .portfolio-box .portfolio-gallery .sixth-box {
+    width: 50%;
+  }
+  body .portfolio-box .portfolio-gallery .boxes {
+    height: calc(140vh/3);
+  }
+  body .portfolio-box .portfolio-gallery .boxes .photo-cover button {
     height: 7rem;
     width: 80%;
     -ms-flex-item-align: center;
@@ -1437,6 +1499,9 @@ body input:focus, body textarea:focus {
   }
   body .contact-copyrights-box .contact-box {
     height: 90%;
+  }
+  body .contact-copyrights-box .contact-box > h3 {
+    margin-left: 8rem;
   }
   body .contact-copyrights-box .contact-box .contact-form {
     width: 85%;
@@ -1460,7 +1525,7 @@ body input:focus, body textarea:focus {
     font-size: 8px;
   }
   body .pl-flag, body .uk-flag {
-    top: 1.5rem;
+    top: 2.2rem;
   }
   body .burger-icon {
     display: block;
@@ -1484,26 +1549,25 @@ body input:focus, body textarea:focus {
     justify-self: center;
     background-color: #444764;
     z-index: 1;
-    opacity: 0;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
-    -webkit-transition: opacity 0.5s, -webkit-transform 0.8s;
-    transition: opacity 0.5s, -webkit-transform 0.8s;
-    transition: opacity 0.5s, transform 0.8s;
-    transition: opacity 0.5s, transform 0.8s, -webkit-transform 0.8s;
+    -webkit-transition: -webkit-transform 0.6s ease-out;
+    transition: -webkit-transform 0.6s ease-out;
+    transition: transform 0.6s ease-out;
+    transition: transform 0.6s ease-out, -webkit-transform 0.6s ease-out;
   }
   body .nav-contact-box .nav-box-open {
-    opacity: 1;
     -webkit-transform: translateX(0%);
             transform: translateX(0%);
   }
   body .nav-contact-box .nav-box-open .close-burger {
     position: fixed;
-    top: 1rem;
-    right: 2.5rem;
+    top: 3rem;
+    right: 3rem;
     display: block;
-    font-size: 4rem;
-    color: white;
+  }
+  body .nav-contact-box .nav-box-open .close-burger img {
+    width: 2.5rem;
   }
   body .nav-contact-box .nav-box-open a {
     color: white;
@@ -1511,19 +1575,19 @@ body input:focus, body textarea:focus {
     letter-spacing: 0.6rem;
     position: relative;
   }
-  body .nav-contact-box .nav-box-open a::after {
+  body .nav-contact-box .nav-box-open a::before {
     content: '';
-    height: 0.1rem;
-    width: 160vw;
-    position: absolute;
+    left: 0;
     bottom: 0;
-    left: -1rem;
+    width: 120%;
+    height: 0.1rem;
     background-color: white;
+    position: absolute;
   }
   body .nav-contact-box .nav-box-open a:hover, body .nav-contact-box .nav-box-open a:focus {
     color: #ffbb3d;
   }
-  body .nav-contact-box .nav-box-open a:hover:after {
+  body .nav-contact-box .nav-box-open a:hover::before, body .nav-contact-box .nav-box-open a:focus::before {
     background-color: #ffbb3d;
   }
   body .nav-contact-box .header-image {
@@ -1604,7 +1668,8 @@ body input:focus, body textarea:focus {
     overflow: auto;
   }
   body .about-me-and-skills-box .about-me-box .about-me-inner-box .description-box p {
-    line-height: 1.8;
+    height: 80%;
+    line-height: 2;
   }
   body .about-me-and-skills-box .skills-box {
     height: 40vmin;
@@ -1615,45 +1680,146 @@ body input:focus, body textarea:focus {
     height: 25vmin;
     right: 6rem;
   }
-  body .about-me-and-skills-box .skills-box .skills-inner-box .css-sass::before, body .about-me-and-skills-box .skills-box .skills-inner-box .css-sass::after {
-    display: none;
-  }
   body .portfolio-box {
-    height: 200vh;
+    height: 155vh;
   }
   body .portfolio-box .portfolio-gallery {
-    height: 190vh;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    background-color: #fbf8fc;
+    height: 140vh;
   }
-  body .portfolio-box .portfolio-gallery .row {
-    height: 190vh;
-    width: 40%;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+  body .portfolio-box .portfolio-gallery .first-box {
+    width: 70%;
   }
-  body .portfolio-box .portfolio-gallery .row .boxes {
-    height: calc(190%/3);
-    width: 100%;
+  body .portfolio-box .portfolio-gallery .second-box {
+    width: 30%;
   }
-  body .portfolio-box .portfolio-gallery .row .boxes .photo-cover button {
+  body .portfolio-box .portfolio-gallery .third-box {
+    width: 45%;
+  }
+  body .portfolio-box .portfolio-gallery .fourth-box {
+    width: 55%;
+  }
+  body .portfolio-box .portfolio-gallery .fifth-box {
+    width: 50%;
+  }
+  body .portfolio-box .portfolio-gallery .sixth-box {
+    width: 50%;
+  }
+  body .portfolio-box .portfolio-gallery .boxes {
+    height: calc(140vh/3);
+  }
+  body .portfolio-box .portfolio-gallery .boxes .photo-cover button {
     height: 7rem;
-    width: 80%;
+    width: 70%;
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
     margin-left: 0;
   }
+  body .contact-copyrights-box .contact-box > h3 {
+    margin-left: 13rem;
+  }
   body .contact-copyrights-box .copyrights .contact-icons-box a img {
     margin-right: 4rem;
+  }
+}
+
+@-webkit-keyframes tilt-astronaut {
+  0% {
+    -webkit-transform: translateY(0) translateX(0) rotate(0);
+            transform: translateY(0) translateX(0) rotate(0);
+  }
+  25% {
+    -webkit-transform: translateY(-0.3rem) translateX(-0.3rem) rotate(7deg);
+            transform: translateY(-0.3rem) translateX(-0.3rem) rotate(7deg);
+  }
+  50% {
+    -webkit-transform: translateY(-0.6rem) translateX(-0.8rem) rotate(-2deg);
+            transform: translateY(-0.6rem) translateX(-0.8rem) rotate(-2deg);
+  }
+  75% {
+    -webkit-transform: translateY(-0.2rem) translateX(-0.6rem) rotate(-9deg);
+            transform: translateY(-0.2rem) translateX(-0.6rem) rotate(-9deg);
+  }
+  100% {
+    -webkit-transform: translateY(0) translateX(0) rotate(0);
+            transform: translateY(0) translateX(0) rotate(0);
+  }
+}
+
+@keyframes tilt-astronaut {
+  0% {
+    -webkit-transform: translateY(0) translateX(0) rotate(0);
+            transform: translateY(0) translateX(0) rotate(0);
+  }
+  25% {
+    -webkit-transform: translateY(-0.3rem) translateX(-0.3rem) rotate(7deg);
+            transform: translateY(-0.3rem) translateX(-0.3rem) rotate(7deg);
+  }
+  50% {
+    -webkit-transform: translateY(-0.6rem) translateX(-0.8rem) rotate(-2deg);
+            transform: translateY(-0.6rem) translateX(-0.8rem) rotate(-2deg);
+  }
+  75% {
+    -webkit-transform: translateY(-0.2rem) translateX(-0.6rem) rotate(-9deg);
+            transform: translateY(-0.2rem) translateX(-0.6rem) rotate(-9deg);
+  }
+  100% {
+    -webkit-transform: translateY(0) translateX(0) rotate(0);
+            transform: translateY(0) translateX(0) rotate(0);
+  }
+}
+
+@-webkit-keyframes skills-moves {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-filter: drop-shadow(0 0 0);
+            filter: drop-shadow(0 0 0);
+  }
+  6% {
+    -webkit-transform: scale(1.125);
+            transform: scale(1.125);
+    -webkit-filter: drop-shadow(0.5rem 0.5rem 0.1rem #c54614);
+            filter: drop-shadow(0.5rem 0.5rem 0.1rem #c54614);
+  }
+  12% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-filter: drop-shadow(0 0 0);
+            filter: drop-shadow(0 0 0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-filter: drop-shadow(0 0 0);
+            filter: drop-shadow(0 0 0);
+  }
+}
+
+@keyframes skills-moves {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-filter: drop-shadow(0 0 0);
+            filter: drop-shadow(0 0 0);
+  }
+  6% {
+    -webkit-transform: scale(1.125);
+            transform: scale(1.125);
+    -webkit-filter: drop-shadow(0.5rem 0.5rem 0.1rem #c54614);
+            filter: drop-shadow(0.5rem 0.5rem 0.1rem #c54614);
+  }
+  12% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-filter: drop-shadow(0 0 0);
+            filter: drop-shadow(0 0 0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-filter: drop-shadow(0 0 0);
+            filter: drop-shadow(0 0 0);
   }
 }
 /*# sourceMappingURL=main.css.map */

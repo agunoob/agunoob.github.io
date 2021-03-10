@@ -84,13 +84,14 @@
 
                 input, form
                 {
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+                    @include buttons-hover;
                     height: 8%;
                     padding: 0.5rem 2rem;
-                    border: none;
                     border-radius: 0.6rem;
-                    box-shadow: 0.1rem 0.1rem 0.6rem map-get($color, accent-mid-fade) inset;
                     font-size: map-get($font-size, extra-small);
-                    color: map-get($color, dark-orange);
                     font-family: 'Poppins', sans-serif;
                 }
 
@@ -106,7 +107,6 @@
 
                     textarea
                     {
-                        padding-top: 0.5rem;
                         width: 100%;
                         height: 100%;
                         border: none;
@@ -175,6 +175,7 @@
         {
             width: 5rem;
             display: block;
+            animation: tilt-astronaut 6s linear infinite;
         }
     }
 }

@@ -8,6 +8,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body
@@ -23,11 +26,20 @@ body
     {
         width: 3rem;
         position: absolute;
-        top: 0.5rem;
+        top: 1.4rem;
         left: 2rem;
         cursor: pointer;
         z-index: 1;
         transition: transform 0.3s;
+
+        //trick for icon shadow, not the whole box-shadow
+        & img
+        {
+            filter: drop-shadow(0 0 0.1rem map-get($color, secondary));
+            // -moz-box-shadow: 0 0 3px #ccc;
+            // -webkit-box-shadow: 0 0 3px #ccc;
+            // box-shadow: 0 0 3px #ccc;
+        }
 
         &:hover
         {
@@ -39,10 +51,10 @@ body
 
     .burger-icon
     {
-        width: 3.5rem;
         position: absolute;
         top: 2rem;
         right: 2rem;
+        width: 3.5rem;
         display: none;
         cursor: pointer;
         z-index: 1;
@@ -58,7 +70,6 @@ body
         .youtube img
         {
             width: 2rem;
-            // display: flex; //??????
         }
     }
 
@@ -70,7 +81,7 @@ body
         }
 
         i img {
-            width: 3.5rem;
+            width: 4.5rem;
         }
     }
 
@@ -178,11 +189,13 @@ body
         outline: none;
     }
 
-        // trick for icon shadow not whole box-shadow
-        // .html i img
-        // {
-        //     filter: drop-shadow(2px 3px 2px red);
-        // }
+    .contact-copyrights-box
+    {
+        .copyrights div p
+        {
+            font-size: map-get($font-size, small-for-footer);
+        }
+    }
 }
 
 ::-webkit-scrollbar

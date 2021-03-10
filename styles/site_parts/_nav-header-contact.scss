@@ -7,7 +7,7 @@
 
     .nav-box
     {
-        height: 6vmin;
+        height: 8vmin;
         display: flex;
         align-items: center;
         justify-content: flex-end;
@@ -21,23 +21,33 @@
         a
         {
             position: relative;
-            margin: auto 1rem;
+            margin: auto 5rem;
             color: map-get($color, accent);
             font-size: map-get($font-size, small);
             letter-spacing: map-get($letter-spacing, narrow);
             font-variant: all-small-caps;
+            transition: color 0.4s linear;
 
             &::before
             {
-                content: '|';
+                content: '';
+                left: 0;
+                bottom: 0;
+                width: 0;
+                height: 0.1rem;
+                background-color: map-get($color, dark-orange);
                 position: absolute;
-                left: -1.2rem;
-                color: map-get($color, accent);
+                transition: width 0.4s ease-in-out;
+            }
+            
+            &:hover::before
+            {
+                width: 80%;
             }
 
             &:hover
             {
-                color: black;
+                color: map-get($color, dark-orange);
             }
         }
     }
@@ -115,7 +125,7 @@
 
     .contact-me-box
     {
-        height: 19vmin;
+        height: 17vmin;
         display: flex;
         flex-direction: column;
         align-items: center;

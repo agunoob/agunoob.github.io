@@ -63,46 +63,85 @@ contactMe.onclick = function scrollToContact() {
     contactPart.scrollIntoView();
 };
 
-//btns alerts
-const btnCheckMyCv = document.getElementById('check-my-cv-btn');
-btnCheckMyCv.onclick = function btnCheckMyCv() {
- alert('It doesnt work yet');
-};
+// //btns alerts
+// const btnCheckMyCv = document.getElementById('check-my-cv-btn');
+// btnCheckMyCv.onclick = function btnCheckMyCv() {
+//  alert('It doesnt work yet');
+// };
 
-const btnFirstPic = document.getElementById('btn-first-pic');
-btnFirstPic.onclick = function btnFirstPic() {
- alert('It doesnt work yet');
-};
+// const btnFirstPic = document.getElementById('btn-first-pic');
+// btnFirstPic.onclick = function btnFirstPic() {
+//  alert('It doesnt work yet');
+// };
 
-const btnSecondPic = document.getElementById('btn-second-pic');
-btnSecondPic.onclick = function btnSecondPic() {
- alert('It doesnt work yet');
-};
+// const btnSecondPic = document.getElementById('btn-second-pic');
+// btnSecondPic.onclick = function btnSecondPic() {
+//  alert('It doesnt work yet');
+// };
 
-const btnThirdPic = document.getElementById('btn-third-pic');
-btnThirdPic.onclick = function btnThirdPic() {
- alert('It doesnt work yet');
-};
+// const btnThirdPic = document.getElementById('btn-third-pic');
+// btnThirdPic.onclick = function btnThirdPic() {
+//  alert('It doesnt work yet');
+// };
 
-const btnFourthPic = document.getElementById('btn-fourth-pic');
-btnFourthPic.onclick = function btnFourthPic() {
- alert('It doesnt work yet');
-};
+// const btnFourthPic = document.getElementById('btn-fourth-pic');
+// btnFourthPic.onclick = function btnFourthPic() {
+//  alert('It doesnt work yet');
+// };
 
-const btnFifthPic = document.getElementById('btn-fifth-pic');
-btnFifthPic.onclick = function btnFifthPic() {
- alert('It doesnt work yet');
-};
+// const btnFifthPic = document.getElementById('btn-fifth-pic');
+// btnFifthPic.onclick = function btnFifthPic() {
+//  alert('It doesnt work yet');
+// };
 
-const btnSixthPic = document.getElementById('btn-six-pic');
-btnSixthPic.onclick = function btnSixthPic() {
- alert('It doesnt work yet');
-};
+// const btnSixthPic = document.getElementById('btn-six-pic');
+// btnSixthPic.onclick = function btnSixthPic() {
+//  alert('It doesnt work yet');
+// };
 
-const btnSend = document.getElementById('btn-send');
-btnSend.onclick = function btnSend() {
- alert('It doesnt work yet');
-};
+// const btnSend = document.getElementById('btn-send');
+// btnSend.onclick = function btnSend() {
+//  alert('It doesnt work yet');
+// };
+
+//view portfolio
+const btns = document.getElementsByClassName('btn');
+console.log(btns.length);
+for (let i = 0; i < btns.length; i++)
+{
+    btns[i].onclick = function openModal()
+    {
+        //modal
+        const createModalBg = document.createElement('div');
+        let modalBg = document.getElementById('portfolio-part').appendChild(createModalBg);
+        modalBg.classList.add('modal-bg');
+
+        //modal content
+        const createModalContent = document.createElement('div');
+        let modalContent = modalBg.appendChild(createModalContent);
+        modalContent.classList.add('modal-content');
+
+        //modal exit
+        const createExitImg = document.createElement('img');
+        let exitImg = modalContent.appendChild(createExitImg);
+        exitImg.src = './photos/cancel-orange.svg';
+        exitImg.classList.add('exit-img');
+
+        // zamykanie modala
+        exitImg.onclick = function closeModal() {
+            modalBg.style.display = 'none';
+        }
+        window.onclick = function closeModalOutside (event) {
+            if (event.target == modalBg) {
+                modalBg.style.display = 'none';
+            }
+        }
+    };
+}
+
+
+
+
 
 //no picture dragging
 window.ondragstart = function() { 
