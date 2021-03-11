@@ -1,0 +1,16 @@
+@keyframes tilt-astronaut
+{
+    0% {transform: translateY(0) translateX(0) rotate(0)}
+    25% {transform: translateY(-0.3rem) translateX(-0.3rem) rotate(7deg)}
+    50% {transform: translateY(-0.6rem) translateX(-0.8rem) rotate(-2deg)}
+    75% {transform: translateY(-0.2rem) translateX(-0.6rem) rotate(-9deg)}
+    100% {transform: translateY(0) translateX(0) rotate(0)}
+}
+
+@keyframes skills-moves
+{
+    0% {transform: scale(1); filter: drop-shadow(0 0 0)}
+    5% {transform: scale(1.125); filter: drop-shadow(0.5rem 0.5rem 0.1rem map-get($color, dark-orange))}
+    10% {transform: scale(1); filter: drop-shadow(0 0 0)}
+    100% {transform: scale(1); filter: drop-shadow(0 0 0)}
+}

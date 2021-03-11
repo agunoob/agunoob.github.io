@@ -1,0 +1,407 @@
+@media screen and (max-width: 425px) {
+    :root
+    {
+        font-size: 7px;
+    }
+
+    body
+    {
+        .pl-flag, .uk-flag
+        {
+            top: 2rem;
+        }
+        
+        .burger-icon
+        {
+            display: block;
+        }
+
+        //nav-header-contact-part
+        .nav-contact-box
+        {
+            height: 100vh;
+
+            .nav-box-closed
+            {
+                
+                height: 100%;
+                width: 100%;
+                position: fixed;
+                display: flex;
+                flex-direction: column;
+                align-self: center;
+                justify-self: center;
+                background-color: map-get($color, accent);
+                z-index: 1;
+                // opacity: 0;
+                transform: translateX(100%);
+                transition: transform 0.6s ease-out;
+                // opacity 0.5s, 
+            }
+
+            .nav-box-open
+            {
+                // opacity: 1;
+                transform: translateX(0%);
+
+                .close-burger
+                {
+                    position: fixed;
+                    top: 3rem;
+                    right: 3rem;
+                    display: block;
+
+                    & img {
+                    width: 2.5rem;
+                    }
+                }
+
+                a
+                {
+                    color: map-get($color, primary);
+                    font-size: map-get($font-size, big-for-menu);
+                    letter-spacing: map-get($letter-spacing, wide);
+                    position: relative;
+                }
+
+                a::before
+                {
+                    content: '';
+                    left: 0;
+                    bottom: 0;
+                    width: 120%;
+                    height: 0.1rem;
+                    background-color: map-get($color, primary);
+                    position: absolute;
+                }
+
+                a:hover, a:focus
+                {
+                    color: map-get($color, bright-orange);
+
+                }
+
+                a:hover::before, a:focus::before
+                {
+                    background-color: map-get($color, bright-orange);
+                }
+            }
+
+            .header-image
+            {
+                background-size: cover;
+
+                height: 50vh;
+                background-position: center;
+                // background-repeat: no-repeat;
+                background-size: cover;
+
+                .header-text-box
+                {
+                    h1
+                    {
+                        font-size: map-get($font-size, big-for-media);
+                    }
+
+                    .header-icons-box
+                    {
+                        justify-content: space-between;
+                        margin: 1rem auto;
+
+                        a img
+                        {
+                            width: 3rem;
+                            margin: 0;
+                        }
+
+                        .twitch img
+                        {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+
+            .contact-me-box
+            {
+                height: 50vh;
+                justify-content: space-around;
+
+                h3
+                {
+                    font-size: map-get($font-size, big-for-contact);
+                    text-align: center;
+                    margin: auto 5rem;
+                }
+
+                .contact-me-buttons
+                {
+                    width: 90%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-around;
+
+                    button
+                    {
+                        height: 9rem;
+                        width: 80%;
+                    }
+                }
+            }
+        }
+
+        //about-me-and-skills-part
+        .about-me-and-skills-box
+        {
+            height: calc(200vh);
+            align-items: center;
+            justify-content: center;
+
+            .about-me-box
+            {
+                height: 100vh;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                h3
+                {
+                    position: static;
+                    margin: 0 auto 2.5rem auto;
+                }
+
+                .about-me-inner-box
+                {
+                    height: 85%;
+                    width: 95%;
+                    left: 0;
+                    flex-direction: column;
+
+                    .profile-picture
+                    {
+                        height: 12rem;
+                        width: 12rem;
+                        border-radius: 12rem;
+                    }
+
+                    .my-data-box, .description-box
+                    {
+                      text-align: center;
+                    }
+
+                    .description-box
+                    {
+                        width: 70%;
+                        height: 40%;
+                        overflow: auto;
+                    }
+                }
+            }
+            
+            .skills-box {
+                height: 100vh;
+                width: 100%;
+                // top: 5%;
+                top: 0;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                h3
+                {
+                    position: static;
+                    margin: 0 auto 2.5rem auto;
+                }
+
+                .skills-inner-box
+                {
+                    height: 85%;
+                    width: 95%;
+                    left: 0;
+                    flex-direction: column;
+
+                    .skills-items
+                    {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+
+                    .html
+                    {
+                        align-self: flex-start;
+                        margin-left: 2rem;
+                        margin-top: 5rem;
+                    }
+
+                    .java-script
+                    {
+                        align-self: flex-end;
+                        margin-right: 2rem;
+                        margin-bottom: 5rem;
+                    }
+
+                    i img
+                    {
+                        width: 11rem;
+                    }
+
+                    p
+                    {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+
+        //portfolio-part
+        .portfolio-box
+        {
+            height: calc(2.12*100vh);
+            justify-content: center;
+
+            .portfolio-gallery
+            {
+                height: calc(2*100vh);
+                align-items: center;
+                justify-content: center;
+
+                .boxes
+                {
+                    height: calc(100%/6);
+                    width: 80%;
+
+                    .photo-cover button
+                    {
+                        height: 7rem;
+                        width: 95%;
+                        align-self: center;
+                        margin-left: 0;
+                    }
+
+                    img
+                    {
+                        height: 100%;
+                    }
+                }
+            }
+        }
+
+        //contact-me-part
+        .contact-copyrights-box
+        {
+            height: 180vh;
+
+            .contact-box
+            {
+                height: 85%;
+                flex-direction: column;
+                align-items: center;
+                position: static;
+
+                &>h3
+                {
+                    position: static;
+                    margin: 0 auto 2.5rem auto;
+                }
+
+                .contact-form
+                {
+                    height: 90%;
+                    width: 100%;
+                    flex-direction: column;
+
+                    .form-info
+                    {
+                        height: 40%;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: space-evenly;
+
+                        i img
+                        {
+                            margin: 0;
+                            width: 7rem;
+                        }
+
+                        .text-p
+                        {
+                            width: 70%;
+                            text-align: center;
+                            margin: 0;
+                        }
+
+                        &::after
+                        {
+                            top: 99%;
+                            right: 70%;
+                            border-top: 2rem solid map-get($color, accent);
+                            border-left: 2rem solid transparent;
+                            border-right: 2rem solid transparent;
+                        }
+                    }
+
+                    .form
+                    {
+                        height: 80%;
+                        width: 100%;
+                        padding: 2.5rem 2rem;
+
+                        textarea
+                        {
+                            padding-top: 2rem;
+                        }
+
+                        h3
+                        {
+                            margin-left: 0;
+                            margin-top: 1.5rem;
+                            align-self: center;
+                        }
+
+                        button
+                        {
+                            width: 80%;
+                            height: 6rem;
+                            align-self: center;
+                        }
+                    }
+                }
+            }
+
+            .copyrights
+            {
+                height: 15%;
+                flex-direction: column;
+
+                i img
+                {
+                    display: none;
+                    // margin: 0;
+                }
+
+                div p
+                {
+                    line-height: 1.5;
+                    text-align: center;
+                    font-size: map-get($font-size, extra-small);
+                }
+
+                .contact-icons-box
+                {
+                    a img
+                    {
+                        width: 3.5rem;
+                        margin-right: 6.5rem;
+                    }
+                }
+            }
+        }
+    }
+}

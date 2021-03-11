@@ -1,0 +1,212 @@
+:root
+{
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body
+{
+    background-color: map-get($color, bg);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    cursor: default;
+
+    .pl-flag, .uk-flag
+    {
+        width: 3rem;
+        position: absolute;
+        top: 1.4rem;
+        left: 2rem;
+        cursor: pointer;
+        z-index: 1;
+        transition: transform 0.3s;
+
+        //trick for icon shadow, not the whole box-shadow
+        & img
+        {
+            filter: drop-shadow(0 0 0.1rem map-get($color, secondary));
+            // -moz-box-shadow: 0 0 3px #ccc;
+            // -webkit-box-shadow: 0 0 3px #ccc;
+            // box-shadow: 0 0 3px #ccc;
+        }
+
+        &:hover
+        {
+            -ms-transform: scale(0.9); /* IE 9 */
+            -webkit-transform: scale(0.9); /* Safari 3-8 */
+            transform: scale(0.9);
+        }
+    }
+
+    .burger-icon
+    {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        width: 3.5rem;
+        display: none;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .nav-contact-box
+    {
+        a img
+        {
+            width: 1.8rem;
+        }
+
+        .youtube img
+        {
+            width: 2rem;
+        }
+    }
+
+    .contact-copyrights-box
+    {
+        
+        a img
+        {
+            width: 2rem;
+        }
+
+        i img {
+            width: 4.5rem;
+        }
+    }
+
+    h1
+    {
+        font-size: map-get($font-size, extra-big);
+        color: map-get($color, primary);
+        letter-spacing: map-get($letter-spacing, wide);
+    }
+
+    h2
+    {
+        font-size: map-get($font-size, big);
+        color: map-get($color, primary);
+        letter-spacing:  map-get($letter-spacing, narrow);
+        font-weight: 100;
+    }
+
+    h3
+    {
+        font-size: map-get($font-size, medium);
+        color: map-get($color, accent);
+        letter-spacing:  map-get($letter-spacing, mid-wide)
+    }
+
+    h4
+    {
+        font-size: map-get($font-size, small);
+        color: map-get($color, secondary);
+        letter-spacing:  map-get($letter-spacing, mid-wide)
+    }
+
+    h5
+    {
+        font-size: map-get($font-size, super-small);
+        font-weight: 100;
+        letter-spacing: map-get($letter-spacing, narrow);
+    }
+
+    p
+    {
+        font-size: map-get($font-size, extra-small);
+        color: map-get($color, secondary);
+        line-height: 2.5;
+        letter-spacing: map-get($letter-spacing, narrow)
+    }
+
+    .arrow-box
+    {
+        height: 6.5rem;
+        width: 6.5rem;
+        position: fixed;
+        right: 2rem;
+        bottom: 2rem;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        border-radius: 1rem;
+        background-color: map-get($color, bg);
+        opacity: 0.4;
+        transition: width 2s, opacity 1s ease-out;
+
+        i img {
+            width: 4.5rem;
+        }
+    }
+
+    .arrow-box:hover
+    {
+        cursor: pointer;
+        opacity: 0.9;
+
+        i img
+        {
+            width: 4.3rem;
+        }
+    }
+
+    button
+    {
+        @include buttons;
+
+        &:focus
+        {
+            outline: none;
+            border: none;
+        }
+
+        &:hover
+        {
+            @include buttons-hover;
+            cursor: pointer;
+        }
+    }
+
+    a:hover
+    {
+        cursor: pointer;
+        color: map-get($color, secondary);
+    }
+
+    input:focus, textarea:focus
+    {
+        outline: none;
+    }
+}
+
+::-webkit-scrollbar
+{
+    width: 1rem;
+}
+
+::-webkit-scrollbar-track
+{
+    background: rgb(211, 211, 211); 
+}
+
+::-webkit-scrollbar-thumb
+{
+    background: rgb(107, 107, 107); 
+}
+
+::-webkit-scrollbar-thumb:hover
+{
+    background: rgb(71, 71, 71); 
+}
