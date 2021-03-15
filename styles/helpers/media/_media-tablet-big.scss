@@ -33,15 +33,12 @@
                 justify-self: center;
                 background-color: map-get($color, accent);
                 z-index: 1;
-                // opacity: 0;
                 transform: translateX(100%);
                 transition: transform 0.6s ease-out;
-                // opacity 0.5s, 
             }
  
             .nav-box-open
             {
-                // opacity: 1;
                 transform: translateX(0%);
  
                 .close-burger
@@ -54,6 +51,11 @@
                     & img {
                     width: 2.5rem;
                     }
+
+                    &:hover
+                    {
+                        cursor: pointer;
+                    }
                 }
 
                 a
@@ -62,17 +64,18 @@
                     font-size: map-get($font-size, big-for-menu);
                     letter-spacing: map-get($letter-spacing, wide);
                     position: relative;
-                }
 
-                a::before
-                {
-                    content: '';
-                    left: 0;
-                    bottom: 0;
-                    width: 120%;
-                    height: 0.1rem;
-                    background-color: map-get($color, primary);
-                    position: absolute;
+                    &::before
+                    {
+                        content: '';
+                        left: 0;
+                        bottom: 0;
+                        width: 0;
+                        height: 0.1rem;
+                        background-color: map-get($color, primary);
+                        position: absolute;
+                        transition: width 0.3s ease-in-out;
+                    }
                 }
 
                 a:hover, a:focus
@@ -84,6 +87,7 @@
                 a:hover::before, a:focus::before
                 {
                     background-color: map-get($color, bright-orange);
+                    width: 120%;
                 }
             }
 
@@ -148,6 +152,16 @@
                 {
                     height: 45vmin;
                     left: 6rem;
+                    overflow: hidden;
+
+                    &:hover
+                    {
+
+                        .description-box
+                        {
+                            line-height: 1.5;
+                        }
+                    }
 
                     .about-me-items
                     {
@@ -167,22 +181,6 @@
                         strong
                         {
                             font-size: map-get($font-size, big);
-                        }
-                    }
-
-                    .description-box
-                    {
-                        margin: 0;
-                        height: 98%;
-                        padding-right: 2.5rem;
-                        display: flex;
-                        align-items: center;
-                        overflow: auto;
-
-                        p
-                        {
-                            height: 80%;
-                            line-height: 2;
                         }
                     }
                 }

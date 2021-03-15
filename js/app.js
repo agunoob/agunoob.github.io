@@ -68,11 +68,6 @@ const baza =
                     "id": 2,
                     "title": "titmouse",
                     "photo": "./photos/portfolio-drawings/titmouse.jpg"
-                },
-                {
-                    "id": 3,
-                    "title": "bird",
-                    "photo": "./photos/portfolio-drawings/bird.png"
                 }
             ]
         },
@@ -123,11 +118,6 @@ const baza =
                 },
                 {
                     "id": 2,
-                    "title": "city project",
-                    "photo": "./photos/portfolio-city/3.png"
-                },
-                {
-                    "id": 3,
                     "title": "city project",
                     "photo": "./photos/portfolio-city/4.png"
                 }
@@ -259,7 +249,8 @@ function photoCover()
 };
 photoCover();
 
-function portfolio() {
+function portfolio()
+{
     const btns = document.getElementsByClassName('btn');
     for (let i = 0; i < btns.length; i++)
     {
@@ -289,7 +280,7 @@ function createModalContent(modalBg)
 {
        const createModalContent = document.createElement('div');
         let modalContent = modalBg.appendChild(createModalContent);
-        modalContent.classList.add('modal-content');
+        modalContent.classList.add('modal-content', 'modal-content-open');
         return modalContent;
 };
 
@@ -348,10 +339,109 @@ function divForProjects(modalContent, i)
             const createProjectImg = document.createElement('img');
             let projectImg = displayProjects.appendChild(createProjectImg);
             projectImg.src = mojaBaza.nazwa[i].examples[j].photo;
+            projectImg.onclick = function openImg()
+            {
+                let imgModalBg = divImgModalBg(displayProjects);
+                imgModal(i, j, imgModalBg);
+                exitImgModal(imgModalBg);
+            }
         }
     }
     displayProjects();
 };
+
+function divImgModalBg(displayProjects)
+{
+    const createImgModalBg = document.createElement('div');
+    let imgModalBg = displayProjects.appendChild(createImgModalBg);
+    imgModalBg.classList.add('img-modal-bg');
+    return imgModalBg;
+};
+
+function imgModal(i, j, imgModalBg)
+{
+    const createImgModal = document.createElement('img');
+    let imgModal = imgModalBg.appendChild(createImgModal);
+    imgModal.src = mojaBaza.nazwa[i].examples[j].photo;
+};
+
+function exitImgModal(imgModalBg)
+{
+    const createExitImgModal = document.createElement('img');
+    let exitImgModal = imgModalBg.appendChild(createExitImgModal);
+    exitImgModal.src = './photos/icons/cancel-orange.svg';
+    exitImgModal.classList.add('exit-img-modal');
+    //close modal
+    exitImgModal.onclick = function closeImgModal()
+    {
+        imgModalBg.style.display = 'none';
+    }
+    //show modal btn
+    imgModalBg.addEventListener("mousemove", function(event) {
+        if(event.screenY < 400)
+        {
+            exitImgModal.classList.add('show-exit-btn');
+        }
+        else if(event.screenY > 400)
+        {
+            exitImgModal.classList.remove('show-exit-btn');
+        }
+    })
+    
+};
+
+function showSkills()
+{
+    const itemsy = document.querySelectorAll('.skills-items');
+    const skills = document.querySelectorAll('.skills-bar');
+    const bars = document.querySelectorAll('.bar');
+    const shineHeader = document.querySelectorAll('.header');
+    const number = document.querySelectorAll('.number');
+
+    for (let i = 0; i < itemsy.length; i++)
+    {
+        itemsy[i].onmouseover = function ()
+        {
+            skills[i].classList.add('open');
+            shineHeader[i].classList.add('shine-header');
+
+            if (i==0)
+            {
+                bars[0].classList.add('bar-html');
+                number[0].innerHTML = '70%';
+            }
+            else if (i==1)
+            {
+               bars[1].classList.add('bar-css');
+               number[1].innerHTML = '60%';
+            }
+            else if (i==2)
+            {
+                bars[2].classList.add('bar-js');
+                number[2].innerHTML = '40%';
+            }
+        }
+        skills[i].onmouseout = function ()
+        {
+            skills[i].classList.remove('open');
+            shineHeader[i].classList.remove('shine-header');
+
+            if (i==0)
+            {
+                bars[0].classList.remove('bar-html');
+            }
+            else if (i==1)
+            {
+               bars[1].classList.remove('bar-css');
+            }
+            else if (i==2)
+            {
+                bars[2].classList.remove('bar-js');
+            }
+        }
+    }
+};
+showSkills();
 
 //no picture dragging
 window.ondragstart = function()

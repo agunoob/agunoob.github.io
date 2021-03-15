@@ -88,6 +88,7 @@
                     -moz-appearance: none;
                     appearance: none;
                     @include buttons-hover;
+                    color: map-get($color, accent);
                     height: 8%;
                     padding: 0.5rem 2rem;
                     border-radius: 0.6rem;
@@ -97,7 +98,7 @@
 
                 ::-webkit-input-placeholder
                 {
-                    color: map-get($color, light-orange);
+                    color: map-get($color, light-grey);
                 }
 
                 form
@@ -112,7 +113,7 @@
                         border: none;
                         resize: none;
                         background-color: rgba(255, 255, 255, 0);
-                        color: map-get($color, dark-orange);
+                        color: map-get($color, accent);
                         font-size: map-get($font-size, extra-small);
                         font-family: 'Poppins', sans-serif;
                     }
@@ -175,6 +176,7 @@
         {
             width: 5rem;
             display: block;
+            -webkit-animation: tilt-astronaut 6s linear infinite;
             animation: tilt-astronaut 6s linear infinite;
         }
     }

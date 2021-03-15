@@ -36,9 +36,9 @@ body
         & img
         {
             filter: drop-shadow(0 0 0.1rem map-get($color, secondary));
-            // -moz-box-shadow: 0 0 3px #ccc;
-            // -webkit-box-shadow: 0 0 3px #ccc;
-            // box-shadow: 0 0 3px #ccc;
+            // -moz-box-shadow: 0 0 0.1rem map-get($color, secondary);
+            // -webkit-box-shadow: 0 0 0.1rem map-get($color, secondary);
+            // box-shadow: 0 0 0.1rem map-get($color, secondary);
         }
 
         &:hover

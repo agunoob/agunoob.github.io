@@ -74,16 +74,14 @@
                     </strong> 1029384857</p>
                     <p class="my-data"><strong>E-mail:</strong> agnieszka.skowronek@vp.pl</p>
                 </div>
-                <div class="about-me-items description-box">
-                    <p>
-                        Web-develop./Front-end?? appealed to me right at the first contact on November 2020. 
-                        Working with the computer that combines creation,
-                        building, mapping and attention to detail fits perfectly to my nature and skills.
-                        <!-- Web-develop./Front-end?? przypadł mi do serca już od pierwszego kontaktu w listopadzie 2020r. Praca przy komputerze
-                        łącząca w sobie tworzenie, budowanie, odwzorowywanie oraz dbałość o detale idealnie wpisują się w moją 
-                        osobowość i umiejętności. -->
-                    </p>
-                </div>
+                <p class="about-me-items description-box">
+                    Web-develop./Front-end?? appealed to me right at the first contact on November 2020. 
+                    Working with the computer that combines creation,
+                    building, mapping and attention to detail fits perfectly to my nature and skills.
+                    <!-- Web-develop./Front-end?? przypadł mi do serca już od pierwszego kontaktu w listopadzie 2020r. Praca przy komputerze
+                    łącząca w sobie tworzenie, budowanie, odwzorowywanie oraz dbałość o detale idealnie wpisują się w moją 
+                    osobowość i umiejętności. -->
+                </p>
             </div>
         </div>
         <div class="skills-box">
@@ -91,18 +89,55 @@
                 <!-- Umiejętności -->
             </h3>
             <div class="skills-inner-box">
-                <div class="skills-items html">
-                    <i><img src="./photos/icons/html.png" class="img-html"></i>
+
+                <div id="html" class="skills-items html">
+                    <i><img src="./photos/icons/html.png" class="zdjecie img-html"></i>
                     <p>HTML</p>
                 </div>
-                <div class="skills-items css-sass">
-                    <i><img src="./photos/icons/css.png" class="img-sass"></i>
+
+                <div class="skills-bar">
+                    <div class="for-header-and-number">
+                        <h3 class="header">HTML</h3>
+                        <p class="number"></p>
+                    </div>
+                    <div class="outside-bar">
+                        <div class="bar">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="css" class="skills-items css-sass">
+                    <i><img src="./photos/icons/css.png" class="zdjecie img-sass"></i>
                     <p>CSS/SASS</p>
                 </div>
-                <div class="skills-items java-script">
-                    <i><img src="./photos/icons/js.png" class="img-js"></i>
+
+                <div class="skills-bar">
+                    <div class="for-header-and-number">
+                        <h3 class="header">CSS/SASS </h3>
+                        <p class="number"></p>
+                    </div>
+                    <div class="outside-bar">
+                        <div class="bar">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="js" class="skills-items java-script">
+                    <i><img src="./photos/icons/js.png" class="zdjecie img-js"></i>
                     <p>JavaScript</p>
                 </div>
+
+                <div class="skills-bar">
+                    <div class="for-header-and-number">
+                        <h3 class="header">JavaScript</h3>
+                        <p class="number"></p>
+                    </div>
+                    <div class="outside-bar">
+                        <div class="bar">
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </div>
@@ -183,6 +218,7 @@
                     <input type="text" placeholder="topic">
                     <!-- temat -->
                     <form><textarea placeholder="message"></textarea></form>
+                    <!-- wiadomość -->
                     <button id="btn-send">send</button>
                     <!-- wyślij -->
                 </div>
