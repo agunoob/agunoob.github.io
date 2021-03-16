@@ -94,7 +94,6 @@
             position: relative;
             right: 8rem;
             display: flex;
-            // align-items: center;
             justify-content: space-around;
             @include box-shadow;
 
@@ -159,14 +158,17 @@
 
                     .number
                     {
-                        margin-left: 2rem;
+                        margin-left: 3rem;
                         font-weight: normal;
                         font-size: map-get($font-size, big-for-contact);
                         color: map-get($color, secondary);
-                        // -moz-animation: showNumber 2s forwards;
-                        // -webkit-animation: showNumber 2s forwards;
-                        // -o-animation:showNumber 2s forwards;
-                        // animation: showNumber 3s forwards 2s;
+                        opacity: 0;
+                
+                    }
+
+                    .number-show
+                    {
+                        animation: showNumber 3s forwards 0.3s;
                     }
                 }
 

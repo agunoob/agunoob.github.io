@@ -256,7 +256,7 @@ function portfolio()
     {
         btns[i].onclick = function openModal()
         {
-            console.log('nr zdjecia: ', i)
+            // console.log('nr zdjecia: ', i)
             let bG = createModalBg();
             let content = createModalContent(bG);
             createModalExit(content, bG);
@@ -367,27 +367,25 @@ function imgModal(i, j, imgModalBg)
 
 function exitImgModal(imgModalBg)
 {
-    const createExitImgModal = document.createElement('img');
-    let exitImgModal = imgModalBg.appendChild(createExitImgModal);
-    exitImgModal.src = './photos/icons/cancel-orange.svg';
-    exitImgModal.classList.add('exit-img-modal');
-    //close modal
-    exitImgModal.onclick = function closeImgModal()
+    window.onclick = function closeModalImgOutside (event)
     {
-        imgModalBg.style.display = 'none';
+        if (event.target == imgModalBg)
+        {
+            imgModalBg.style.display = 'none';
+        }
     }
-    //show modal btn
-    imgModalBg.addEventListener("mousemove", function(event) {
-        if(event.screenY < 400)
-        {
-            exitImgModal.classList.add('show-exit-btn');
-        }
-        else if(event.screenY > 400)
-        {
-            exitImgModal.classList.remove('show-exit-btn');
-        }
-    })
-    
+
+//     //show modal btn when hover 400px from top
+//     imgModalBg.addEventListener("mousemove", function(event) {
+//         if(event.screenY < 400)
+//         {
+//             exitImgModal.classList.add('show-exit-btn');
+//         }
+//         else if(event.screenY > 400)
+//         {
+//             exitImgModal.classList.remove('show-exit-btn');
+//         }
+//     })
 };
 
 function showSkills()
@@ -400,48 +398,174 @@ function showSkills()
 
     for (let i = 0; i < itemsy.length; i++)
     {
-        itemsy[i].onmouseover = function ()
+        itemsy[i].onmouseenter = function()
         {
+            console.log('mouseOVER icon', i)
             skills[i].classList.add('open');
             shineHeader[i].classList.add('shine-header');
 
             if (i==0)
             {
                 bars[0].classList.add('bar-html');
-                number[0].innerHTML = '70%';
+                number[0].classList.add('number-show');
+                let counter = 0;
+                setInterval(()=>
+                {
+                    if(counter == 70)
+                    {
+                        clearInterval();
+                    }
+                    else
+                    {
+                        counter++;
+                        number[0].innerHTML = counter + '%';
+                    }
+                }, 25);
             }
             else if (i==1)
             {
                bars[1].classList.add('bar-css');
-               number[1].innerHTML = '60%';
+               number[1].classList.add('number-show');
+               let counter = 0;
+               setInterval(()=>
+               {
+                   if(counter == 60)
+                   {
+                       clearInterval();
+                   }
+                   else
+                   {
+                       counter++;
+                       number[1].innerHTML = counter + '%';
+                   }
+               }, 30);
             }
             else if (i==2)
             {
                 bars[2].classList.add('bar-js');
-                number[2].innerHTML = '40%';
+                number[2].classList.add('number-show');
+                let counter = 0;
+                setInterval(()=>
+                {
+                    if(counter == 40)
+                    {
+                        clearInterval();
+                    }
+                    else
+                    {
+                        counter++;
+                        number[2].innerHTML = counter + '%';
+                    }
+                }, 40);
             }
         }
-        skills[i].onmouseout = function ()
+      
+        skills[i].onmouseleave = function()
         {
+            console.log('mouseOUT modal', i)
             skills[i].classList.remove('open');
             shineHeader[i].classList.remove('shine-header');
 
             if (i==0)
             {
                 bars[0].classList.remove('bar-html');
+                number[0].classList.remove('number-show');
             }
             else if (i==1)
             {
-               bars[1].classList.remove('bar-css');
+                bars[1].classList.remove('bar-css');
+                number[1].classList.remove('number-show');
             }
             else if (i==2)
             {
                 bars[2].classList.remove('bar-js');
+                number[2].classList.remove('number-show');
             }
         }
     }
 };
 showSkills();
+
+function startAnimation()
+{
+    const skillsBox = document.querySelector('.skills-box');
+    window.addEventListener("scroll", function() {
+        if (window.scrollY > (skillsBox.offsetTop) && window.scrollY < (skillsBox.offsetTop + skillsBox.offsetHeight))
+        {
+            console.log('jestem')
+            const skillsInnerBox = document.querySelector('.skills-inner-box');
+            skillsInnerBox.classList.add('open-skills-mobile');
+            const skillsBar = document.querySelectorAll('.skills-bar');
+            const shineHeader = document.querySelectorAll('.header');
+            const number = document.querySelectorAll('.number');
+            const bars = document.querySelectorAll('.bar');
+
+            skillsBar.forEach(element =>
+            {
+                element.classList.add('skills-bar-mobile');
+            });
+
+            shineHeader.forEach(e =>
+            {
+                e.classList.add('shine-header');
+            });
+
+            number.forEach(num =>
+            {
+                num.classList.add('number-show');
+            });
+
+            for (let i = 0; i < bars.length; i++)
+            {
+                bars[0].classList.add('bar-html');
+                let counter = 0;
+                setInterval(()=>
+                {
+                    if(counter == 70)
+                    {
+                        clearInterval();
+                    }
+                    else
+                    {
+                        counter++;
+                        number[0].innerHTML = counter + '%';
+                    }
+                }, 25);
+               
+                bars[1].classList.add('bar-css');
+                let counterTwo = 0;
+                setInterval(()=>
+                {
+                    if(counterTwo == 60)
+                    {
+                        clearInterval();
+                    }
+                    else
+                    {
+                        counterTwo++;
+                        number[1].innerHTML = counterTwo + '%';
+                    }
+                }, 30);
+
+                bars[2].classList.add('bar-js');
+                let counterThree = 0;
+                setInterval(()=>
+                {
+                    if(counterThree == 40)
+                    {
+                        clearInterval();
+                    }
+                    else
+                    {
+                        counterThree++;
+                        number[2].innerHTML = counterThree + '%';
+                    }
+                }, 40);
+            }
+        }
+    })
+}
+startAnimation();
 
 //no picture dragging
 window.ondragstart = function()
