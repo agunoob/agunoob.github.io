@@ -207,7 +207,7 @@
 
                 h3
                 {
-                    position: static;
+                    left: auto;
                     margin: 0 auto 2.5rem auto;
                 }
 
@@ -251,19 +251,14 @@
                     {
                         padding: 0;
                     }
-
-                 
                 }
 
                 .open-skills-mobile
                 {
+                    height: 85%;
                     display: flex;
                     flex-direction: row;
-                    position: absolute;
                     background-color: map-get($color, primary);
-                    background-color: red;
-                    height: 100%;
-                    width: 100%;
                     align-items: center;
                     justify-content: space-evenly;
 
@@ -277,12 +272,19 @@
                         display: none;
                     }
 
+                    .skills-bar
+                    {
+                        height: 0;
+                        opacity: 0;
+                        transition: none;
+                        transition: height ease-out 0.6s, opacity ease 1s;
+                    }
                     .skills-bar-mobile
                     {
                         position: relative;
                         width: calc(100% / 3);
+                        height: 85%;
                         opacity: 1;
-                        // background-color: aqua;
 
                         .for-header-and-number
                         {
@@ -306,6 +308,7 @@
 
                             .number-show
                             {
+                                -webkit-animation: showNumber 3s forwards 0.3s;
                                 animation: showNumber 3s forwards 0.3s;
                             }
                         }
@@ -318,7 +321,7 @@
 
                         .outside-bar
                         {
-                            width: 2rem;
+                            width: 3rem;
                             height: 70%;
                             align-items: flex-end;
                             justify-content: center;
@@ -326,25 +329,25 @@
                             .bar
                             {
                                 height: 0;
-                                width: 100%;
+                                width: 90%;
                             }
 
                             .bar-html
                             {
-                                -webkit-animation: shineBarHTMLMobile ease-out 1.2s forwards 0.65s;
-                                animation: shineBarHTMLMobile ease-out 1.2s forwards 0.65s;
+                                -webkit-animation: shineBarHTMLMobile ease-out 1.8s forwards 0.65s;
+                                animation: shineBarHTMLMobile ease-out 1.8s forwards 0.65s;
                             }
         
                             .bar-css
                             {
-                                -webkit-animation: shineBarCSSMobile ease-out 1.2s forwards 0.65s;
-                                animation: shineBarCSSMobile ease-out 1.2s forwards 0.65s;
+                                -webkit-animation: shineBarCSSMobile ease-out 1.8s forwards 0.65s;
+                                animation: shineBarCSSMobile ease-out 1.8s forwards 0.65s;
                             }
         
                             .bar-js
                             {
-                                -webkit-animation: shineBarJSMobile ease-out 1.2s forwards 0.65s;
-                                animation: shineBarJSMobile ease-out 1.2s forwards 0.65s;
+                                -webkit-animation: shineBarJSMobile ease-out 1.8s forwards 0.65s;
+                                animation: shineBarJSMobile ease-out 1.8s forwards 0.65s;
                             }
                         }
                     }
@@ -390,6 +393,8 @@
                 .modal-content
                 {
                     overflow: auto;
+                    height: 95%;
+                    width: 95%;
 
                     .div-for-projects
                     {
@@ -401,15 +406,6 @@
                         {
                             min-height: 20%;
                             width: 90%;
-
-                            .img-modal-bg
-                            {
-                                img
-                                {
-                                    width: 100%;
-                                    min-height: auto;
-                                }
-                            }
                         }
                     }
 

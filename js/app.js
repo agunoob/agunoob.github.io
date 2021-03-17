@@ -395,6 +395,7 @@ function showSkills()
     const bars = document.querySelectorAll('.bar');
     const shineHeader = document.querySelectorAll('.header');
     const number = document.querySelectorAll('.number');
+    let odliczanie, odliczanieTwo, odliczanieThree;
 
     for (let i = 0; i < itemsy.length; i++)
     {
@@ -409,54 +410,72 @@ function showSkills()
                 bars[0].classList.add('bar-html');
                 number[0].classList.add('number-show');
                 let counter = 0;
-                setInterval(()=>
+                number[0].innerHTML = '0%';
+                setTimeout(function()
                 {
-                    if(counter == 70)
+                    odliczanie = setInterval(()=>
                     {
-                        clearInterval();
-                    }
-                    else
-                    {
-                        counter++;
-                        number[0].innerHTML = counter + '%';
-                    }
-                }, 25);
+                        if(counter == 70)
+                        {
+                            clearInterval(odliczanie);
+                        }
+                        else
+                        {
+                            counter++;
+                            number[0].innerHTML = counter + '%';
+                            console.log(counter)
+                        }
+                        return
+                    }, 25)
+                }, 700);
             }
             else if (i==1)
             {
                bars[1].classList.add('bar-css');
                number[1].classList.add('number-show');
-               let counter = 0;
-               setInterval(()=>
+               let counterTwo = 0;
+               number[1].innerHTML = '0%';
+               setTimeout(function()
                {
-                   if(counter == 60)
-                   {
-                       clearInterval();
-                   }
-                   else
-                   {
-                       counter++;
-                       number[1].innerHTML = counter + '%';
-                   }
-               }, 30);
+                odliczanieTwo = setInterval(()=>
+                    {
+                        if(counterTwo == 60)
+                        {
+                            clearInterval(odliczanieTwo);
+                        }
+                        else
+                        {
+                            counterTwo++;
+                            number[1].innerHTML = counterTwo + '%';
+                            console.log(counterTwo)
+                        }
+                        return
+                    }, 30)
+                }, 700);
             }
             else if (i==2)
             {
                 bars[2].classList.add('bar-js');
                 number[2].classList.add('number-show');
-                let counter = 0;
-                setInterval(()=>
+                let counterThree = 0;
+                number[2].innerHTML = '0%';
+                setTimeout(function()
                 {
-                    if(counter == 40)
+                    odliczanieThree = setInterval(()=>
                     {
-                        clearInterval();
-                    }
-                    else
-                    {
-                        counter++;
-                        number[2].innerHTML = counter + '%';
-                    }
-                }, 40);
+                        if(counterThree == 40)
+                        {
+                            clearInterval(odliczanieThree);
+                        }
+                        else
+                        {
+                            counterThree++;
+                            number[2].innerHTML = counterThree + '%';
+                            console.log(counterThree)
+                        }
+                        return
+                    }, 40)
+                }, 700);
             }
         }
       
@@ -468,41 +487,54 @@ function showSkills()
 
             if (i==0)
             {
+                clearInterval(odliczanie);
                 bars[0].classList.remove('bar-html');
                 number[0].classList.remove('number-show');
+                // number[0].innerHTML = '0%';
             }
             else if (i==1)
             {
+                clearInterval(odliczanieTwo);
                 bars[1].classList.remove('bar-css');
                 number[1].classList.remove('number-show');
+                // number[1].innerHTML = '0%';
             }
             else if (i==2)
             {
+                clearInterval(odliczanieThree);
                 bars[2].classList.remove('bar-js');
                 number[2].classList.remove('number-show');
+                // number[2].innerHTML = '0%';
             }
         }
     }
 };
 showSkills();
 
-function startAnimation()
+function showSkillsMobile()
 {
     const skillsBox = document.querySelector('.skills-box');
-    window.addEventListener("scroll", function() {
-        if (window.scrollY > (skillsBox.offsetTop) && window.scrollY < (skillsBox.offsetTop + skillsBox.offsetHeight))
-        {
-            console.log('jestem')
-            const skillsInnerBox = document.querySelector('.skills-inner-box');
-            skillsInnerBox.classList.add('open-skills-mobile');
-            const skillsBar = document.querySelectorAll('.skills-bar');
-            const shineHeader = document.querySelectorAll('.header');
-            const number = document.querySelectorAll('.number');
-            const bars = document.querySelectorAll('.bar');
+    const skillsBar = document.querySelectorAll('.skills-bar');
+    const shineHeader = document.querySelectorAll('.header');
+    const number = document.querySelectorAll('.number');
+    const bars = document.querySelectorAll('.bar');
+    const skillsInnerBox = document.querySelector('.skills-inner-box');
+    let odliczanie, odliczanieTwo, odliczanieThree;
 
+    window.addEventListener("scroll", function() {
+        if (window.scrollY > (skillsBox.offsetTop) && window.scrollY < (skillsBox.offsetTop + 4))
+        // skillsBox.offsetHeight
+        {
+            console.log('ładuj')
+            skillsInnerBox.classList.add('open-skills-mobile');
+            number[0].innerHTML = '0%';
+            number[1].innerHTML = '0%';
+            number[2].innerHTML = '0%';
+            
             skillsBar.forEach(element =>
             {
                 element.classList.add('skills-bar-mobile');
+                element.style.transition = 'height ease-out 0.6s, opacity ease 1s';
             });
 
             shineHeader.forEach(e =>
@@ -519,53 +551,93 @@ function startAnimation()
             {
                 bars[0].classList.add('bar-html');
                 let counter = 0;
-                setInterval(()=>
+                // clearInterval(odliczanie);
+                setTimeout(function()
                 {
-                    if(counter == 70)
+                    odliczanie = setInterval(()=>
                     {
-                        clearInterval();
-                    }
-                    else
-                    {
-                        counter++;
-                        number[0].innerHTML = counter + '%';
-                    }
-                }, 25);
+                        if(counter == 70)
+                        {
+                            clearInterval(odliczanie);
+                        }
+                        else
+                        {
+                            counter++;
+                            number[0].innerHTML = counter + '%';
+                        }
+                        return
+                    }, 25)
+                }, 700);
                
                 bars[1].classList.add('bar-css');
                 let counterTwo = 0;
-                setInterval(()=>
+                // clearInterval(odliczanieTwo);
+                setTimeout(function()
                 {
-                    if(counterTwo == 60)
+                    odliczanieTwo = setInterval(()=>
                     {
-                        clearInterval();
-                    }
-                    else
-                    {
-                        counterTwo++;
-                        number[1].innerHTML = counterTwo + '%';
-                    }
-                }, 30);
+                        if(counterTwo == 60)
+                        {
+                            clearInterval(odliczanieTwo);
+                        }
+                        else
+                        {
+                            counterTwo++;
+                            number[1].innerHTML = counterTwo + '%';
+                        }
+                        return
+                    }, 30)
+                }, 700);
 
                 bars[2].classList.add('bar-js');
                 let counterThree = 0;
-                setInterval(()=>
+                // clearInterval(odliczanieThree);
+                setTimeout(function()
                 {
-                    if(counterThree == 40)
+                    odliczanieThree = setInterval(()=>
                     {
-                        clearInterval();
-                    }
-                    else
-                    {
-                        counterThree++;
-                        number[2].innerHTML = counterThree + '%';
-                    }
-                }, 40);
+                        if(counterThree == 40)
+                        {
+                            clearInterval(odliczanieThree);
+                        }
+                        else
+                        {
+                            counterThree++;
+                            number[2].innerHTML = counterThree + '%';
+                        }
+                        return
+                    }, 40)
+                }, 700);
             }
         }
+        else if (window.scrollY < (skillsBox.offsetTop - 140) && window.scrollY > (skillsBox.offsetTop - 180) 
+        || window.scrollY > (skillsBox.offsetTop + 220) && window.scrollY < (skillsBox.offsetTop + 260))
+        {
+            console.log('reset');
+            clearInterval(odliczanie);
+            clearInterval(odliczanieTwo);
+            clearInterval(odliczanieThree);
+            skillsInnerBox.classList.remove('open-skills-mobile');
+
+            skillsBar.forEach(element =>
+            {
+                element.classList.remove('skills-bar-mobile');
+                element.style.transition = 'none';
+            });
+
+            shineHeader.forEach(e =>
+            {
+                e.classList.remove('shine-header');
+            });
+
+            number.forEach(num =>
+            {
+                num.classList.remove('number-show');
+            });
+        }
     })
-}
-startAnimation();
+};
+showSkillsMobile();
 
 //no picture dragging
 window.ondragstart = function()

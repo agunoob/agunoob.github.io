@@ -158,9 +158,10 @@
 
                     .number
                     {
+                        width: 8rem;
                         margin-left: 3rem;
                         font-weight: normal;
-                        font-size: map-get($font-size, big-for-contact);
+                        font-size: map-get($font-size, big-for-menu);
                         color: map-get($color, secondary);
                         opacity: 0;
                 
@@ -168,6 +169,7 @@
 
                     .number-show
                     {
+                        -webkit-animation: showNumber 3s forwards 0.3s;
                         animation: showNumber 3s forwards 0.3s;
                     }
                 }
@@ -183,7 +185,7 @@
                     width: 65%;
                     height: 2rem;
                     background-color: rgb(155, 155, 155);
-                    border: solid 0.2rem rgba(143, 143, 143, 0.041);
+                    border: solid 0.2rem map-get($color, light-grey);
                     border-radius: 0.6rem;
                     display: flex;
                     align-items: center;
@@ -192,28 +194,28 @@
 
                     .bar
                     {
-                        height: 100%;
+                        height: 90%;
                         background-color: map-get($color, bright-orange);
-                        border-radius: 0.6rem;
+                        border-radius: 0.4rem;
                         box-shadow: 0 0 1.5rem map-get($color, bright-orange);;
                     }
 
                     .bar-html
                     {
-                        -webkit-animation: shineBarHTML ease-out 1.2s forwards 0.65s;
-                        animation: shineBarHTML ease-out 1.2s forwards 0.65s;
+                        -webkit-animation: shineBarHTML ease-out 1.8s forwards 0.65s;
+                        animation: shineBarHTML ease-out 1.8s forwards 0.65s;
                     }
 
                     .bar-css
                     {
-                        -webkit-animation: shineBarCSS ease-out 1.2s forwards 0.65s;
-                        animation: shineBarCSS ease-out 1.2s forwards 0.65s;
+                        -webkit-animation: shineBarCSS ease-out 1.8s forwards 0.65s;
+                        animation: shineBarCSS ease-out 1.8s forwards 0.65s;
                     }
 
                     .bar-js
                     {
-                        -webkit-animation: shineBarJS ease-out 1.2s forwards 0.65s;
-                        animation: shineBarJS ease-out 1.2s forwards 0.65s;
+                        -webkit-animation: shineBarJS ease-out 1.8s forwards 0.65s;
+                        animation: shineBarJS ease-out 1.8s forwards 0.65s;
                     }
                 }
             }

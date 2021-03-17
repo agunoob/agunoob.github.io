@@ -573,16 +573,17 @@ body input:focus, body textarea:focus {
 }
 
 .about-me-and-skills-box .skills-box .skills-inner-box .skills-bar .for-header-and-number .number {
+  width: 8rem;
   margin-left: 3rem;
   font-weight: normal;
-  font-size: 3rem;
+  font-size: 4rem;
   color: black;
   opacity: 0;
 }
 
 .about-me-and-skills-box .skills-box .skills-inner-box .skills-bar .for-header-and-number .number-show {
   -webkit-animation: showNumber 3s forwards 0.3s;
-          animation: showNumber 3s forwards 0.3s;
+  animation: showNumber 3s forwards 0.3s;
 }
 
 .about-me-and-skills-box .skills-box .skills-inner-box .skills-bar .shine-header {
@@ -594,7 +595,7 @@ body input:focus, body textarea:focus {
   width: 65%;
   height: 2rem;
   background-color: #9b9b9b;
-  border: solid 0.2rem rgba(143, 143, 143, 0.041);
+  border: solid 0.2rem #777777;
   border-radius: 0.6rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -608,26 +609,26 @@ body input:focus, body textarea:focus {
 }
 
 .about-me-and-skills-box .skills-box .skills-inner-box .skills-bar .outside-bar .bar {
-  height: 100%;
+  height: 90%;
   background-color: #ffbb3d;
-  border-radius: 0.6rem;
+  border-radius: 0.4rem;
   -webkit-box-shadow: 0 0 1.5rem #ffbb3d;
           box-shadow: 0 0 1.5rem #ffbb3d;
 }
 
 .about-me-and-skills-box .skills-box .skills-inner-box .skills-bar .outside-bar .bar-html {
-  -webkit-animation: shineBarHTML ease-out 1.2s forwards 0.65s;
-  animation: shineBarHTML ease-out 1.2s forwards 0.65s;
+  -webkit-animation: shineBarHTML ease-out 1.8s forwards 0.65s;
+  animation: shineBarHTML ease-out 1.8s forwards 0.65s;
 }
 
 .about-me-and-skills-box .skills-box .skills-inner-box .skills-bar .outside-bar .bar-css {
-  -webkit-animation: shineBarCSS ease-out 1.2s forwards 0.65s;
-  animation: shineBarCSS ease-out 1.2s forwards 0.65s;
+  -webkit-animation: shineBarCSS ease-out 1.8s forwards 0.65s;
+  animation: shineBarCSS ease-out 1.8s forwards 0.65s;
 }
 
 .about-me-and-skills-box .skills-box .skills-inner-box .skills-bar .outside-bar .bar-js {
-  -webkit-animation: shineBarJS ease-out 1.2s forwards 0.65s;
-  animation: shineBarJS ease-out 1.2s forwards 0.65s;
+  -webkit-animation: shineBarJS ease-out 1.8s forwards 0.65s;
+  animation: shineBarJS ease-out 1.8s forwards 0.65s;
 }
 
 .about-me-and-skills-box .skills-box .skills-inner-box .open {
@@ -806,6 +807,8 @@ body input:focus, body textarea:focus {
   font-size: 2rem;
   color: black;
   text-align: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .modal-bg .modal-content .div-for-projects {
@@ -844,6 +847,7 @@ body input:focus, body textarea:focus {
 .modal-bg .modal-content .div-for-projects .display-projects h2 {
   color: black;
   font-variant: all-small-caps;
+  padding: 0;
 }
 
 .modal-bg .modal-content .div-for-projects .display-projects img {
@@ -1319,7 +1323,7 @@ body input:focus, body textarea:focus {
             justify-content: center;
   }
   body .about-me-and-skills-box .skills-box h3 {
-    position: static;
+    left: auto;
     margin: 0 auto 2.5rem auto;
   }
   body .about-me-and-skills-box .skills-box .skills-inner-box {
@@ -1366,6 +1370,7 @@ body input:focus, body textarea:focus {
     padding: 0;
   }
   body .about-me-and-skills-box .skills-box .open-skills-mobile {
+    height: 85%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1373,11 +1378,7 @@ body input:focus, body textarea:focus {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    position: absolute;
     background-color: white;
-    background-color: red;
-    height: 100%;
-    width: 100%;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -1391,9 +1392,18 @@ body input:focus, body textarea:focus {
   body .about-me-and-skills-box .skills-box .open-skills-mobile .skills-items {
     display: none;
   }
+  body .about-me-and-skills-box .skills-box .open-skills-mobile .skills-bar {
+    height: 0;
+    opacity: 0;
+    -webkit-transition: none;
+    transition: none;
+    -webkit-transition: height ease-out 0.6s, opacity ease 1s;
+    transition: height ease-out 0.6s, opacity ease 1s;
+  }
   body .about-me-and-skills-box .skills-box .open-skills-mobile .skills-bar-mobile {
     position: relative;
     width: calc(100% / 3);
+    height: 85%;
     opacity: 1;
   }
   body .about-me-and-skills-box .skills-box .open-skills-mobile .skills-bar-mobile .for-header-and-number {
@@ -1414,14 +1424,14 @@ body input:focus, body textarea:focus {
   }
   body .about-me-and-skills-box .skills-box .open-skills-mobile .skills-bar-mobile .for-header-and-number .number-show {
     -webkit-animation: showNumber 3s forwards 0.3s;
-            animation: showNumber 3s forwards 0.3s;
+    animation: showNumber 3s forwards 0.3s;
   }
   body .about-me-and-skills-box .skills-box .open-skills-mobile .skills-bar-mobile .shine-header {
     -webkit-animation: shine ease 3s forwards 0.6s;
     animation: shine ease 3s forwards 0.6s;
   }
   body .about-me-and-skills-box .skills-box .open-skills-mobile .skills-bar-mobile .outside-bar {
-    width: 2rem;
+    width: 3rem;
     height: 70%;
     -webkit-box-align: end;
         -ms-flex-align: end;
@@ -1432,19 +1442,19 @@ body input:focus, body textarea:focus {
   }
   body .about-me-and-skills-box .skills-box .open-skills-mobile .skills-bar-mobile .outside-bar .bar {
     height: 0;
-    width: 100%;
+    width: 90%;
   }
   body .about-me-and-skills-box .skills-box .open-skills-mobile .skills-bar-mobile .outside-bar .bar-html {
-    -webkit-animation: shineBarHTMLMobile ease-out 1.2s forwards 0.65s;
-    animation: shineBarHTMLMobile ease-out 1.2s forwards 0.65s;
+    -webkit-animation: shineBarHTMLMobile ease-out 1.8s forwards 0.65s;
+    animation: shineBarHTMLMobile ease-out 1.8s forwards 0.65s;
   }
   body .about-me-and-skills-box .skills-box .open-skills-mobile .skills-bar-mobile .outside-bar .bar-css {
-    -webkit-animation: shineBarCSSMobile ease-out 1.2s forwards 0.65s;
-    animation: shineBarCSSMobile ease-out 1.2s forwards 0.65s;
+    -webkit-animation: shineBarCSSMobile ease-out 1.8s forwards 0.65s;
+    animation: shineBarCSSMobile ease-out 1.8s forwards 0.65s;
   }
   body .about-me-and-skills-box .skills-box .open-skills-mobile .skills-bar-mobile .outside-bar .bar-js {
-    -webkit-animation: shineBarJSMobile ease-out 1.2s forwards 0.65s;
-    animation: shineBarJSMobile ease-out 1.2s forwards 0.65s;
+    -webkit-animation: shineBarJSMobile ease-out 1.8s forwards 0.65s;
+    animation: shineBarJSMobile ease-out 1.8s forwards 0.65s;
   }
   body .portfolio-box {
     height: calc(2.12*100vh);
@@ -1478,6 +1488,8 @@ body input:focus, body textarea:focus {
   }
   body .modal-bg .modal-content {
     overflow: auto;
+    height: 95%;
+    width: 95%;
   }
   body .modal-bg .modal-content .div-for-projects {
     margin: 0;
@@ -1490,10 +1502,6 @@ body input:focus, body textarea:focus {
   body .modal-bg .modal-content .div-for-projects .display-projects {
     min-height: 20%;
     width: 90%;
-  }
-  body .modal-bg .modal-content .div-for-projects .display-projects .img-modal-bg img {
-    width: 100%;
-    min-height: auto;
   }
   body .modal-bg .modal-content .exit-img {
     width: 3rem;

@@ -150,6 +150,8 @@
             font-size: map-get($font-size, small);
             color: map-get($color, secondary);
             text-align: center;
+            padding-left: 2rem;
+            padding-right: 2rem;
         }
 
         .div-for-projects
@@ -175,6 +177,7 @@
                 {
                     color: map-get($color, secondary);
                     font-variant: all-small-caps;
+                    padding: 0;
                 }
 
                 img
