@@ -16,6 +16,12 @@
             display: block;
         }
 
+        .arrow-box
+        {
+            bottom: 1rem;
+            right: 1rem;
+        }
+
         //nav-header-contact-part
         .nav-contact-box
         {
@@ -193,6 +199,16 @@
                     .my-data-box, .description-box
                     {
                       text-align: center;
+                    }
+
+                    .description-box
+                    {
+                        height: 40%;
+
+                        p
+                        {
+                            line-height: 3;
+                        }
                     }
                 }
             }

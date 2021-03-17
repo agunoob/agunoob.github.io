@@ -16,6 +16,11 @@
             display: block;
         }
 
+        .arrow-box
+        {
+            bottom: 7rem;
+        }
+
         //nav-header-contact-part
         .nav-contact-box
         {
@@ -152,16 +157,7 @@
                 {
                     height: 45vmin;
                     left: 6rem;
-                    overflow: hidden;
-
-                    &:hover
-                    {
-
-                        .description-box
-                        {
-                            line-height: 1.5;
-                        }
-                    }
+                    // overflow: hidden;
 
                     .about-me-items
                     {
@@ -183,6 +179,15 @@
                             font-size: map-get($font-size, big);
                         }
                     }
+
+                    .description-box
+                    {
+                        p
+                        {
+                            padding: 2rem 0;
+                        }
+                    }
+
                 }
             }
 

@@ -16,6 +16,11 @@
             display: block;
         }
 
+        .arrow-box
+        {
+            bottom: 7rem;
+        }
+
         //nav-header-contact-part
         .nav-contact-box
         {
@@ -156,15 +161,6 @@
                     height: 45vh;
                     left: 4rem;
                     overflow: hidden;
-
-                    &:hover
-                    {
-
-                        .description-box
-                        {
-                            line-height: 1.4;
-                        }
-                    }
 
                     .about-me-items
                     {

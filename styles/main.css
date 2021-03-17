@@ -458,6 +458,25 @@ body input:focus, body textarea:focus {
   letter-spacing: 0.3rem;
 }
 
+.about-me-and-skills-box .about-me-box .about-me-inner-box .description-box {
+  height: 100%;
+  overflow: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem 0;
+}
+
+.about-me-and-skills-box .about-me-box .about-me-inner-box .description-box p {
+  line-height: 2;
+}
+
 .about-me-and-skills-box .skills-box {
   height: 45vmin;
   width: 75%;
@@ -1146,6 +1165,10 @@ body input:focus, body textarea:focus {
   body .burger-icon {
     display: block;
   }
+  body .arrow-box {
+    bottom: 1rem;
+    right: 1rem;
+  }
   body .nav-contact-box {
     height: 100vh;
   }
@@ -1306,6 +1329,12 @@ body input:focus, body textarea:focus {
   }
   body .about-me-and-skills-box .about-me-box .about-me-inner-box .my-data-box, body .about-me-and-skills-box .about-me-box .about-me-inner-box .description-box {
     text-align: center;
+  }
+  body .about-me-and-skills-box .about-me-box .about-me-inner-box .description-box {
+    height: 40%;
+  }
+  body .about-me-and-skills-box .about-me-box .about-me-inner-box .description-box p {
+    line-height: 3;
   }
   body .about-me-and-skills-box .skills-box {
     height: 100vh;
@@ -1619,6 +1648,9 @@ body input:focus, body textarea:focus {
   body .burger-icon {
     display: block;
   }
+  body .arrow-box {
+    bottom: 7rem;
+  }
   body .nav-contact-box {
     height: 100vh;
   }
@@ -1741,9 +1773,6 @@ body input:focus, body textarea:focus {
     left: 4rem;
     overflow: hidden;
   }
-  body .about-me-and-skills-box .about-me-box .about-me-inner-box:hover .description-box {
-    line-height: 1.4;
-  }
   body .about-me-and-skills-box .about-me-box .about-me-inner-box .about-me-items {
     margin: auto 1.5rem;
   }
@@ -1842,6 +1871,9 @@ body input:focus, body textarea:focus {
   }
   body .burger-icon {
     display: block;
+  }
+  body .arrow-box {
+    bottom: 7rem;
   }
   body .nav-contact-box {
     height: 100vh;
@@ -1960,10 +1992,6 @@ body input:focus, body textarea:focus {
   body .about-me-and-skills-box .about-me-box .about-me-inner-box {
     height: 45vmin;
     left: 6rem;
-    overflow: hidden;
-  }
-  body .about-me-and-skills-box .about-me-box .about-me-inner-box:hover .description-box {
-    line-height: 1.5;
   }
   body .about-me-and-skills-box .about-me-box .about-me-inner-box .about-me-items {
     margin: auto 2rem;
@@ -1977,6 +2005,9 @@ body input:focus, body textarea:focus {
   }
   body .about-me-and-skills-box .about-me-box .about-me-inner-box .my-data-box strong {
     font-size: 2.5rem;
+  }
+  body .about-me-and-skills-box .about-me-box .about-me-inner-box .description-box p {
+    padding: 2rem 0;
   }
   body .about-me-and-skills-box .skills-box {
     height: 40vmin;

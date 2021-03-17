@@ -66,6 +66,21 @@
                     letter-spacing: map-get($letter-spacing, mid-wide);
                 }
             }
+
+            .description-box
+            {
+                height: 100%;
+                overflow: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0.5rem 0;
+
+                p
+                {
+                    line-height: 2;
+                }
+            }
         }
     }
 
@@ -164,7 +179,6 @@
                         font-size: map-get($font-size, big-for-menu);
                         color: map-get($color, secondary);
                         opacity: 0;
-                
                     }
 
                     .number-show
