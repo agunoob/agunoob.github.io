@@ -162,6 +162,8 @@
 
                 &:hover
                 {
+                    -webkit-transform: translate(0, -0.6rem);
+                    -ms-transform: translate(0, -0.6rem);
                     transform: translate(0, -0.6rem);
                 }
             }

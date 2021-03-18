@@ -69,10 +69,12 @@
                 width: 100%;
                 position: absolute;
                 background-image: linear-gradient(map-get($color, secondary-fade),map-get($color, accent-mid-fade));
-                display: none;
+                // display: none;
                 flex-direction: column;
-                transition: 1.2s;
+                -webkit-transform: translateY(100%);
+                -ms-transform: translateY(100%);
                 transform: translateY(100%);
+                transition: 1.2s;
                 display: flex;
 
                 h4, p
@@ -104,6 +106,8 @@
 
                 .photo-cover
                 {
+                    -webkit-transform: translateY(0%);
+                    -ms-transform: translateY(0%);
                     transform:translateY(0);
                 }
             }
@@ -273,6 +277,8 @@
             &:hover
             {
                 cursor: pointer;
+                -webkit-transform: scale(0.9);
+                -ms-transform: scale(0.9);
                 transform: scale(0.9);
             }
         }
