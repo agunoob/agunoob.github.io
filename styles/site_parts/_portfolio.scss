@@ -212,7 +212,7 @@
                     align-items: center;
                     justify-content: center;
                     z-index: 4;
-                    background-color: rgba(0, 0, 0, 0.6);
+                    background-color: rgba(0, 0, 0, 0.8);
 
                     img
                     {
@@ -220,7 +220,8 @@
                         min-height: 90%;
                         box-shadow: none;
                         border-radius:unset;
-                        background-color: red;
+                        // background-color: red;
+                        background-color: rgba(0, 0, 0, 0);
                         -o-object-fit: contain;
                         object-fit: contain;
                         -webkit-animation: niceOpenImg ease-in-out 1.8s;
@@ -232,32 +233,24 @@
                         }
                     }
 
-                    // .exit-img-modal
-                    // {
-                    //     width: 3rem;
-                    //     height: 3rem;
-                    //     position: fixed;
-                    //     top: 1.5rem;
-                    //     transform: translateY(-8rem);
-                    //     z-index: 5;
-                    //     padding: 0.5rem;
-                    //     background-color: map-get($color, shadow);
-                    //     box-sizing: content-box;
-                    //     border-radius: 3rem;
-                    //     transition: transform ease-in-out 0.4s;
-                    // }
-
-                    // .show-exit-btn
-                    // {
-                    //     transform: translateY(0);
-                       
-
-                    //     &:hover
-                    //     {
-                    //         cursor: pointer;
-                    //         transform: scale(0.9);
-                    //     }
-                    // }
+                    .exit-img-modal
+                    {
+                        width: 2.8rem;
+                        height: 2.8rem;
+                        position: fixed;
+                        top: 1.5rem;
+                        right: 1.5rem;
+                        padding: 1rem;
+                        min-height: auto;
+                        -webkit-transform:  translateY(-9rem);
+                        -ms-transform:  translateY(-9rem);
+                        transform: translateY(-9rem);
+                        z-index: 5;
+                        background-color: white;
+                        box-sizing: content-box;
+                        border-radius: 3rem;
+                        visibility: hidden;
+                    }
                 }
             }
         }

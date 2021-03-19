@@ -263,6 +263,48 @@
             }
         }
 
+           //modal in portfolio
+           .modal-bg
+           {
+
+               .modal-content
+               {
+
+                   .div-for-projects
+                   {
+
+                       .display-projects
+                       {
+
+                           .img-modal-bg
+                           {
+
+                               img
+                               {
+                                   max-width: 95%;
+                                   max-height: 95%;
+                               }
+
+                               .exit-img-modal
+                               {
+                                   visibility: visible;
+                                   -webkit-animation: showModalImg ease-out 1.2s forwards;
+                                   animation: showModalImg ease-out 1.2s forwards;
+
+                                   &:hover
+                                   {
+                                       cursor: pointer;
+                                       -webkit-transform: scale(0.9);
+                                       -ms-transform: scale(0.9);
+                                       transform: scale(0.9);
+                                   }
+                               }
+                           }
+                       }
+                   }
+               }
+           }
+
         //contact-me-part
         .contact-copyrights-box
         {

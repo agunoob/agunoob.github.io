@@ -68,9 +68,6 @@
     100% {height: 70%}
 }
 
-
-
-
 @-webkit-keyframes shineBarCSS
 {
     0% {width: 0}
@@ -92,8 +89,6 @@
     0% {height: 0}
     100% {height: 60%}
 }
-
-
 
 @-webkit-keyframes shineBarJS
 {
@@ -117,11 +112,24 @@
     100% {height: 40%}
 }
 
-
-
 @keyframes showNumber
 {
     0% {opacity: 0}
     30% {opacity: 1}
     100% {opacity: 1}
+}
+
+@-webkit-keyframes showModalImg
+{
+    0%   {-webkit-transform:  translateY(-9rem); -ms-transform:  translateY(-9rem); transform: translateY(-9rem); opacity: 0}
+    55% {opacity: 0}
+    100% { -webkit-transform: translateY(0); -ms-transform: translateY(0); transform: translateY(0); opacity: 1}
+}
+
+@keyframes showModalImg
+{
+    0%   {-webkit-transform:  translateY(-9rem); -ms-transform:  translateY(-9rem); transform: translateY(-9rem); opacity: 0}
+    55% {opacity: 0}
+    100% { -webkit-transform: translateY(0); -ms-transform: translateY(0); transform: translateY(0); opacity: 1}
+
 }

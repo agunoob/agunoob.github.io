@@ -148,7 +148,7 @@ function showArrowWhenScroll()
     }
     arrow.onclick = function scrollToTop()
     {
-        window.scroll(0,0);
+        window.scroll({top:0, behavior: "smooth"});
     }
 };
 showArrowWhenScroll();
@@ -183,34 +183,34 @@ function scrollToPartOfPage()
     const startPart = document.getElementById('start-part');
     start.onclick = function scrollToStart()
     {
-        startPart.scrollIntoView();
+        startPart.scrollIntoView({behavior: "smooth"});
     };
 
     const aboutMe = document.getElementById('about-me');
     const aboutMePart = document.getElementById('about-me-part');
     aboutMe.onclick = function scrollToaboutMe()
     {
-        aboutMePart.scrollIntoView();
+        aboutMePart.scrollIntoView({behavior: "smooth"});
     };
 
     const portfolio = document.getElementById('portfolio');
     const portfolioPart = document.getElementById('portfolio-part');
     portfolio.onclick = function scrollToPortfolio()
     {
-        portfolioPart.scrollIntoView();
+        portfolioPart.scrollIntoView({behavior: "smooth"});
     };
 
     const contact = document.getElementById('contact');
     const contactPart = document.getElementById('contact-part');
     contact.onclick = function scrollToContact()
     {
-        contactPart.scrollIntoView();
+        contactPart.scrollIntoView({behavior: "smooth"});
     };
 
     const contactMe = document.getElementById('contact-me');
     contactMe.onclick = function scrollToContact()
     {
-        contactPart.scrollIntoView();
+        contactPart.scrollIntoView({behavior: "smooth"});
     };
 };
 scrollToPartOfPage();
@@ -293,12 +293,14 @@ function createModalExit(modalContent, modalBg)
     //close modal
     exitImg.onclick = function closeModal()
     {
+        console.log('exitImg klik')
         modalBg.style.display = 'none';
     }
     window.onclick = function closeModalOutside (event)
     {
         if (event.target == modalBg)
         {
+            console.log('target modalBg klik')
             modalBg.style.display = 'none';
         }
     }
@@ -363,14 +365,27 @@ function imgModal(i, j, imgModalBg)
     const createImgModal = document.createElement('img');
     let imgModal = imgModalBg.appendChild(createImgModal);
     imgModal.src = mojaBaza.nazwa[i].examples[j].photo;
+    // return imgModal;
 };
 
 function exitImgModal(imgModalBg)
 {
-    window.onclick = function closeModalImgOutside (event)
+    const createExitButtonModal = document.createElement('img');
+    let exitButtonModal = imgModalBg.appendChild(createExitButtonModal);
+    exitButtonModal.src = './photos/icons/cancel-orange.svg';
+    exitButtonModal.classList.add('exit-img-modal');
+    
+    exitButtonModal.onclick = function()
     {
-        if (event.target == imgModalBg)
+        console.log('exitButtonModal klik')
+        imgModalBg.style.display = 'none';
+    }
+
+    window.onclick = function closeModalImgOutside (eventTwo)
+    {
+        if (eventTwo.target == imgModalBg)
         {
+            console.log('imgModalBg klik')
             imgModalBg.style.display = 'none';
         }
     }

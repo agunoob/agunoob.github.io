@@ -426,6 +426,30 @@
                         {
                             min-height: 20%;
                             width: 90%;
+
+                            .img-modal-bg
+                            {
+                                img
+                                {
+                                    max-width: 95%;
+                                    height: auto;
+                                }
+
+                                .exit-img-modal
+                                {
+                                    visibility: visible;
+                                    -webkit-animation: showModalImg ease-out 1.2s forwards;
+                                    animation: showModalImg ease-out 1.2s forwards;
+
+                                    &:hover
+                                    {
+                                        cursor: pointer;
+                                        -webkit-transform: scale(0.9);
+                                        -ms-transform: scale(0.9);
+                                        transform: scale(0.9);
+                                    }
+                                }
+                            }
                         }
                     }
 
@@ -526,10 +550,9 @@
                 height: 15%;
                 flex-direction: column;
 
-                i img
+                i
                 {
                     display: none;
-                    // margin: 0;
                 }
 
                 div p
