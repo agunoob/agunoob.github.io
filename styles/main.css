@@ -389,6 +389,30 @@ body input:focus, body textarea:focus {
   margin: 1.5rem 2rem;
 }
 
+.cv-bg {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.cv-bg .cv {
+  max-height: 98%;
+  width: auto;
+  -webkit-animation: niceOpenImg ease-in-out 0.8s;
+  animation: niceOpenImg ease-in-out 0.8s;
+}
+
 .about-me-and-skills-box {
   height: 100vmin;
   width: 100%;

@@ -145,3 +145,23 @@
         }
     }
 }
+
+.cv-bg
+{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .cv
+    {
+        max-height: 98%;
+        width: auto;
+        -webkit-animation: niceOpenImg ease-in-out 0.8s;
+        animation: niceOpenImg ease-in-out 0.8s;
+    }
+}

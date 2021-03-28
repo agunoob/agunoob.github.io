@@ -220,13 +220,35 @@ function buttonsAlerts()
     const btnCheckMyCv = document.getElementById('check-my-cv-btn');
     btnCheckMyCv.onclick = function btnCheckMyCv()
     {
-    alert('It doesnt work yet');
+        const createCvBg = document.createElement('div');
+        let cvBg = document.getElementById('start-part').appendChild(createCvBg);
+        cvBg.classList.add('cv-bg');
+
+        const createCv = document.createElement('img');
+        let cv = cvBg.appendChild(createCv);
+        cv.src = './photos/cv-eng.svg';
+        cv.classList.add('cv');
+
+        //close modal
+        // exitImg.onclick = function closeCv()
+        // {
+        //     // console.log('exitImg klik')
+        //     modalBg.style.display = 'none';
+        // }
+        window.onclick = function closeCvOutside (event)
+        {
+            if (event.target == cvBg)
+            {
+                // console.log('target modalBg klik')
+                cvBg.style.display = 'none';
+            }
+        }
     }
 
     const btnSend = document.getElementById('btn-send');
     btnSend.onclick = function btnSend()
     {
-    alert('It doesnt work yet');
+        alert('It doesnt work yet');
     }
 };
 buttonsAlerts();
