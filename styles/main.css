@@ -408,9 +408,27 @@ body input:focus, body textarea:focus {
 
 .cv-bg .cv {
   max-height: 98%;
-  width: auto;
+  max-width: 98%;
   -webkit-animation: niceOpenImg ease-in-out 0.8s;
   animation: niceOpenImg ease-in-out 0.8s;
+}
+
+.cv-bg .exit-img-modal {
+  width: 2rem;
+  height: 2rem;
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  padding: 1rem;
+  min-height: auto;
+  -webkit-transform: translateY(-9rem);
+  transform: translateY(-9rem);
+  z-index: 5;
+  background-color: white;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  border-radius: 3rem;
+  visibility: hidden;
 }
 
 .about-me-and-skills-box {
@@ -881,7 +899,7 @@ body input:focus, body textarea:focus {
 
 .modal-bg .modal-content .div-for-projects .display-projects {
   height: 98%;
-  min-width: 24%;
+  min-width: 20%;
   margin: 0.2rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -899,13 +917,15 @@ body input:focus, body textarea:focus {
 }
 
 .modal-bg .modal-content .div-for-projects .display-projects h2 {
+  height: 20%;
   color: black;
   font-variant: all-small-caps;
   padding: 0;
+  line-height: 1.2;
 }
 
 .modal-bg .modal-content .div-for-projects .display-projects img {
-  height: 75%;
+  height: 80%;
   width: 95%;
   background-color: white;
   -webkit-box-shadow: 0.6rem 0.6rem 0.6rem rgba(206, 202, 212, 0.425);
@@ -1339,6 +1359,12 @@ body input:focus, body textarea:focus {
     height: 9rem;
     width: 80%;
   }
+  body .cv-bg .exit-img-modal {
+    visibility: visible;
+    -webkit-animation: showModalImg ease-out 1.2s forwards;
+    animation: showModalImg ease-out 1.2s forwards;
+    cursor: pointer;
+  }
   body .about-me-and-skills-box {
     height: calc(200vh);
     -webkit-box-align: center;
@@ -1569,7 +1595,6 @@ body input:focus, body textarea:focus {
     height: 100%;
   }
   body .modal-bg .modal-content {
-    overflow: auto;
     height: 95%;
     width: 95%;
   }
@@ -1580,6 +1605,7 @@ body input:focus, body textarea:focus {
         -ms-flex-direction: column;
             flex-direction: column;
     height: 70%;
+    overflow: auto;
   }
   body .modal-bg .modal-content .div-for-projects .display-projects {
     min-height: 20%;
@@ -1827,6 +1853,12 @@ body input:focus, body textarea:focus {
   body .nav-contact-box .contact-me-box .contact-me-buttons button {
     height: 7rem;
     width: 80%;
+  }
+  body .cv-bg .exit-img-modal {
+    visibility: visible;
+    -webkit-animation: showModalImg ease-out 1.2s forwards;
+    animation: showModalImg ease-out 1.2s forwards;
+    cursor: pointer;
   }
   body .about-me-and-skills-box {
     height: 100vh;

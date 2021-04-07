@@ -170,7 +170,7 @@
             .display-projects
             {
                 height: 98%;
-                min-width: 24%;
+                min-width: 20%;
                 margin: 0.2rem;
                 display: flex;
                 flex-direction: column;
@@ -179,14 +179,16 @@
 
                 h2
                 {
+                    height: 20%;
                     color: map-get($color, secondary);
                     font-variant: all-small-caps;
                     padding: 0;
+                    line-height: 1.2;
                 }
 
                 img
                 {
-                    height: 75%;
+                    height: 80%;
                     width: 95%;
                     @include box-shadow;
                     border-radius: 1rem;

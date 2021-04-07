@@ -165,6 +165,18 @@
             }
         }
 
+        .cv-bg
+        {
+
+            .exit-img-modal
+            {
+                visibility: visible;
+                -webkit-animation: showModalImg ease-out 1.2s forwards;
+                animation: showModalImg ease-out 1.2s forwards;
+                cursor: pointer;
+            }
+        }
+
         //about-me-and-skills-part
         .about-me-and-skills-box
         {
@@ -412,7 +424,6 @@
             {
                 .modal-content
                 {
-                    overflow: auto;
                     height: 95%;
                     width: 95%;
 
@@ -421,6 +432,7 @@
                         margin: 0;
                         flex-direction: column;
                         height: 70%;
+                        overflow: auto;
 
                         .display-projects
                         {

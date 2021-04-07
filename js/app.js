@@ -6,28 +6,43 @@ const baza =
     [
         {
             "id": 0,
-            "title": "coding",
-            "description": "codes, coding, js, css, scss, html, JSON, programming..",
-            "longerDescription": "efjwoifjw jfoiw oifw jeoifwe oif wjeoifjewifweoi fweifwe",
+            "title": "projects",
+            "description": "my first projects",
+            "longerDescription": "My first projects created during 3-month internship in Snabel Sp. z o.o. This Business Card website is also an effect of that work.",
             "examples":
             [
                 {
                     "id": 0,
-                    "title": "first project",
-                    "photo": "src"
+                    "title": "simple calculator",
+                    "photo": "./photos/portfolio-projects/calc-1.png"
                 },
                 {
                     "id": 1,
-                    "title": "second project",
-                    "photo": "src"
+                    "title": "another calculator",
+                    "photo": "./photos/portfolio-projects/calc-2.png"
+                },
+                {
+                    "id": 2,
+                    "title": "online shop",
+                    "photo": "./photos/portfolio-projects/shop-1.png"
+                },
+                {
+                    "id": 3,
+                    "title": "online shop- modal",
+                    "photo": "./photos/portfolio-projects/shop-2.png"
+                },
+                {
+                    "id": 4,
+                    "title": "online shop- cart",
+                    "photo": "./photos/portfolio-projects/shop-3.png"
                 }
             ]
         },
         {
             "id": 1,
             "title": "photography",
-            "description": "my photos, best photos, galleries..",
-            "longerDescription": "duhd eudsu yr g ef gwjw d jw id s",
+            "description": "some of my photos",
+            "longerDescription": "Some sceneries need to be captured.",
             "examples":
             [
                 {
@@ -50,8 +65,8 @@ const baza =
         {
             "id": 2,
             "title": "drawings",
-            "description": "my drawings, sketches, galleries..",
-            "longerDescription": "ejf f erf ruer wen sn dsn sdfn sd sef usenfusnfeuwnefuwn eufn wuefuwe fuwef ",
+            "description": "my drawings",
+            "longerDescription": "I love to image beautiful nature. Here are some of my drawings with color pencils on paper.",
             "examples":
             [
                 {
@@ -74,27 +89,27 @@ const baza =
         {
             "id": 3,
             "title": "design",
-            "description": "interior design, my projects, architecture..",
-            "longerDescription": "wefj fowief w efyu we fo",
+            "description": "learning web desing and tools, looking for inspirations",
+            "longerDescription": "I found this graphics editing app very useful. Here is my first web design attempt so far.",
             "examples":
             [
                 {
                     "id": 0,
-                    "title": "project",
-                    "photo": "src"
+                    "title": "learning Figma",
+                    "photo": "./photos/portfolio-figma/figma.png"
                 }
             ]
         },
         {
             "id": 4,
-            "title": "computer",
-            "description": "MS Office, Linux, ..",
-            "longerDescription": "dsduf udsnf oudsf dsnf osd nfdsnfion",
+            "title": ". . .",
+            "description": ". . . .",
+            "longerDescription": ". . . . . . . .",
             "examples":
             [
                 {
                     "id": 0,
-                    "title": "computer aplications and programs",
+                    "title": ". . . .",
                     "photo": "src"
                 }
             ]
@@ -102,23 +117,23 @@ const baza =
         {
             "id": 5,
             "title": "games",
-            "description": "big city, ..",
-            "longerDescription": "idfjsif amd dwuefewufncndwc csndvbd sdvwreywefw do",
+            "description": "Even trivial computer games can relieve creativity",
+            "longerDescription": "I also like playing computer games especially when i can build and design in them. Here is my huge city project in Minecraft that took me few years.",
             "examples":
             [
                 {
                     "id": 0,
-                    "title": "city project",
+                    "title": "1 view",
                     "photo": "./photos/portfolio-city/1.png"
                 },
                 {
                     "id": 1,
-                    "title": "city project",
+                    "title": "2 view",
                     "photo": "./photos/portfolio-city/2.png"
                 },
                 {
                     "id": 2,
-                    "title": "city project",
+                    "title": "3 view",
                     "photo": "./photos/portfolio-city/4.png"
                 }
             ]
@@ -229,12 +244,17 @@ function buttonsAlerts()
         cv.src = './photos/cv-eng.svg';
         cv.classList.add('cv');
 
-        //close modal
-        // exitImg.onclick = function closeCv()
-        // {
-        //     // console.log('exitImg klik')
-        //     modalBg.style.display = 'none';
-        // }
+        const createExitButtonCv = document.createElement('img');
+        let exitButtonCv = cvBg.appendChild(createExitButtonCv);
+        exitButtonCv.src = './photos/icons/cancel-orange.svg';
+        exitButtonCv.classList.add('exit-img-modal');
+        
+        exitButtonCv.onclick = function()
+        {
+            // console.log('exitButtonModal klik')
+            cvBg.style.display = 'none';
+        }
+
         window.onclick = function closeCvOutside (event)
         {
             if (event.target == cvBg)
@@ -387,7 +407,6 @@ function imgModal(i, j, imgModalBg)
     const createImgModal = document.createElement('img');
     let imgModal = imgModalBg.appendChild(createImgModal);
     imgModal.src = mojaBaza.nazwa[i].examples[j].photo;
-    // return imgModal;
 };
 
 function exitImgModal(imgModalBg)

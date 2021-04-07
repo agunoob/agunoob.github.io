@@ -150,6 +150,18 @@
             }
         }
 
+        .cv-bg
+        {
+
+            .exit-img-modal
+            {
+                visibility: visible;
+                -webkit-animation: showModalImg ease-out 1.2s forwards;
+                animation: showModalImg ease-out 1.2s forwards;
+                cursor: pointer;
+            }
+        }
+
         //about-me-and-skills-part
         .about-me-and-skills-box
         {

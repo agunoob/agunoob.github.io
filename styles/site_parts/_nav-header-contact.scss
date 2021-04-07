@@ -160,8 +160,27 @@
     .cv
     {
         max-height: 98%;
-        width: auto;
+        max-width: 98%;
         -webkit-animation: niceOpenImg ease-in-out 0.8s;
         animation: niceOpenImg ease-in-out 0.8s;
+    }
+
+    .exit-img-modal
+    {
+        width: 2rem;
+        height: 2rem;
+        position: fixed;
+        top: 1.5rem;
+        right: 1.5rem;
+        padding: 1rem;
+        min-height: auto;
+        -webkit-transform:  translateY(-9rem);
+        -ms-transform:  translateY(-9rem);
+        transform: translateY(-9rem);
+        z-index: 5;
+        background-color: white;
+        box-sizing: content-box;
+        border-radius: 3rem;
+        visibility: hidden;
     }
 }
