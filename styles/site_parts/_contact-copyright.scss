@@ -71,57 +71,51 @@
             {
                 height: 100%;
                 width: 60%;
-                padding: 4rem 6rem;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
+                padding: 0 6rem 0 6rem;
 
                 h3
                 {
                     margin-left: 2rem;
-                    margin-bottom: 1rem;
+                    margin-top: 4.5rem;
+                    margin-bottom: 2rem;
                 }
 
-                input, form
-                {
-                    -webkit-appearance: none;
-                    -moz-appearance: none;
-                    appearance: none;
-                    @include buttons-hover;
-                    color: map-get($color, accent);
-                    height: 8%;
-                    padding: 0.5rem 2rem;
-                    border-radius: 0.6rem;
-                    font-size: map-get($font-size, extra-small);
-                    font-family: 'Poppins', sans-serif;
-                }
+                form {
+                    
+                    height: 70%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
 
-                ::-webkit-input-placeholder
-                {
-                    color: map-get($color, light-grey);
-                }
-
-                form
-                {
-                    height: 40%;
-                    padding-right: 0.2rem;
-
-                    textarea
+                    input, textarea
                     {
-                        width: 100%;
-                        height: 100%;
-                        border: none;
-                        resize: none;
-                        background-color: rgba(255, 255, 255, 0);
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        appearance: none;
+                        @include buttons-hover;
                         color: map-get($color, accent);
+                        height: 10%;
+                        padding: 0.5rem 2rem;
+                        border-radius: 0.6rem;
                         font-size: map-get($font-size, extra-small);
                         font-family: 'Poppins', sans-serif;
                     }
-                }
 
-                button
-                {
-                    align-self: flex-end;
+                    ::-webkit-input-placeholder
+                    {
+                        color: map-get($color, light-grey);
+                    }
+
+                    textarea
+                    {
+                        height: 45%;
+                        resize: none;
+                    }
+
+                    button
+                    {
+                        align-self: flex-end;
+                    }
                 }
             }
         }

@@ -99,6 +99,20 @@
                     margin-top: 4rem;
                     margin-left: 1.5rem;
                 }
+                
+                #btn-fifth-pic
+                {
+                    -ms-background-image: linear-gradient(to bottom right, lightgrey ,lightgrey);
+                    -moz-background-image: linear-gradient(to bottom right, lightgrey ,lightgrey);
+                    -webkit-background-image: linear-gradient(to bottom right, lightgrey ,lightgrey);
+                    background-image: linear-gradient(to bottom right, lightgrey ,lightgrey);
+                    
+                    &:hover
+                    {
+                        color: black;
+                        border-color: black;
+                    }
+                }
             }
 
             &:hover
@@ -219,7 +233,7 @@
                     img
                     {
                         width: auto;
-                        min-height: 90%;
+                        min-height: 80%;
                         box-shadow: none;
                         border-radius:unset;
                         // background-color: red;

@@ -21,30 +21,36 @@ body
     font-family: 'Poppins', sans-serif;
     cursor: default;
 
-    .pl-flag, .uk-flag
+    .div-for-flag
     {
-        width: 3rem;
+        height: 8vmin;
+        display: flex;
+        align-items: center;
         position: absolute;
-        top: 1.4rem;
         left: 2rem;
-        cursor: pointer;
-        z-index: 1;
-        transition: transform 0.3s;
 
-        //trick for icon shadow, not the whole box-shadow
-        & img
+        .pl-flag, .uk-flag
         {
-            filter: drop-shadow(0 0 0.1rem map-get($color, secondary));
-            // -moz-box-shadow: 0 0 0.1rem map-get($color, secondary);
-            // -webkit-box-shadow: 0 0 0.1rem map-get($color, secondary);
-            // box-shadow: 0 0 0.1rem map-get($color, secondary);
-        }
+            width: 3rem;
+            cursor: pointer;
+            z-index: 1;
+            transition: transform 0.3s;
 
-        &:hover
-        {
-            -ms-transform: scale(0.9); /* IE 9 */
-            -webkit-transform: scale(0.9); /* Safari 3-8 */
-            transform: scale(0.9);
+            //trick for icon shadow, not the whole box-shadow
+            & img
+            {
+                filter: drop-shadow(0 0 0.1rem map-get($color, secondary));
+                // -moz-box-shadow: 0 0 0.1rem map-get($color, secondary);
+                // -webkit-box-shadow: 0 0 0.1rem map-get($color, secondary);
+                // box-shadow: 0 0 0.1rem map-get($color, secondary);
+            }
+
+            &:hover
+            {
+                -ms-transform: scale(0.9); /* IE 9 */
+                -webkit-transform: scale(0.9); /* Safari 3-8 */
+                transform: scale(0.9);
+            }
         }
     }
 

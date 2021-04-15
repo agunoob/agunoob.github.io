@@ -6,9 +6,15 @@
 
     body
     {
-        .pl-flag, .uk-flag
+        .div-for-flag
         {
-            top: 2.5rem;
+            top: 1rem;
+            right: 2rem;
+            
+            .pl-flag, .uk-flag
+            {
+                width: 4rem;
+            }
         }
     
         .burger-icon
@@ -345,7 +351,7 @@
 
                     .form
                     {
-                        padding: 4rem 4rem;
+                        padding: 0 3.5rem;
                     }
                 }
             }

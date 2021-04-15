@@ -8,8 +8,10 @@
 </head>
 <body>
 
-    <a href="./index.html" class="pl-flag"><img src="./photos/icons/uk.svg" alt="UK flag"></a>
+    <div class="div-for-flag">
+        <a href="./index.html" class="pl-flag"><img src="./photos/icons/uk.svg" alt="UK flag"></a>
     <!-- "./index.html"   "./photos/icons/poland.svg"  UK-flag-->
+    </div>
     <i><img id="burger" class="burger-icon" src="./photos/icons/menu.svg"></i>
     <div id="start-part" class="nav-contact-box">
         <nav id="nav-box-open" class="nav-box nav-box-closed">
@@ -181,7 +183,7 @@
             </div>
             <div class="boxes fifth-box">
                 <div class="photo-cover">
-                    <button class="btn" id="btn-fifth-pic">zobacz
+                    <button class="btn" id="btn-fifth-pic">pusty
                         <!-- zobacz -->
                     </button>
                 </div>
@@ -213,16 +215,18 @@
                     <h3>Zaczynamy
                         <!-- Zaczynamy -->
                     </h3>
-                    <input type="text" placeholder="imię">
-                    <!-- imię -->
-                    <input type="text" placeholder="twoj adres e-mail">
-                    <!-- twój adres e-mail -->
-                    <input type="text" placeholder="temat">
-                    <!-- temat -->
-                    <form><textarea placeholder="wiadomość"></textarea></form>
-                    <!-- wiadomość -->
-                    <button id="btn-send">wyślij</button>
-                    <!-- wyślij -->
+                    <form netlify>
+                        <input type="text" name="name" placeholder="imię">
+                        <!-- imię -->
+                        <input type="email" name="email" placeholder="twój adres e-mail" required>
+                        <!-- twój adres e-mail -->
+                        <input type="text" name="topic" placeholder="temat">
+                        <!-- temat -->
+                        <textarea name="message" placeholder="wiadomość" required></textarea>
+                        <!-- wiadomość -->
+                        <button id="btn-send">wyślij</button>
+                        <!-- wyślij -->
+                    </form>
                 </div>
             </div>
         </div>

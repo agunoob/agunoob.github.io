@@ -97,19 +97,24 @@ const baza =
                     "id": 0,
                     "title": "learning Figma",
                     "photo": "./photos/portfolio-figma/figma.png"
+                },
+                {
+                    "id": 1,
+                    "title": "learning Figma",
+                    "photo": "./photos/portfolio-figma/wooden-figma.png"
                 }
             ]
         },
         {
             "id": 4,
-            "title": ". . .",
-            "description": ". . . .",
-            "longerDescription": ". . . . . . . .",
+            "title": "",
+            "description": "",
+            "longerDescription": "",
             "examples":
             [
                 {
                     "id": 0,
-                    "title": ". . . .",
+                    "title": "",
                     "photo": "src"
                 }
             ]
@@ -268,7 +273,7 @@ function buttonsAlerts()
     const btnSend = document.getElementById('btn-send');
     btnSend.onclick = function btnSend()
     {
-        alert('It doesnt work yet');
+        alert('Thank you for you message!');
     }
 };
 buttonsAlerts();
@@ -298,13 +303,21 @@ function portfolio()
     {
         btns[i].onclick = function openModal()
         {
-            // console.log('nr zdjecia: ', i)
-            let bG = createModalBg();
-            let content = createModalContent(bG);
-            createModalExit(content, bG);
-            titleInModal(content, i);
-            longerDescriptionInModal(content, i);
-            divForProjects(content, i);
+            //empty element of portfolio
+            if (i == 4)
+            { 
+                alert('Sorry! This one is still empty');
+            }
+
+            else
+            {
+                let bG = createModalBg();
+                let content = createModalContent(bG);
+                createModalExit(content, bG);
+                titleInModal(content, i);
+                longerDescriptionInModal(content, i);
+                divForProjects(content, i);
+            }
         }
     }
 };
@@ -371,7 +384,6 @@ function divForProjects(modalContent, i)
     {
         for (let j in mojaBaza.nazwa[i].examples)
         {
-            console.log(j, i)
             const createDisplayProjects = document.createElement('div');
             let displayProjects = divForProjects.appendChild(createDisplayProjects);
             displayProjects.classList.add('display-projects');
@@ -479,7 +491,7 @@ function showSkills()
                         {
                             counter++;
                             number[0].innerHTML = counter + '%';
-                            console.log(counter)
+                            // console.log(counter)
                         }
                         return
                     }, 25)
@@ -503,7 +515,7 @@ function showSkills()
                         {
                             counterTwo++;
                             number[1].innerHTML = counterTwo + '%';
-                            console.log(counterTwo)
+                            // console.log(counterTwo)
                         }
                         return
                     }, 30)
@@ -527,7 +539,7 @@ function showSkills()
                         {
                             counterThree++;
                             number[2].innerHTML = counterThree + '%';
-                            console.log(counterThree)
+                            // console.log(counterThree)
                         }
                         return
                     }, 40)

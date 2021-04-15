@@ -24,11 +24,20 @@ body {
   cursor: default;
 }
 
-body .pl-flag, body .uk-flag {
-  width: 3rem;
+body .div-for-flag {
+  height: 8vmin;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: absolute;
-  top: 1.4rem;
   left: 2rem;
+}
+
+body .div-for-flag .pl-flag, body .div-for-flag .uk-flag {
+  width: 3rem;
   cursor: pointer;
   z-index: 1;
   -webkit-transition: -webkit-transform 0.3s;
@@ -37,12 +46,12 @@ body .pl-flag, body .uk-flag {
   transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
-body .pl-flag img, body .uk-flag img {
+body .div-for-flag .pl-flag img, body .div-for-flag .uk-flag img {
   -webkit-filter: drop-shadow(0 0 0.1rem black);
           filter: drop-shadow(0 0 0.1rem black);
 }
 
-body .pl-flag:hover, body .uk-flag:hover {
+body .div-for-flag .pl-flag:hover, body .div-for-flag .uk-flag:hover {
   /* IE 9 */
   -webkit-transform: scale(0.9);
   /* Safari 3-8 */
@@ -813,6 +822,20 @@ body input:focus, body textarea:focus {
   margin-left: 1.5rem;
 }
 
+.portfolio-box .portfolio-gallery .boxes .photo-cover #btn-fifth-pic {
+  -ms-background-image: linear-gradient(to bottom right, lightgrey, lightgrey);
+  -moz-background-image: linear-gradient(to bottom right, lightgrey, lightgrey);
+  -webkit-background-image: -webkit-gradient(linear, left top, right bottom, from(lightgrey), to(lightgrey));
+  -webkit-background-image: linear-gradient(to bottom right, lightgrey, lightgrey);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(lightgrey), to(lightgrey));
+  background-image: linear-gradient(to bottom right, lightgrey, lightgrey);
+}
+
+.portfolio-box .portfolio-gallery .boxes .photo-cover #btn-fifth-pic:hover {
+  color: black;
+  border-color: black;
+}
+
 .portfolio-box .portfolio-gallery .boxes:hover .photo-cover {
   -webkit-transform: translateY(0%);
   transform: translateY(0);
@@ -963,7 +986,7 @@ body input:focus, body textarea:focus {
 
 .modal-bg .modal-content .div-for-projects .display-projects .img-modal-bg img {
   width: auto;
-  min-height: 90%;
+  min-height: 80%;
   -webkit-box-shadow: none;
           box-shadow: none;
   border-radius: unset;
@@ -1110,7 +1133,17 @@ body input:focus, body textarea:focus {
 .contact-copyrights-box .contact-box .contact-form .form {
   height: 100%;
   width: 60%;
-  padding: 4rem 6rem;
+  padding: 0 6rem 0 6rem;
+}
+
+.contact-copyrights-box .contact-box .contact-form .form h3 {
+  margin-left: 2rem;
+  margin-top: 4.5rem;
+  margin-bottom: 2rem;
+}
+
+.contact-copyrights-box .contact-box .contact-form .form form {
+  height: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1122,12 +1155,7 @@ body input:focus, body textarea:focus {
       justify-content: space-around;
 }
 
-.contact-copyrights-box .contact-box .contact-form .form h3 {
-  margin-left: 2rem;
-  margin-bottom: 1rem;
-}
-
-.contact-copyrights-box .contact-box .contact-form .form input, .contact-copyrights-box .contact-box .contact-form .form form {
+.contact-copyrights-box .contact-box .contact-form .form form input, .contact-copyrights-box .contact-box .contact-form .form form textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1143,34 +1171,23 @@ body input:focus, body textarea:focus {
   -webkit-border: solid 0.1rem #c54614;
   border: solid 0.1rem #c54614;
   color: #444764;
-  height: 8%;
+  height: 10%;
   padding: 0.5rem 2rem;
   border-radius: 0.6rem;
   font-size: 1.4rem;
   font-family: 'Poppins', sans-serif;
 }
 
-.contact-copyrights-box .contact-box .contact-form .form ::-webkit-input-placeholder {
+.contact-copyrights-box .contact-box .contact-form .form form ::-webkit-input-placeholder {
   color: #777777;
 }
 
-.contact-copyrights-box .contact-box .contact-form .form form {
-  height: 40%;
-  padding-right: 0.2rem;
-}
-
 .contact-copyrights-box .contact-box .contact-form .form form textarea {
-  width: 100%;
-  height: 100%;
-  border: none;
+  height: 45%;
   resize: none;
-  background-color: rgba(255, 255, 255, 0);
-  color: #444764;
-  font-size: 1.4rem;
-  font-family: 'Poppins', sans-serif;
 }
 
-.contact-copyrights-box .contact-box .contact-form .form button {
+.contact-copyrights-box .contact-box .contact-form .form form button {
   -ms-flex-item-align: end;
       align-self: flex-end;
 }
@@ -1232,8 +1249,12 @@ body input:focus, body textarea:focus {
   :root {
     font-size: 7px;
   }
-  body .pl-flag, body .uk-flag {
+  body .div-for-flag {
     top: 2rem;
+    right: 2rem;
+  }
+  body .div-for-flag .pl-flag, body .div-for-flag .uk-flag {
+    width: 4.5rem;
   }
   body .burger-icon {
     display: block;
@@ -1693,17 +1714,21 @@ body input:focus, body textarea:focus {
     width: 100%;
     padding: 2.5rem 2rem;
   }
-  body .contact-copyrights-box .contact-box .contact-form .form textarea {
-    padding-top: 2rem;
-  }
   body .contact-copyrights-box .contact-box .contact-form .form h3 {
     margin-left: 0;
-    margin-top: 1.5rem;
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
+    margin-top: 2rem;
+    text-align: center;
   }
-  body .contact-copyrights-box .contact-box .contact-form .form button {
+  body .contact-copyrights-box .contact-box .contact-form .form form {
+    height: 90%;
+  }
+  body .contact-copyrights-box .contact-box .contact-form .form form input {
+    height: 8%;
+  }
+  body .contact-copyrights-box .contact-box .contact-form .form form textarea {
+    padding-top: 2rem;
+  }
+  body .contact-copyrights-box .contact-box .contact-form .form form button {
     width: 80%;
     height: 6rem;
     -ms-flex-item-align: center;
@@ -1735,8 +1760,12 @@ body input:focus, body textarea:focus {
   :root {
     font-size: 7.5px;
   }
-  body .pl-flag, body .uk-flag {
-    top: 2.5rem;
+  body .div-for-flag {
+    top: 1rem;
+    right: 2rem;
+  }
+  body .div-for-flag .pl-flag, body .div-for-flag .uk-flag {
+    width: 4rem;
   }
   body .burger-icon {
     display: block;
@@ -1962,7 +1991,7 @@ body input:focus, body textarea:focus {
     line-height: 2;
   }
   body .contact-copyrights-box .contact-box .contact-form .form {
-    padding: 4rem 4rem;
+    padding: 0 3.5rem;
   }
   body .contact-copyrights-box .copyrights p {
     font-size: 1.2rem;
@@ -1979,8 +2008,12 @@ body input:focus, body textarea:focus {
   :root {
     font-size: 8px;
   }
-  body .pl-flag, body .uk-flag {
-    top: 2.2rem;
+  body .div-for-flag {
+    top: 1rem;
+    right: 2rem;
+  }
+  body .div-for-flag .pl-flag, body .div-for-flag .uk-flag {
+    width: 4rem;
   }
   body .burger-icon {
     display: block;
