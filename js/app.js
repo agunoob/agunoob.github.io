@@ -35,6 +35,11 @@ const baza =
                     "id": 4,
                     "title": "online shop- cart",
                     "photo": "./photos/portfolio-projects/shop-3.png"
+                },
+                {
+                    "id": 5,
+                    "title": "simple text editor",
+                    "photo": "./photos/portfolio-projects/txt-editor.png"
                 }
             ]
         },
